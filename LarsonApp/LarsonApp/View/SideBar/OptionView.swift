@@ -23,33 +23,34 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
         
     slideTableView.delegate = self
     slideTableView.dataSource = self
-     slideTableView.registerNib(UINib(nibName: "SlideTableViewCell", bundle: nil), forCellReuseIdentifier: "SlideTableViewCell")
+     slideTableView.register(UINib(nibName: "SlideTableViewCell", bundle: nil), forCellReuseIdentifier: "SlideTableViewCell")
         self.layoutIfNeeded()
 
-        let view =  NSBundle.mainBundle().loadNibNamed("SlideTableHeaderView", owner: self, options: nil)[0] as? SlideTableHeaderView
+        let view =  Bundle.main.loadNibNamed("SlideTableHeaderView", owner: self, options: nil)?[0] as? SlideTableHeaderView
         
         view?.frame = headerViewContainer.bounds
         view?.initUI()
         headerViewContainer.addSubview(view!)
         view?.layoutIfNeeded()
 
-        slideContainer.frame = CGRectMake(CGFloat(0 - LCDW + 70), 0, self.width(), LCDH)
-
+//        slideContainer.frame = CGRectMake(CGFloat(0 - LCDW + 70), 0, self.width(), LCDH)
+        slideContainer.frame = CGRect(x: CGFloat(0 - LCDW + 70), y: 0, width: self.width(), height: LCDH)
         greyView.alpha = 0
-    slideTableView.separatorStyle = UITableViewCellSeparatorStyle.None
-    UIView.animateWithDuration(0.5, animations: { () -> Void in
+    slideTableView.separatorStyle = UITableViewCellSeparatorStyle.none
+    UIView.animate(withDuration: 0.5, animations: { () -> Void in
         
         self.greyView.alpha = 0.5
         
-        self.slideContainer.frame = CGRectMake(0, 0, self.width(), LCDH)
+//        self.slideContainer.frame = CGRectMake(0, 0, self.width(), LCDH)
+        self.slideContainer.frame = CGRect(x: 0, y: 0, width: self.width(), height: LCDH)
         }, completion: nil)
 
         
-        let swipeGesture = UISwipeGestureRecognizer(target: self, action: "handleSwipeGesture")
-        swipeGesture.direction = UISwipeGestureRecognizerDirection.Left
+        let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(OptionView.handleSwipeGesture))
+        swipeGesture.direction = UISwipeGestureRecognizerDirection.left
         self.addGestureRecognizer(swipeGesture)
         
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleSwipeGesture")
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(OptionView.handleSwipeGesture))
         
         self.greyView.addGestureRecognizer(tapGesture)
         
@@ -58,7 +59,7 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
     
     
     func handleSwipeGesture(){
-        DispatchQueue.main.asynchronously() {
+        DispatchQueue.main.async {
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 
                 self.greyView.alpha = 0
@@ -67,7 +68,6 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
             }) { (Bool) -> Void in
                 self.removeFromSuperview()
             }
-            
         }
     }
 
@@ -83,11 +83,11 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
         return cell
         }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(48)
     }
     
-    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
        
       let view = UIView()
         view.backgroundColor = UIColor.white
@@ -95,11 +95,11 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
         return view
     }
     
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return CGFloat(8)
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
        items["didSelect"] = indexPath.item
         tableView.reloadData()
         if indexPath.row == 0
@@ -110,7 +110,7 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
         else
         {
             if cellTouchUpHandler != nil {
-                cellTouchUpHandler!(indexPath,"" as AnyObject)
+                cellTouchUpHandler!(indexPath as NSIndexPath,"" as AnyObject)
             }
         }
     }
