@@ -26,6 +26,15 @@
 		434395D21DBF4F3B00C12C37 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D01DBF4F3B00C12C37 /* LoginViewController.xib */; };
 		434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395D31DBF4F4900C12C37 /* PartsViewController.swift */; };
 		434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D41DBF4F4900C12C37 /* PartsViewController.xib */; };
+		A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861131DBF573800BA17EE /* MKBlueButton.swift */; };
+		A778611E1DBF573800BA17EE /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861141DBF573800BA17EE /* MKButton.swift */; };
+		A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861151DBF573800BA17EE /* MKLayer.swift */; };
+		A77861201DBF573800BA17EE /* OptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861171DBF573800BA17EE /* OptionView.swift */; };
+		A77861211DBF573800BA17EE /* OptionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A77861181DBF573800BA17EE /* OptionView.xib */; };
+		A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861191DBF573800BA17EE /* SlideTableHeaderView.swift */; };
+		A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */; };
+		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
+		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +61,15 @@
 		434395D41DBF4F4900C12C37 /* PartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartsViewController.xib; sourceTree = "<group>"; };
 		95EF6B1C3B9D60DA1143DF55 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A756EC05834112A3B3E17C34 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A77861131DBF573800BA17EE /* MKBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBlueButton.swift; sourceTree = "<group>"; };
+		A77861141DBF573800BA17EE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
+		A77861151DBF573800BA17EE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
+		A77861171DBF573800BA17EE /* OptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionView.swift; sourceTree = "<group>"; };
+		A77861181DBF573800BA17EE /* OptionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionView.xib; sourceTree = "<group>"; };
+		A77861191DBF573800BA17EE /* SlideTableHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTableHeaderView.swift; sourceTree = "<group>"; };
+		A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableHeaderView.xib; sourceTree = "<group>"; };
+		A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTableViewCell.swift; sourceTree = "<group>"; };
+		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +235,8 @@
 		434395BB1DBF4E9800C12C37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A77861121DBF573800BA17EE /* MKButton */,
+				A77861161DBF573800BA17EE /* SideBar */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -239,6 +259,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A77861121DBF573800BA17EE /* MKButton */ = {
+			isa = PBXGroup;
+			children = (
+				A77861131DBF573800BA17EE /* MKBlueButton.swift */,
+				A77861141DBF573800BA17EE /* MKButton.swift */,
+				A77861151DBF573800BA17EE /* MKLayer.swift */,
+			);
+			path = MKButton;
+			sourceTree = "<group>";
+		};
+		A77861161DBF573800BA17EE /* SideBar */ = {
+			isa = PBXGroup;
+			children = (
+				A77861171DBF573800BA17EE /* OptionView.swift */,
+				A77861181DBF573800BA17EE /* OptionView.xib */,
+				A77861191DBF573800BA17EE /* SlideTableHeaderView.swift */,
+				A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */,
+				A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */,
+				A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */,
+			);
+			path = SideBar;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -252,6 +295,7 @@
 				434395931DBF4DBE00C12C37 /* Resources */,
 				F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */,
 				74CB41886C3916A60BA95305 /* [CP] Copy Pods Resources */,
+				A6508A78CA0E505482548A90 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -301,9 +345,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
+				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
 				434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */,
+				A77861211DBF573800BA17EE /* OptionView.xib in Resources */,
 				434395D21DBF4F3B00C12C37 /* LoginViewController.xib in Resources */,
 				434395CE1DBF4F2E00C12C37 /* JobDetailViewController.xib in Resources */,
 				434395CA1DBF4F2100C12C37 /* ChatViewController.xib in Resources */,
@@ -344,6 +391,21 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		A6508A78CA0E505482548A90 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -368,14 +430,20 @@
 			files = (
 				434395C41DBF4EE600C12C37 /* AppointmentViewController.swift in Sources */,
 				434395BC1DBF4E9800C12C37 /* BlockDefination.swift in Sources */,
+				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
+				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
+				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
 				434395BD1DBF4E9800C12C37 /* ViewFrameExtension.swift in Sources */,
+				A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */,
+				A778611E1DBF573800BA17EE /* MKButton.swift in Sources */,
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
 				434395D11DBF4F3B00C12C37 /* LoginViewController.swift in Sources */,
+				A77861201DBF573800BA17EE /* OptionView.swift in Sources */,
 				434395C11DBF4EC900C12C37 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -412,6 +480,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -434,7 +503,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -461,6 +530,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -477,7 +547,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
