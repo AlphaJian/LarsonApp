@@ -10,26 +10,30 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    var navHeaderView : NavHeaderView?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func initNavView(title : String){
+        navHeaderView = Bundle.main.loadNibNamed("NavHeaderView", owner: self, options: nil)?[0] as? NavHeaderView
+        navHeaderView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: 64)
+        navHeaderView?.initUI(str: title, bolBack: false)
+        self.view.addSubview(navHeaderView!)
+        navHeaderView?.testBtnHandler = {
+            
+        }
+        navHeaderView?.opertionBtnHandler = {
+            
+        }
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

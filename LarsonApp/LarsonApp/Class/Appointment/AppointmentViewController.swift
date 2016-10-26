@@ -13,6 +13,7 @@ class AppointmentViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        initNavView(title: "Appointment List")
         // Do any additional setup after loading the view.
     }
 

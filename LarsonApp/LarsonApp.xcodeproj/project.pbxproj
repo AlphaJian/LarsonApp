@@ -26,6 +26,8 @@
 		434395D21DBF4F3B00C12C37 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D01DBF4F3B00C12C37 /* LoginViewController.xib */; };
 		434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395D31DBF4F4900C12C37 /* PartsViewController.swift */; };
 		434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D41DBF4F4900C12C37 /* PartsViewController.xib */; };
+		434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395F01DC044A400C12C37 /* NavHeaderView.swift */; };
+		434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395F11DC044A400C12C37 /* NavHeaderView.xib */; };
 		A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861131DBF573800BA17EE /* MKBlueButton.swift */; };
 		A778611E1DBF573800BA17EE /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861141DBF573800BA17EE /* MKButton.swift */; };
 		A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861151DBF573800BA17EE /* MKLayer.swift */; };
@@ -59,6 +61,8 @@
 		434395D01DBF4F3B00C12C37 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		434395D31DBF4F4900C12C37 /* PartsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsViewController.swift; sourceTree = "<group>"; };
 		434395D41DBF4F4900C12C37 /* PartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartsViewController.xib; sourceTree = "<group>"; };
+		434395F01DC044A400C12C37 /* NavHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavHeaderView.swift; sourceTree = "<group>"; };
+		434395F11DC044A400C12C37 /* NavHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavHeaderView.xib; sourceTree = "<group>"; };
 		95EF6B1C3B9D60DA1143DF55 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 		A756EC05834112A3B3E17C34 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77861131DBF573800BA17EE /* MKBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBlueButton.swift; sourceTree = "<group>"; };
@@ -235,6 +239,7 @@
 		434395BB1DBF4E9800C12C37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				434395EF1DC044A400C12C37 /* NavView */,
 				A77861121DBF573800BA17EE /* MKButton */,
 				A77861161DBF573800BA17EE /* SideBar */,
 			);
@@ -248,6 +253,15 @@
 				434395C81DBF4F2100C12C37 /* ChatViewController.xib */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		434395EF1DC044A400C12C37 /* NavView */ = {
+			isa = PBXGroup;
+			children = (
+				434395F01DC044A400C12C37 /* NavHeaderView.swift */,
+				434395F11DC044A400C12C37 /* NavHeaderView.xib */,
+			);
+			path = NavView;
 			sourceTree = "<group>";
 		};
 		4566BC582A48ACEEA790A8DA /* Pods */ = {
@@ -346,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */,
+				434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
@@ -429,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				434395C41DBF4EE600C12C37 /* AppointmentViewController.swift in Sources */,
+				434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */,
 				434395BC1DBF4E9800C12C37 /* BlockDefination.swift in Sources */,
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
