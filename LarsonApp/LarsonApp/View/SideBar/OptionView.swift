@@ -15,7 +15,7 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var greyView: UIView!
     @IBOutlet weak var headerViewContainer: UIView!
     @IBOutlet weak var slideTableView: UITableView!
-    var items: NSMutableDictionary = ["0":"My Current Job", "1":"Messenger", "2":"Leaderboard", "3":"Job List", "4":"Logout", "didSelect": 0]
+    var items: NSMutableDictionary = ["0":"Appointment List", "1":"Current Job", "2":"Parts Search", "3":"Chat Help", "4":"Log out", "didSelect": 0]
     var cellTouchUpHandler : CellTouchUpBlock?
     
     
