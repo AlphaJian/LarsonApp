@@ -11,7 +11,7 @@ import UIKit
 class BaseViewController: UIViewController {
 
     var navHeaderView : NavHeaderView?
-
+    var optionView : OptionView?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,6 +27,17 @@ class BaseViewController: UIViewController {
             
         }
         navHeaderView?.opertionBtnHandler = {
+            self.optionView = Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView
+            self.optionView!.frame = self.view.bounds
+            self.optionView?.initUI()
+            
+            self.view.addSubview(self.optionView!)
+            self.optionView?.cellTouchUpHandler = {(index, obj) -> Void in
+               
+                    self.optionView?.handleSwipeGesture()
+                
+            }
+
             
         }
 

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>424794492786-71vqhtlmrnioag05ds86ootcinaollas.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.424794492786-71vqhtlmrnioag05ds86ootcinaollas</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAo4V0A74x1b4SWtwIwU3ZMq2Z2bRrXmAM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>424794492786</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pwc.LarsonApp</string>
+	<key>PROJECT_ID</key>
+	<string>larson-e13c2</string>
+	<key>STORAGE_BUCKET</key>
+	<string>larson-e13c2.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:424794492786:ios:0203552cad37c112</string>
+	<key>DATABASE_URL</key>
+	<string>https://larson-e13c2.firebaseio.com</string>
+</dict>
+</plist>

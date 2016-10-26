@@ -37,6 +37,7 @@
 		A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */; };
 		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
 		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
+		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,8 @@
 		A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableHeaderView.xib; sourceTree = "<group>"; };
 		A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTableViewCell.swift; sourceTree = "<group>"; };
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
+		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		434395971DBF4DBE00C12C37 /* LarsonApp */ = {
 			isa = PBXGroup;
 			children = (
+				BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */,
 				434395AA1DBF4E9800C12C37 /* Class */,
 				434395B01DBF4E9800C12C37 /* Defination */,
 				434395B21DBF4E9800C12C37 /* Extension */,
@@ -127,6 +131,7 @@
 				434395B91DBF4E9800C12C37 /* Utility */,
 				434395BB1DBF4E9800C12C37 /* View */,
 				434395981DBF4DBE00C12C37 /* AppDelegate.swift */,
+				BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */,
 				4343959F1DBF4DBE00C12C37 /* Assets.xcassets */,
 				434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */,
 				434395A41DBF4DBE00C12C37 /* Info.plist */,
@@ -332,7 +337,16 @@
 				TargetAttributes = {
 					434395941DBF4DBE00C12C37 = {
 						CreatedOnToolsVersion = 8.0;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 382ASS7UAT;
+						ProvisioningStyle = Manual;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -364,6 +378,7 @@
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
+				BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */,
 				434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */,
 				A77861211DBF573800BA17EE /* OptionView.xib in Resources */,
 				434395D21DBF4F3B00C12C37 /* LoginViewController.xib in Resources */,
@@ -576,11 +591,16 @@
 			baseConfigurationReference = 95EF6B1C3B9D60DA1143DF55 /* Pods-LarsonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: WANG BIZHOU (E3683UJ4RV)";
+				DEVELOPMENT_TEAM = 382ASS7UAT;
 				INFOPLIST_FILE = LarsonApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pwc.LarsonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "64882a93-e711-41fa-9483-0829226aa15a";
+				PROVISIONING_PROFILE_SPECIFIER = LarsonPush;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -590,11 +610,16 @@
 			baseConfigurationReference = 3EDC49DD7A703EC3482A8F13 /* Pods-LarsonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer: WANG BIZHOU (E3683UJ4RV)";
+				DEVELOPMENT_TEAM = 382ASS7UAT;
 				INFOPLIST_FILE = LarsonApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.pwc.LarsonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "64882a93-e711-41fa-9483-0829226aa15a";
+				PROVISIONING_PROFILE_SPECIFIER = LarsonPush;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

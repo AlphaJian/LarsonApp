@@ -1,4 +1,6 @@
 
 target 'LarsonApp' do
     pod 'SDWebImage/WebP'
+    pod 'Firebase/Core'
+    pod 'Firebase/Messaging'
 end
