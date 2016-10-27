@@ -23,7 +23,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         initMainVC()
         self.window?.makeKeyAndVisible()
         
+        configReceiveNotification(application: application)
         
+        return true
+    }
+
+    func configReceiveNotification(application: UIApplication){
         if #available(iOS 10.0, *) {
             let authOptions : UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
@@ -33,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self
             // For iOS 10 data message (sent via FCM)
-         //   FIRMessaging.messaging().remoteMessageDelegate = self
+            //   FIRMessaging.messaging().remoteMessageDelegate = self
             
         } else {
             let settings: UIUserNotificationSettings =
@@ -42,14 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         application.registerForRemoteNotifications()
-        
-        
-        
-        
-        
-        return true
     }
-
+    
     func initMainVC(){
         let vc = AppointmentViewController()
         self.window?.rootViewController = vc

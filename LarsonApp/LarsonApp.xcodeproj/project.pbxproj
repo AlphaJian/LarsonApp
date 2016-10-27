@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		28B6D7E6FC30A8972E7BA6FC /* libPods-LarsonApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A756EC05834112A3B3E17C34 /* libPods-LarsonApp.a */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -38,10 +37,11 @@
 		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
 		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
+		BEA6413C0CBB097C7168E5E8 /* libPods-LarsonApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3EDC49DD7A703EC3482A8F13 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
+		3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,8 +64,7 @@
 		434395D41DBF4F4900C12C37 /* PartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartsViewController.xib; sourceTree = "<group>"; };
 		434395F01DC044A400C12C37 /* NavHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavHeaderView.swift; sourceTree = "<group>"; };
 		434395F11DC044A400C12C37 /* NavHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavHeaderView.xib; sourceTree = "<group>"; };
-		95EF6B1C3B9D60DA1143DF55 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
-		A756EC05834112A3B3E17C34 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77861131DBF573800BA17EE /* MKBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBlueButton.swift; sourceTree = "<group>"; };
 		A77861141DBF573800BA17EE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		A77861151DBF573800BA17EE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -77,6 +76,7 @@
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
+		F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,28 +84,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28B6D7E6FC30A8972E7BA6FC /* libPods-LarsonApp.a in Frameworks */,
+				BEA6413C0CBB097C7168E5E8 /* libPods-LarsonApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		4025599953E0E9E3AC7FF0CB /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				A756EC05834112A3B3E17C34 /* libPods-LarsonApp.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4343958C1DBF4DBE00C12C37 = {
 			isa = PBXGroup;
 			children = (
 				434395971DBF4DBE00C12C37 /* LarsonApp */,
 				434395961DBF4DBE00C12C37 /* Products */,
-				4566BC582A48ACEEA790A8DA /* Pods */,
-				4025599953E0E9E3AC7FF0CB /* Frameworks */,
+				74DCEA8D27206FCAF383566B /* Pods */,
+				F45F7559015A46EBB6F8CE32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -269,11 +261,11 @@
 			path = NavView;
 			sourceTree = "<group>";
 		};
-		4566BC582A48ACEEA790A8DA /* Pods */ = {
+		74DCEA8D27206FCAF383566B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				95EF6B1C3B9D60DA1143DF55 /* Pods-LarsonApp.debug.xcconfig */,
-				3EDC49DD7A703EC3482A8F13 /* Pods-LarsonApp.release.xcconfig */,
+				F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */,
+				3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -301,6 +293,14 @@
 			path = SideBar;
 			sourceTree = "<group>";
 		};
+		F45F7559015A46EBB6F8CE32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -314,7 +314,6 @@
 				434395931DBF4DBE00C12C37 /* Resources */,
 				F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */,
 				74CB41886C3916A60BA95305 /* [CP] Copy Pods Resources */,
-				A6508A78CA0E505482548A90 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -419,21 +418,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		A6508A78CA0E505482548A90 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */ = {
@@ -588,7 +572,7 @@
 		};
 		434395A81DBF4DBE00C12C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 95EF6B1C3B9D60DA1143DF55 /* Pods-LarsonApp.debug.xcconfig */;
+			baseConfigurationReference = F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
@@ -607,7 +591,7 @@
 		};
 		434395A91DBF4DBE00C12C37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EDC49DD7A703EC3482A8F13 /* Pods-LarsonApp.release.xcconfig */;
+			baseConfigurationReference = 3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
