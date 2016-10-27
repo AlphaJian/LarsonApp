@@ -25,6 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configReceiveNotification(application: application)
         
+        
         return true
     }
 
