@@ -10,10 +10,15 @@ import UIKit
 
 class AppointmentViewController: BaseViewController {
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        initNavView(title: "Appointment List")
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        initNavView(title: "Appointment List")
         // Do any additional setup after loading the view.
     }
 

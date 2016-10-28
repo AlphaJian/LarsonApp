@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configReceiveNotification(application: application)
         
-        
+        DataManager.shareManager.test()
         return true
     }
 
