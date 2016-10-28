@@ -1,7 +1,11 @@
 
 target 'LarsonApp' do
     pod 'SDWebImage/WebP'
-    pod 'Firebase/Core'
     pod 'Firebase/Messaging'
+    pod 'Google/SignIn'
+    pod 'Firebase'
+    pod 'Firebase/Core'
     pod 'Firebase/Database'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
 end
