@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        initMainVC()
         
                 GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
-        
                     self.initMainVC()
                     }) {
         
