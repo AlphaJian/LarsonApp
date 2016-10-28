@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 import UserNotifications
 
 @UIApplicationMain
@@ -17,14 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        FIRApp.configure()
+//        FIRApp.configure()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        initMainVC()
-        self.window?.makeKeyAndVisible()
+//        initMainVC()
+        
+                GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
+        
+                    self.initMainVC()
+                    }) {
+        
+                    self.initLogin()
+                }
         
         configReceiveNotification(application: application)
-        
         
         return true
     }
@@ -53,8 +60,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initMainVC(){
         let vc = AppointmentViewController()
         self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+
     }
-    
+    func initLogin() {
+        let vc = LoginViewController()
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
+
+    }
+    func application(_ application: UIApplication,
+                     open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                 annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+    }
+    func application(_ application: UIApplication,
+                     open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        var options: [String: AnyObject] = [UIApplicationOpenURLOptionsKey.sourceApplication.rawValue: sourceApplication! as AnyObject,
+                                            UIApplicationOpenURLOptionsKey.annotation.rawValue: annotation as AnyObject]
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: sourceApplication,
+                                                 annotation: annotation)
+    }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],
                      fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
