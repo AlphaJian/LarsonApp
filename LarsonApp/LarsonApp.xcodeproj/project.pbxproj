@@ -27,6 +27,7 @@
 		434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D41DBF4F4900C12C37 /* PartsViewController.xib */; };
 		434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395F01DC044A400C12C37 /* NavHeaderView.swift */; };
 		434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395F11DC044A400C12C37 /* NavHeaderView.xib */; };
+		A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495221DC33980004AEA98 /* GoogleSignInManager.swift */; };
 		43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */; };
 		43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5141DC1D84400A44F4E /* PartModel.swift */; };
 		43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */; };
@@ -73,6 +74,7 @@
 		43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryModel.swift; sourceTree = "<group>"; };
 		43CEC5181DC1D96900A44F4E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A70495221DC33980004AEA98 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		A77861131DBF573800BA17EE /* MKBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBlueButton.swift; sourceTree = "<group>"; };
 		A77861141DBF573800BA17EE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		A77861151DBF573800BA17EE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -207,7 +209,11 @@
 		434395B41DBF4E9800C12C37 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+
+				A70495221DC33980004AEA98 /* GoogleSignInManager.swift */,
+
 				43CEC5181DC1D96900A44F4E /* DataManager.swift */,
+
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -464,6 +470,7 @@
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
+				A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
 				434395BD1DBF4E9800C12C37 /* ViewFrameExtension.swift in Sources */,
