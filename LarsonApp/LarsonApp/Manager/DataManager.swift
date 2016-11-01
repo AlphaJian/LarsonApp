@@ -20,6 +20,23 @@ class DataManager: NSObject {
         return single
     }
     
+    func fetchAppointList(){
+        ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let dic = snapshot.value as? NSDictionary
+            let arr = [AppointmentModel]()
+            for i in 0...(dic?.allValues.count)! - 1
+            {
+                let tempDic = dic?.allValues[i] as? NSDictionary
+                let model = AppointmentModel()
+                
+            }
+            
+        }) { (error) in
+            print(error.localizedDescription)
+        }
+    }
+    
     func test(){
         ref.child("engineerApp").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value

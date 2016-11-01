@@ -20,6 +20,7 @@ class AppointmentViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        DataManager.shareManager.fetchAppointList()
     }
 
     override func didReceiveMemoryWarning() {

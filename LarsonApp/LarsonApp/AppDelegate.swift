@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.initMainVC()
                     }) {
         
-                    self.initLogin()
+                    self.initMainVC()
                 }
         
         configReceiveNotification(application: application)
