@@ -27,11 +27,14 @@
 		434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D41DBF4F4900C12C37 /* PartsViewController.xib */; };
 		434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395F01DC044A400C12C37 /* NavHeaderView.swift */; };
 		434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395F11DC044A400C12C37 /* NavHeaderView.xib */; };
-		A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495221DC33980004AEA98 /* GoogleSignInManager.swift */; };
 		43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */; };
 		43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5141DC1D84400A44F4E /* PartModel.swift */; };
 		43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */; };
 		43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5181DC1D96900A44F4E /* DataManager.swift */; };
+		A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495221DC33980004AEA98 /* GoogleSignInManager.swift */; };
+		A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495241DC34919004AEA98 /* WorkOrdersModel.swift */; };
+		A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495261DC34A63004AEA98 /* TimesheetModel.swift */; };
+		A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495281DC34B84004AEA98 /* InvoicesModel.swift */; };
 		A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861131DBF573800BA17EE /* MKBlueButton.swift */; };
 		A778611E1DBF573800BA17EE /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861141DBF573800BA17EE /* MKButton.swift */; };
 		A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861151DBF573800BA17EE /* MKLayer.swift */; };
@@ -75,6 +78,9 @@
 		43CEC5181DC1D96900A44F4E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70495221DC33980004AEA98 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
+		A70495241DC34919004AEA98 /* WorkOrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrdersModel.swift; sourceTree = "<group>"; };
+		A70495261DC34A63004AEA98 /* TimesheetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesheetModel.swift; sourceTree = "<group>"; };
+		A70495281DC34B84004AEA98 /* InvoicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesModel.swift; sourceTree = "<group>"; };
 		A77861131DBF573800BA17EE /* MKBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBlueButton.swift; sourceTree = "<group>"; };
 		A77861141DBF573800BA17EE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		A77861151DBF573800BA17EE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -209,11 +215,8 @@
 		434395B41DBF4E9800C12C37 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-
 				A70495221DC33980004AEA98 /* GoogleSignInManager.swift */,
-
 				43CEC5181DC1D96900A44F4E /* DataManager.swift */,
-
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -224,6 +227,9 @@
 				43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */,
 				43CEC5141DC1D84400A44F4E /* PartModel.swift */,
 				43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */,
+				A70495241DC34919004AEA98 /* WorkOrdersModel.swift */,
+				A70495261DC34A63004AEA98 /* TimesheetModel.swift */,
+				A70495281DC34B84004AEA98 /* InvoicesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -467,9 +473,11 @@
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
+				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
+				A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */,
 				A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
@@ -479,6 +487,7 @@
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
 				434395D11DBF4F3B00C12C37 /* LoginViewController.swift in Sources */,
+				A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */,
 				A77861201DBF573800BA17EE /* OptionView.swift in Sources */,
 				43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */,
 				43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */,

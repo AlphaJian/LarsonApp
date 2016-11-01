@@ -20,4 +20,21 @@ class PartModel: NSObject {
     var price : CGFloat!
     var qty : Int!
     var stock : Int!
+    var userId : String!
+    
+    func parseDicToSelf(dic : NSDictionary) {
+        self._id = dic["_id"] as! String
+        self.alternateNumber = dic["alternateNumber"] as! String
+        self.emergencyRequest = dic["emergencyRequest"] as! Bool
+        self.inTruck = dic["inTruck"] as! Int
+        self.name = dic["name"] as! String
+        self.needDeliveryService = dic["needDeliveryService"] as! Bool
+        self.number = dic["number"] as! String
+        self.partRequestId = dic["partRequestId"] as! String
+        self.price = dic["price"] as! CGFloat
+        self.qty = dic["qty"] as! Int
+        self.stock = dic["stock"] as! Int
+        self.userId = dic["userId"] as! String
+    }
+    
 }
