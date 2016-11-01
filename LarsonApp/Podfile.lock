@@ -75,6 +75,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - JGProgressHUD (1.4)
   - libwebp (0.5.1):
     - libwebp/core (= 0.5.1)
     - libwebp/dec (= 0.5.1)
@@ -112,6 +113,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Firebase/Storage
   - Google/SignIn
+  - JGProgressHUD
   - SDWebImage/WebP
 
 SPEC CHECKSUMS:
@@ -131,9 +133,8 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  JGProgressHUD: 1617b0940cf80bb53e8f7d6f0fd69252ea45d6d4
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 5be26728bbe72da0747ad815ac39b45076550078
-
-COCOAPODS: 1.0.1
+COCOAPODS: 0.39.0
