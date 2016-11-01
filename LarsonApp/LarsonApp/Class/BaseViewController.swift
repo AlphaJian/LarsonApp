@@ -12,7 +12,6 @@ class BaseViewController: UIViewController {
 
     var navHeaderView : NavHeaderView?
     var optionView : OptionView?
-    //var tabBarView : TabBarView?
     var scrollViewSet : ScrollViewSet?
     
     override func viewDidLoad() {
@@ -41,21 +40,12 @@ class BaseViewController: UIViewController {
             }
         }
         
-//        tabBarView = TabBarView.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: 64))
-//        self.view.addSubview(tabBarView!)
-//        
-//        tabBarView?.tabHandler = {(index)-> Void in
-//        let page = index as! Int
-//            self.scrollViewSet?.scrollByTab(index: page)
-//        }
+
         
         scrollViewSet = ScrollViewSet.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64 ))
         self.view.addSubview(scrollViewSet!)
 
-//        scrollViewSet?.scrolledHandler =  {(index)-> Void in
-//            let page = index as! Int
-//            self.tabBarView?.scrollByView(index: page)
-//        }
+
 
         
     }

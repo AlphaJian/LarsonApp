@@ -40,7 +40,7 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
         
         
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 128 ))
-        scrollView?.contentSize.height = LCDH - 128
+        scrollView?.contentSize.height = (scrollView?.frame.height)!
         scrollView?.contentSize.width = LCDW * CGFloat(titleArr.count)
         scrollView?.showsHorizontalScrollIndicator = false
         
