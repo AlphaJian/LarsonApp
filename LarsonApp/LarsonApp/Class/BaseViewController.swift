@@ -41,23 +41,23 @@ class BaseViewController: UIViewController {
             }
         }
         
-        tabBarView = TabBarView.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: 64))
-        self.view.addSubview(tabBarView!)
-        
-        tabBarView?.tabHandler = {(index)-> Void in
-        let page = index as! Int
-            self.scrollViewSet?.scrollByTab(index: page)
-        }
-        
-        scrollViewSet = ScrollViewSet.init(frame: CGRect(x: 0, y: 128, width: LCDW, height: LCDH - 128 ))
-        self.view.addSubview(scrollViewSet!)
-
-        scrollViewSet?.scrolledHandler =  {(index)-> Void in
-            let page = index as! Int
-            self.tabBarView?.scrollByView(index: page)
-        }
-
-        
+//        tabBarView = TabBarView.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: 64))
+//        self.view.addSubview(tabBarView!)
+//        
+//        tabBarView?.tabHandler = {(index)-> Void in
+//        let page = index as! Int
+//            self.scrollViewSet?.scrollByTab(index: page)
+//        }
+//        
+//        scrollViewSet = ScrollViewSet.init(frame: CGRect(x: 0, y: 128, width: LCDW, height: LCDH - 128 ))
+//        self.view.addSubview(scrollViewSet!)
+//
+//        scrollViewSet?.scrolledHandler =  {(index)-> Void in
+//            let page = index as! Int
+//            self.tabBarView?.scrollByView(index: page)
+//        }
+//
+//        
     }
 
     override func didReceiveMemoryWarning() {
