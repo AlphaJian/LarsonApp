@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17A813FC085A3CA431E734BB /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -31,6 +32,7 @@
 		43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5141DC1D84400A44F4E /* PartModel.swift */; };
 		43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */; };
 		43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5181DC1D96900A44F4E /* DataManager.swift */; };
+		43FB0BC21DC86CDD00CCE87A /* AppointmentsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FB0BC11DC86CDD00CCE87A /* AppointmentsTableView.swift */; };
 		A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495221DC33980004AEA98 /* GoogleSignInManager.swift */; };
 		A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495241DC34919004AEA98 /* WorkOrdersModel.swift */; };
 		A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495261DC34A63004AEA98 /* TimesheetModel.swift */; };
@@ -45,11 +47,10 @@
 		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
 		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
-		BEA6413C0CBB097C7168E5E8 /* libPods-LarsonApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
+		0083009118891B33A26B0843 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,7 +77,7 @@
 		43CEC5141DC1D84400A44F4E /* PartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartModel.swift; sourceTree = "<group>"; };
 		43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryModel.swift; sourceTree = "<group>"; };
 		43CEC5181DC1D96900A44F4E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LarsonApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		43FB0BC11DC86CDD00CCE87A /* AppointmentsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableView.swift; sourceTree = "<group>"; };
 		A70495221DC33980004AEA98 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		A70495241DC34919004AEA98 /* WorkOrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrdersModel.swift; sourceTree = "<group>"; };
 		A70495261DC34A63004AEA98 /* TimesheetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesheetModel.swift; sourceTree = "<group>"; };
@@ -92,7 +93,7 @@
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
-		F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E6199F07F4A1769287998D24 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,20 +101,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEA6413C0CBB097C7168E5E8 /* libPods-LarsonApp.a in Frameworks */,
+				17A813FC085A3CA431E734BB /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AD2839D3661496CDCA00609 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6199F07F4A1769287998D24 /* Pods-LarsonApp.debug.xcconfig */,
+				0083009118891B33A26B0843 /* Pods-LarsonApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		32EE5FD715BD140B983BA7BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4343958C1DBF4DBE00C12C37 = {
 			isa = PBXGroup;
 			children = (
 				434395971DBF4DBE00C12C37 /* LarsonApp */,
 				434395961DBF4DBE00C12C37 /* Products */,
-				74DCEA8D27206FCAF383566B /* Pods */,
-				F45F7559015A46EBB6F8CE32 /* Frameworks */,
+				2AD2839D3661496CDCA00609 /* Pods */,
+				32EE5FD715BD140B983BA7BD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,6 +182,7 @@
 			children = (
 				434395C21DBF4EE600C12C37 /* AppointmentViewController.swift */,
 				434395C31DBF4EE600C12C37 /* AppointmentViewController.xib */,
+				43FB0BC01DC86CC900CCE87A /* Views */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -285,13 +303,12 @@
 			path = NavView;
 			sourceTree = "<group>";
 		};
-		74DCEA8D27206FCAF383566B /* Pods */ = {
+		43FB0BC01DC86CC900CCE87A /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */,
-				3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */,
+				43FB0BC11DC86CDD00CCE87A /* AppointmentsTableView.swift */,
 			);
-			name = Pods;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		A77861121DBF573800BA17EE /* MKButton */ = {
@@ -315,14 +332,6 @@
 				A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */,
 			);
 			path = SideBar;
-			sourceTree = "<group>";
-		};
-		F45F7559015A46EBB6F8CE32 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				99135909D751A06769B6A7E5 /* libPods-LarsonApp.a */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +484,7 @@
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
+				43FB0BC21DC86CDD00CCE87A /* AppointmentsTableView.swift in Sources */,
 				43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
 				A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */,
@@ -604,7 +614,7 @@
 		};
 		434395A81DBF4DBE00C12C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */;
+			baseConfigurationReference = E6199F07F4A1769287998D24 /* Pods-LarsonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
@@ -623,7 +633,7 @@
 		};
 		434395A91DBF4DBE00C12C37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */;
+			baseConfigurationReference = 0083009118891B33A26B0843 /* Pods-LarsonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
