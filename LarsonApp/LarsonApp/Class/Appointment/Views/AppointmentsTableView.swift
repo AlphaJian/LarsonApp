@@ -35,7 +35,7 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
             cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
         
-        let model = items[indexPath.row] as! AppointmentModel
+        let model = items[indexPath.row] 
         cell?.textLabel?.text = model.legacyId
         
         return cell!
