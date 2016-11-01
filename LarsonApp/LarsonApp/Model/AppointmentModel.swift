@@ -28,4 +28,28 @@ class AppointmentModel: NSObject {
     var purchaseOrder : String!
     var streetViewUrl : String!
     var telephoneNumber : String!
+    var legacyId : String!
+    
+    func parseDicToSelf(dic : NSDictionary) {
+        self._id = dic["_id"] as! String
+        self.appointmentId = dic["appointmentId"] as! String
+        self.callStatus = dic["callStatus"] as! String
+        self.clientId = dic["clientId"] as! String
+        self.complete = dic["complete"] as! Bool
+        self.contactName = dic["contactName"] as! String
+        self.contactNumber = dic["contactNumber"] as! String
+        self.contactPerson = dic["contactPerson"] as! String
+        self.currentFieldEngineerId = dic["currentFieldEngineerId"] as! String
+        self.currentStatus = dic["currentStatus"] as! String
+        self.customerAddress = dic["customerAddress"] as! String
+        self.customerName = dic["customerName"] as! String
+        self.jobDetail = dic["jobDetail"] as! String
+        self.jobID = dic["jobID"] as! String
+        self.jobType = dic["jobType"] as! String
+        self.purchaseOrder = dic["purchaseOrder"] as! String
+        self.streetViewUrl = dic["streetViewUrl"] as! String
+        self.telephoneNumber = dic["telephoneNumber"] as! String
+        self.legacyId = dic["legacyId"] as! String
+    }
+    
 }
