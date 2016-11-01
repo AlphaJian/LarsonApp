@@ -1,11 +1,12 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="LarsonApp" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -14,7 +15,32 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Xm-wo-G7G">
+                    <color key="backgroundColor" red="1" green="0.80546510630000001" blue="0.86718271970000005" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hmN-sZ-LRL">
+                    <color key="backgroundColor" red="0.97058568219999997" green="0.50688743930000002" blue="0.036610198869999999" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="119" id="CyI-cu-FHa"/>
+                        <constraint firstAttribute="height" constant="30" id="RGN-U0-MSU"/>
+                    </constraints>
+                    <state key="normal" title="Google SignIn"/>
+                    <connections>
+                        <action selector="signInWithGoogle:" destination="-1" eventType="touchUpInside" id="bWV-db-gnS"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hmN-sZ-LRL" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="N1Z-ms-4d9"/>
+                <constraint firstAttribute="bottom" secondItem="6Xm-wo-G7G" secondAttribute="bottom" id="QFs-De-5hk"/>
+                <constraint firstItem="hmN-sZ-LRL" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="UTs-T9-lE1"/>
+                <constraint firstItem="6Xm-wo-G7G" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cl6-bU-QL5"/>
+                <constraint firstItem="6Xm-wo-G7G" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="iIK-do-Wsj"/>
+                <constraint firstAttribute="trailing" secondItem="6Xm-wo-G7G" secondAttribute="trailing" id="teA-xv-sl7"/>
+            </constraints>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
         </view>
     </objects>
 </document>
