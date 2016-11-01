@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollViewSet: UIScrollView, UIScrollViewDelegate {
+class ScrollViewSet: UIView, UIScrollViewDelegate {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -18,18 +18,35 @@ class ScrollViewSet: UIScrollView, UIScrollViewDelegate {
     }
     */
     
-    
+    var tabBarView : TabBarView?
+
+    var scrollView : UIScrollView?
     var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrolledHandler : ReturnBlock?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.contentSize.height = frame.height
-        self.contentSize.width = LCDW * CGFloat(titleArr.count)
-        self.showsHorizontalScrollIndicator = false
-        self.isPagingEnabled = true
-        self.delegate = self
+        
+        tabBarView = TabBarView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: 64))
+        tabBarView?.titleArr = self.titleArr
+        
+        self.addSubview(tabBarView!)
+        
+        tabBarView?.tabHandler = {(index)-> Void in
+            let page = index as! Int
+            self.scrollByTab(index: page)
+        }
 
+        
+        
+        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 128 ))
+        scrollView?.contentSize.height = LCDH - 128
+        scrollView?.contentSize.width = LCDW * CGFloat(titleArr.count)
+        scrollView?.showsHorizontalScrollIndicator = false
+        
+        scrollView?.isPagingEnabled = true
+        scrollView?.delegate = self
+        self.addSubview(scrollView!)
     
         for i in 0...titleArr.count - 1 {
             
@@ -37,7 +54,7 @@ class ScrollViewSet: UIScrollView, UIScrollViewDelegate {
             
             view.backgroundColor = StringUtil.getColorWithRGB(red: 30 * CGFloat(i), green: 20 * CGFloat(i), blue: 155)
         
-            self.addSubview(view)
+            self.scrollView?.addSubview(view)
             
         }
         
@@ -48,18 +65,16 @@ class ScrollViewSet: UIScrollView, UIScrollViewDelegate {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let index = contentOffset.x / LCDW
         
-        print (index)
-        
-        if self.scrolledHandler != nil {
-            self.scrolledHandler!(index as AnyObject)
+        if scrollView == self.scrollView {        
+        let index = scrollView.contentOffset.x / LCDW
+        tabBarView?.scrollByView(index: Int(index))
         }
     }
     
     
     func scrollByTab (index : Int) {
-        self.contentOffset.x = LCDW * CGFloat(index)
+        scrollView?.contentOffset.x = LCDW * CGFloat(index)
     }
     
 }
