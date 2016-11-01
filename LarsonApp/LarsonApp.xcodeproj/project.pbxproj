@@ -38,6 +38,8 @@
 		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
 		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
+		BA8165D21DC1D4F300A1D8FE /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8165D11DC1D4F300A1D8FE /* TabBarView.swift */; };
+		BAF0F5A21DC8648C00FBC443 /* ScrollViewSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A11DC8648C00FBC443 /* ScrollViewSet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
+		BA8165D11DC1D4F300A1D8FE /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		BAF0F5A11DC8648C00FBC443 /* ScrollViewSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewSet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,6 +248,8 @@
 		434395BB1DBF4E9800C12C37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAF0F5A01DC8641500FBC443 /* ScrollViewSet */,
+				BA8165CE1DC1D3DD00A1D8FE /* TabBar */,
 				434395EF1DC044A400C12C37 /* NavView */,
 				A77861121DBF573800BA17EE /* MKButton */,
 				A77861161DBF573800BA17EE /* SideBar */,
@@ -299,6 +305,22 @@
 				A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */,
 			);
 			path = SideBar;
+			sourceTree = "<group>";
+		};
+		BA8165CE1DC1D3DD00A1D8FE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				BA8165D11DC1D4F300A1D8FE /* TabBarView.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		BAF0F5A01DC8641500FBC443 /* ScrollViewSet */ = {
+			isa = PBXGroup;
+			children = (
+				BAF0F5A11DC8648C00FBC443 /* ScrollViewSet.swift */,
+			);
+			path = ScrollViewSet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -464,6 +486,7 @@
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
+				BA8165D21DC1D4F300A1D8FE /* TabBarView.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
@@ -473,6 +496,7 @@
 				A778611E1DBF573800BA17EE /* MKButton.swift in Sources */,
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
+				BAF0F5A21DC8648C00FBC443 /* ScrollViewSet.swift in Sources */,
 				434395D11DBF4F3B00C12C37 /* LoginViewController.swift in Sources */,
 				A77861201DBF573800BA17EE /* OptionView.swift in Sources */,
 				434395C11DBF4EC900C12C37 /* BaseViewController.swift in Sources */,
