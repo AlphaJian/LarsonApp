@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		17A813FC085A3CA431E734BB /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		3313F4E96609F5A7413D0FFC /* Pods_LarsonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -32,11 +32,11 @@
 		43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5141DC1D84400A44F4E /* PartModel.swift */; };
 		43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */; };
 		43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5181DC1D96900A44F4E /* DataManager.swift */; };
-		43FB0BC21DC86CDD00CCE87A /* AppointmentsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43FB0BC11DC86CDD00CCE87A /* AppointmentsTableView.swift */; };
 		A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495221DC33980004AEA98 /* GoogleSignInManager.swift */; };
 		A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495241DC34919004AEA98 /* WorkOrdersModel.swift */; };
 		A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495261DC34A63004AEA98 /* TimesheetModel.swift */; };
 		A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70495281DC34B84004AEA98 /* InvoicesModel.swift */; };
+		A7593F231DC87EDA00FEFE71 /* AppointmentsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7593F221DC87EDA00FEFE71 /* AppointmentsTableView.swift */; };
 		A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861131DBF573800BA17EE /* MKBlueButton.swift */; };
 		A778611E1DBF573800BA17EE /* MKButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861141DBF573800BA17EE /* MKButton.swift */; };
 		A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77861151DBF573800BA17EE /* MKLayer.swift */; };
@@ -46,11 +46,13 @@
 		A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */; };
 		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
 		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
+		A79278D31DC86C42005FA025 /* ViewProgressExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */; };
+		A79278D61DC87426005FA025 /* libJGProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A79278D51DC87426005FA025 /* libJGProgressHUD.a */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0083009118891B33A26B0843 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
+		3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,11 +79,11 @@
 		43CEC5141DC1D84400A44F4E /* PartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartModel.swift; sourceTree = "<group>"; };
 		43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryModel.swift; sourceTree = "<group>"; };
 		43CEC5181DC1D96900A44F4E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		43FB0BC11DC86CDD00CCE87A /* AppointmentsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableView.swift; sourceTree = "<group>"; };
 		A70495221DC33980004AEA98 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		A70495241DC34919004AEA98 /* WorkOrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrdersModel.swift; sourceTree = "<group>"; };
 		A70495261DC34A63004AEA98 /* TimesheetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesheetModel.swift; sourceTree = "<group>"; };
 		A70495281DC34B84004AEA98 /* InvoicesModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoicesModel.swift; sourceTree = "<group>"; };
+		A7593F221DC87EDA00FEFE71 /* AppointmentsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentsTableView.swift; sourceTree = "<group>"; };
 		A77861131DBF573800BA17EE /* MKBlueButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKBlueButton.swift; sourceTree = "<group>"; };
 		A77861141DBF573800BA17EE /* MKButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKButton.swift; sourceTree = "<group>"; };
 		A77861151DBF573800BA17EE /* MKLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKLayer.swift; sourceTree = "<group>"; };
@@ -91,9 +93,13 @@
 		A778611A1DBF573800BA17EE /* SlideTableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableHeaderView.xib; sourceTree = "<group>"; };
 		A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideTableViewCell.swift; sourceTree = "<group>"; };
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
+		A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProgressExtension.swift; sourceTree = "<group>"; };
+		A79278D41DC86F45005FA025 /* LarsonApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LarsonApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A79278D51DC87426005FA025 /* libJGProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJGProgressHUD.a; path = "../../Library/Developer/Xcode/DerivedData/LarsonApp-epqtuwiczcamxpbhagmssrnlroir/Build/Products/Debug-iphonesimulator/libJGProgressHUD.a"; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
-		E6199F07F4A1769287998D24 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
+		E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LarsonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,36 +107,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17A813FC085A3CA431E734BB /* (null) in Frameworks */,
+				A79278D61DC87426005FA025 /* libJGProgressHUD.a in Frameworks */,
+				3313F4E96609F5A7413D0FFC /* Pods_LarsonApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2AD2839D3661496CDCA00609 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				E6199F07F4A1769287998D24 /* Pods-LarsonApp.debug.xcconfig */,
-				0083009118891B33A26B0843 /* Pods-LarsonApp.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		32EE5FD715BD140B983BA7BD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		4343958C1DBF4DBE00C12C37 = {
 			isa = PBXGroup;
 			children = (
 				434395971DBF4DBE00C12C37 /* LarsonApp */,
 				434395961DBF4DBE00C12C37 /* Products */,
-				2AD2839D3661496CDCA00609 /* Pods */,
-				32EE5FD715BD140B983BA7BD /* Frameworks */,
+				74DCEA8D27206FCAF383566B /* Pods */,
+				F45F7559015A46EBB6F8CE32 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,6 +147,7 @@
 				434395B91DBF4E9800C12C37 /* Utility */,
 				434395BB1DBF4E9800C12C37 /* View */,
 				434395981DBF4DBE00C12C37 /* AppDelegate.swift */,
+				A79278D41DC86F45005FA025 /* LarsonApp-Bridging-Header.h */,
 				BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */,
 				4343959F1DBF4DBE00C12C37 /* Assets.xcassets */,
 				434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */,
@@ -182,7 +174,7 @@
 			children = (
 				434395C21DBF4EE600C12C37 /* AppointmentViewController.swift */,
 				434395C31DBF4EE600C12C37 /* AppointmentViewController.xib */,
-				43FB0BC01DC86CC900CCE87A /* Views */,
+				A7593F211DC87EDA00FEFE71 /* Views */,
 			);
 			path = Appointment;
 			sourceTree = "<group>";
@@ -226,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				434395B31DBF4E9800C12C37 /* ViewFrameExtension.swift */,
+				A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -303,10 +296,19 @@
 			path = NavView;
 			sourceTree = "<group>";
 		};
-		43FB0BC01DC86CC900CCE87A /* Views */ = {
+		74DCEA8D27206FCAF383566B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				43FB0BC11DC86CDD00CCE87A /* AppointmentsTableView.swift */,
+				F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */,
+				3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A7593F211DC87EDA00FEFE71 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				A7593F221DC87EDA00FEFE71 /* AppointmentsTableView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,6 +336,15 @@
 			path = SideBar;
 			sourceTree = "<group>";
 		};
+		F45F7559015A46EBB6F8CE32 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A79278D51DC87426005FA025 /* libJGProgressHUD.a */,
+				E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -341,12 +352,15 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434395A71DBF4DBE00C12C37 /* Build configuration list for PBXNativeTarget "LarsonApp" */;
 			buildPhases = (
+				87E9FB8DD7ACB6447CCCE095 /* Check Pods Manifest.lock */,
 				767D6F1CAE5518120E1DDD7F /* [CP] Check Pods Manifest.lock */,
 				434395911DBF4DBE00C12C37 /* Sources */,
 				434395921DBF4DBE00C12C37 /* Frameworks */,
 				434395931DBF4DBE00C12C37 /* Resources */,
 				F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */,
 				74CB41886C3916A60BA95305 /* [CP] Copy Pods Resources */,
+				24CB9DF401DFC3E700426E38 /* Embed Pods Frameworks */,
+				4034947E378016F93EF0C30B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -423,6 +437,36 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		24CB9DF401DFC3E700426E38 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4034947E378016F93EF0C30B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		74CB41886C3916A60BA95305 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -446,6 +490,21 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		87E9FB8DD7ACB6447CCCE095 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,8 +543,9 @@
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
-				43FB0BC21DC86CDD00CCE87A /* AppointmentsTableView.swift in Sources */,
+				A79278D31DC86C42005FA025 /* ViewProgressExtension.swift in Sources */,
 				43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */,
+				A7593F231DC87EDA00FEFE71 /* AppointmentsTableView.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
 				A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */,
 				A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */,
@@ -614,7 +674,7 @@
 		};
 		434395A81DBF4DBE00C12C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E6199F07F4A1769287998D24 /* Pods-LarsonApp.debug.xcconfig */;
+			baseConfigurationReference = F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
@@ -633,7 +693,7 @@
 		};
 		434395A91DBF4DBE00C12C37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0083009118891B33A26B0843 /* Pods-LarsonApp.release.xcconfig */;
+			baseConfigurationReference = 3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
