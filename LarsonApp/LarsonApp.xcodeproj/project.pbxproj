@@ -47,7 +47,7 @@
 		A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A778611B1DBF573800BA17EE /* SlideTableViewCell.swift */; };
 		A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */; };
 		A79278D31DC86C42005FA025 /* ViewProgressExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */; };
-		A79278D61DC87426005FA025 /* libJGProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A79278D51DC87426005FA025 /* libJGProgressHUD.a */; };
+		BA062EAE1DCB188300C43F82 /* libJGProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
 		BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A51DC884CB00FBC443 /* TabBarView.swift */; };
 		BAF0F5A91DC884D800FBC443 /* ScrollViewSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A81DC884D800FBC443 /* ScrollViewSet.swift */; };
@@ -97,7 +97,7 @@
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
 		A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProgressExtension.swift; sourceTree = "<group>"; };
 		A79278D41DC86F45005FA025 /* LarsonApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LarsonApp-Bridging-Header.h"; sourceTree = "<group>"; };
-		A79278D51DC87426005FA025 /* libJGProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libJGProgressHUD.a; path = "../../Library/Developer/Xcode/DerivedData/LarsonApp-epqtuwiczcamxpbhagmssrnlroir/Build/Products/Debug-iphonesimulator/libJGProgressHUD.a"; sourceTree = "<group>"; };
+		BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJGProgressHUD.a; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
 		BAF0F5A51DC884CB00FBC443 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A79278D61DC87426005FA025 /* libJGProgressHUD.a in Frameworks */,
+				BA062EAE1DCB188300C43F82 /* libJGProgressHUD.a in Frameworks */,
 				3313F4E96609F5A7413D0FFC /* Pods_LarsonApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,7 +361,7 @@
 		F45F7559015A46EBB6F8CE32 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A79278D51DC87426005FA025 /* libJGProgressHUD.a */,
+				BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */,
 				E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */,
 			);
 			name = Frameworks;
@@ -707,6 +707,10 @@
 				INFOPLIST_FILE = LarsonApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pwc.LarsonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "64882a93-e711-41fa-9483-0829226aa15a";
@@ -726,6 +730,10 @@
 				INFOPLIST_FILE = LarsonApp/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pwc.LarsonApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "64882a93-e711-41fa-9483-0829226aa15a";
