@@ -12,6 +12,8 @@ class BaseViewController: UIViewController {
 
     var navHeaderView : NavHeaderView?
     var optionView : OptionView?
+    var scrollViewSet : ScrollViewSet?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -35,12 +37,17 @@ class BaseViewController: UIViewController {
             self.optionView?.cellTouchUpHandler = {(index, obj) -> Void in
                
                     self.optionView?.handleSwipeGesture()
-                
             }
-
-            
         }
+        
 
+        
+        scrollViewSet = ScrollViewSet.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64 ))
+        self.view.addSubview(scrollViewSet!)
+
+
+
+        
     }
 
     override func didReceiveMemoryWarning() {
