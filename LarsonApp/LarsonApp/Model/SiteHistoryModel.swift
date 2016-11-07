@@ -31,4 +31,11 @@ class SiteHistoryModel: NSObject {
         self.typeOfCall = dic["typeOfCall"] as! String
         self.typeOfProblem = dic["typeOfProblem"] as! String
     }
+    func initWithDic (dic : NSDictionary) {
+        self.setValuesForKeys(dic as! [String : Any])
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("\(value)" + key)
+    }
 }

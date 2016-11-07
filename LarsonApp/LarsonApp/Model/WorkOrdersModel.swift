@@ -45,7 +45,14 @@ class WorkOrdersModel: NSObject {
         self.workCompleted = dic["workCompleted"] as! Bool
         
     }
+   
+    func initWithDic (dic : NSDictionary) {
+        self.setValuesForKeys(dic as! [String : Any])
+    }
     
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("\(value)" + key)
+    }
     
     
     

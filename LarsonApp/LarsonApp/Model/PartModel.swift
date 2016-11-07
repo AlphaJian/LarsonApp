@@ -37,4 +37,12 @@ class PartModel: NSObject {
         self.userId = dic["userId"] as! String
     }
     
+    func initWithDic (dic : NSDictionary) {
+        self.setValuesForKeys(dic as! [String : Any])
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("\(value)" + key)
+    }
+    
 }
