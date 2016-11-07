@@ -8,6 +8,8 @@
 
 import UIKit
 
+let singleView = OptionView ()
+
 class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
   
     @IBOutlet weak var slideContainer: UIView!
@@ -15,9 +17,13 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var greyView: UIView!
     @IBOutlet weak var headerViewContainer: UIView!
     @IBOutlet weak var slideTableView: UITableView!
-    var items: NSMutableDictionary = ["0":"Appointment List", "1":"Current Job", "2":"Parts Search", "3":"Chat Help", "4":"Log out", "didSelect": 0]
+    var items: NSMutableDictionary = [:]
     var cellTouchUpHandler : CellTouchUpBlock?
     
+    class var shareManager : OptionView {
+        return singleView
+    }
+
     
     func initUI() {
         
@@ -41,7 +47,6 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
         
         self.greyView.alpha = 0.5
         
-//        self.slideContainer.frame = CGRectMake(0, 0, self.width(), LCDH)
         self.slideContainer.frame = CGRect(x: 0, y: 0, width: self.width(), height: LCDH)
         }, completion: nil)
 
@@ -100,18 +105,12 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       items["didSelect"] = indexPath.item
+       //self.items["didSelect"] = indexPath.item
         tableView.reloadData()
-        if indexPath.row == 0
-        {
-            //fetch current job
-
-        }
-        else
-        {
+       
             if cellTouchUpHandler != nil {
                 cellTouchUpHandler!(indexPath as NSIndexPath,"" as AnyObject)
-            }
+            
         }
     }
     

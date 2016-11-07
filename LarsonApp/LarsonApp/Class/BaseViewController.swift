@@ -11,15 +11,16 @@ import UIKit
 class BaseViewController: UIViewController {
 
     var navHeaderView : NavHeaderView?
-    var optionView : OptionView?
+    
+    var optionView = OptionView.shareManager
     
     var sideBarTappedHandler : ReturnBlock?
     
     var bolLoaded = false
+    var items = DataManager.shareManager.items
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -36,14 +37,15 @@ class BaseViewController: UIViewController {
                 
             }
             navHeaderView?.opertionBtnHandler = {
-                self.optionView = Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView
-                self.optionView!.frame = self.view.bounds
-                self.optionView?.initUI()
+                self.optionView = (Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView)!
+                 self.optionView.items = self.items
+                self.optionView.frame = self.view.bounds
+                self.optionView.initUI()
                 
-                self.view.addSubview(self.optionView!)
-                self.optionView?.cellTouchUpHandler = {(index, obj) -> Void in
-                    
-                    self.optionView?.handleSwipeGesture()
+                self.view.addSubview(self.optionView)
+                self.optionView.cellTouchUpHandler = {(index, obj) -> Void in
+                    self.items["didSelect"] = index.item
+                    self.optionView.handleSwipeGesture()
                     if self.sideBarTappedHandler != nil
                     {
                         self.sideBarTappedHandler!(index.row as AnyObject)
