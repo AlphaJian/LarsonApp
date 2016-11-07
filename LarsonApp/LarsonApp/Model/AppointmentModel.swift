@@ -59,6 +59,4 @@ class AppointmentModel: NSObject {
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print("\(value)" + key)
     }
-    
-    
 }

@@ -24,7 +24,7 @@ typealias ReturnWithFourParmsBlock = (AnyObject,AnyObject,AnyObject,AnyObject) -
 let LCDW : CGFloat = UIScreen.main.bounds.size.width
 let LCDH : CGFloat = UIScreen.main.bounds.size.height
 
-
+let kAccountFileName = "userAccount"
 
 class BlockDefination: NSObject {
 

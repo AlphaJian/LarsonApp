@@ -14,29 +14,30 @@ let single = DataManager()
 
 class DataManager: NSObject {
     
-//    var ref = FIRDatabase.database().reference()
-    var items: NSMutableDictionary = ["0":"Appointment List", "1":"Current Job", "2":"Parts Search", "3":"Chat Help", "4":"Log out", "didSelect": 0]
+    var ref = FIRDatabase.database().reference()
+    
     var tt = 0
     class var shareManager : DataManager {
         return single
     }
     
     func fetchAppointList(successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
-//        ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").observeSingleEvent(of: .value, with: { (snapshot) in
-//            // Get user value
-//            let dic = snapshot.value as? NSDictionary
-//            var arr = [AppointmentModel]()
-//            for i in 0...(dic?.allValues.count)! - 1
-//            {
-//                let tempDic = dic?.allValues[i] as? NSDictionary
-//                let model = AppointmentModel()
+        ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let dic = snapshot.value as? NSDictionary
+            var arr = [AppointmentModel]()
+            for i in 0...(dic?.allValues.count)! - 1
+            {
+                let tempDic = dic?.allValues[i] as? NSDictionary
+                let model = AppointmentModel()
+                model.initWithDic(dic: tempDic!)
 //                model.parseDicToSelf(dic: tempDic!)
-//                arr.append(model)
-//            }
-//            successHandler(arr as AnyObject)
-//        }) { (error) in
-//            print(error.localizedDescription)
-//            failHandeler("Can't load appointments" as AnyObject)
-//        }
+                arr.append(model)
+            }
+            successHandler(arr as AnyObject)
+        }) { (error) in
+            print(error.localizedDescription)
+            failHandeler("Can't load appointments" as AnyObject)
+        }
     }
 }
