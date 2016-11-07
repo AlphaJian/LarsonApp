@@ -13,7 +13,7 @@ class AppointmentViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        print()
         initNavView(title: "Appointment List")
         initUI()
     }
