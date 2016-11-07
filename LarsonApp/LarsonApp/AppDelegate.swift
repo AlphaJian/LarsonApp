@@ -13,28 +13,28 @@ import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
-
-
+    
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-//        FIRApp.configure()
+        //        FIRApp.configure()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-//        initMainVC()
+        //        initMainVC()
         
-                GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
-                    self.initMainVC()
-                    }) {
-        
-                    self.initMainVC()
-                }
+        GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
+            self.initMainVC()
+        }) {
+            
+            self.initLogin()
+        }
         
         configReceiveNotification(application: application)
         
         return true
     }
-
+    
     func configReceiveNotification(application: UIApplication){
         if #available(iOS 10.0, *) {
             let authOptions : UNAuthorizationOptions = [.alert, .badge, .sound]
@@ -60,13 +60,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let vc = TabViewController()
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
-
+        
     }
     func initLogin() {
         let vc = LoginViewController()
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
-
+        
     }
     func application(_ application: UIApplication,
                      open url: URL, options: [UIApplicationOpenURLOptionsKey: Any]) -> Bool {
@@ -102,21 +102,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationWillResignActive(_ application: UIApplication) {
     }
-
+    
     func applicationDidEnterBackground(_ application: UIApplication) {
     }
-
+    
     func applicationWillEnterForeground(_ application: UIApplication) {
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
     }
     
     
-   
+    
 }
 
 @available(iOS 10, *)
@@ -124,8 +124,8 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     
     // Receive displayed notifications for iOS 10 devices.
     @objc(userNotificationCenter:willPresentNotification:withCompletionHandler:) func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+                                                                                                             willPresent notification: UNNotification,
+                                                                                                             withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
         // Print message ID.
         print("Message ID: \(userInfo["gcm.message_id"]!)")

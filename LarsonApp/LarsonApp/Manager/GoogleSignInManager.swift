@@ -44,7 +44,7 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
             print(error.localizedDescription)
             return
         }
-        
+        saveGoogleAccount(account: user.profile)
         let authentication = user.authentication
         let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
                                                           accessToken: (authentication?.accessToken)!)
@@ -65,5 +65,16 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
     func signOut() {
         try!FIRAuth.auth()?.signOut()
         GIDSignIn.sharedInstance().signOut()
+    }
+    
+    func saveGoogleAccount(account : GIDProfileData){
+        var usermodel = FileUtility.unarchive(fileName: kAccountFileName) as? UserModel
+        if usermodel == nil
+        {
+            usermodel = UserModel()
+        }
+        usermodel?.google_email = account.email
+        usermodel?.google_imageURL = account.imageURL(withDimension: 120)
+        FileUtility.archive(fileName: kAccountFileName, object: usermodel!)
     }
 }
