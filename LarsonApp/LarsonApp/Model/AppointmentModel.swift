@@ -52,4 +52,11 @@ class AppointmentModel: NSObject {
         self.legacyId = dic["legacyId"] as! String
     }
     
+    func initWithDic (dic : NSDictionary) {
+        self.setValuesForKeys(dic as! [String : Any])
+    }
+    
+    override func setValue(_ value: Any?, forUndefinedKey key: String) {
+        print("\(value)" + key)
+    }
 }
