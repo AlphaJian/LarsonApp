@@ -10,6 +10,12 @@ import UIKit
 
 class PartsViewController: BaseViewController {
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        initNavView(title: "Parts Management")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

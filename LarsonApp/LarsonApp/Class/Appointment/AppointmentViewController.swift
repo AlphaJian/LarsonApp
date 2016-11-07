@@ -15,7 +15,6 @@ class AppointmentViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         initNavView(title: "Appointment List")
-       // initUI()
     }
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -57,7 +57,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initMainVC(){
-        let vc = AppointmentViewController()
+        let vc = TabViewController()
         self.window?.rootViewController = vc
         self.window?.makeKeyAndVisible()
 

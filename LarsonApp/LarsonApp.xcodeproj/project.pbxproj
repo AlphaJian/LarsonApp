@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3313F4E96609F5A7413D0FFC /* Pods_LarsonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -28,6 +27,8 @@
 		434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395D41DBF4F4900C12C37 /* PartsViewController.xib */; };
 		434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395F01DC044A400C12C37 /* NavHeaderView.swift */; };
 		434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395F11DC044A400C12C37 /* NavHeaderView.xib */; };
+		43C3C6831DD011620036EE91 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3C6821DD011620036EE91 /* TabViewController.swift */; };
+		43C3C6851DD012910036EE91 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3C6841DD012910036EE91 /* NavViewController.swift */; };
 		43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */; };
 		43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5141DC1D84400A44F4E /* PartModel.swift */; };
 		43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */; };
@@ -51,10 +52,11 @@
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
 		BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A51DC884CB00FBC443 /* TabBarView.swift */; };
 		BAF0F5A91DC884D800FBC443 /* ScrollViewSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A81DC884D800FBC443 /* ScrollViewSet.swift */; };
+		BDC52A008C4A0DA2831CE980 /* Pods_LarsonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681B656FFD9DF694B2602670 /* Pods_LarsonApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
+		0EDDF6E8BFD14C3B62B983EC /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,10 +79,13 @@
 		434395D41DBF4F4900C12C37 /* PartsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartsViewController.xib; sourceTree = "<group>"; };
 		434395F01DC044A400C12C37 /* NavHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavHeaderView.swift; sourceTree = "<group>"; };
 		434395F11DC044A400C12C37 /* NavHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavHeaderView.xib; sourceTree = "<group>"; };
+		43C3C6821DD011620036EE91 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
+		43C3C6841DD012910036EE91 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
 		43CEC5141DC1D84400A44F4E /* PartModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartModel.swift; sourceTree = "<group>"; };
 		43CEC5161DC1D91D00A44F4E /* SiteHistoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryModel.swift; sourceTree = "<group>"; };
 		43CEC5181DC1D96900A44F4E /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		681B656FFD9DF694B2602670 /* Pods_LarsonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LarsonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70495221DC33980004AEA98 /* GoogleSignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		A70495241DC34919004AEA98 /* WorkOrdersModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrdersModel.swift; sourceTree = "<group>"; };
 		A70495261DC34A63004AEA98 /* TimesheetModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimesheetModel.swift; sourceTree = "<group>"; };
@@ -97,13 +102,12 @@
 		A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlideTableViewCell.xib; sourceTree = "<group>"; };
 		A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewProgressExtension.swift; sourceTree = "<group>"; };
 		A79278D41DC86F45005FA025 /* LarsonApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "LarsonApp-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7C90335E5A69BA916759F9F /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJGProgressHUD.a; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
 		BAF0F5A51DC884CB00FBC443 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		BAF0F5A81DC884D800FBC443 /* ScrollViewSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewSet.swift; sourceTree = "<group>"; };
-		E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LarsonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,7 +116,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA062EAE1DCB188300C43F82 /* libJGProgressHUD.a in Frameworks */,
-				3313F4E96609F5A7413D0FFC /* Pods_LarsonApp.framework in Frameworks */,
+				BDC52A008C4A0DA2831CE980 /* Pods_LarsonApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,8 +128,8 @@
 			children = (
 				434395971DBF4DBE00C12C37 /* LarsonApp */,
 				434395961DBF4DBE00C12C37 /* Products */,
-				74DCEA8D27206FCAF383566B /* Pods */,
 				F45F7559015A46EBB6F8CE32 /* Frameworks */,
+				FD58FD8A5E7D647B0A16B4C0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -169,6 +173,8 @@
 				434395AE1DBF4E9800C12C37 /* Login */,
 				434395AF1DBF4E9800C12C37 /* Parts */,
 				434395C01DBF4EC900C12C37 /* BaseViewController.swift */,
+				43C3C6821DD011620036EE91 /* TabViewController.swift */,
+				43C3C6841DD012910036EE91 /* NavViewController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -302,15 +308,6 @@
 			path = NavView;
 			sourceTree = "<group>";
 		};
-		74DCEA8D27206FCAF383566B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */,
-				3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		A7593F211DC87EDA00FEFE71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,9 +359,18 @@
 			isa = PBXGroup;
 			children = (
 				BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */,
-				E57D4FFA449BFBB564C56AC3 /* Pods_LarsonApp.framework */,
+				681B656FFD9DF694B2602670 /* Pods_LarsonApp.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD58FD8A5E7D647B0A16B4C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7C90335E5A69BA916759F9F /* Pods-LarsonApp.debug.xcconfig */,
+				0EDDF6E8BFD14C3B62B983EC /* Pods-LarsonApp.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,15 +380,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 434395A71DBF4DBE00C12C37 /* Build configuration list for PBXNativeTarget "LarsonApp" */;
 			buildPhases = (
-				87E9FB8DD7ACB6447CCCE095 /* Check Pods Manifest.lock */,
 				767D6F1CAE5518120E1DDD7F /* [CP] Check Pods Manifest.lock */,
 				434395911DBF4DBE00C12C37 /* Sources */,
 				434395921DBF4DBE00C12C37 /* Frameworks */,
 				434395931DBF4DBE00C12C37 /* Resources */,
 				F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */,
 				74CB41886C3916A60BA95305 /* [CP] Copy Pods Resources */,
-				24CB9DF401DFC3E700426E38 /* Embed Pods Frameworks */,
-				4034947E378016F93EF0C30B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -459,36 +462,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24CB9DF401DFC3E700426E38 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4034947E378016F93EF0C30B /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		74CB41886C3916A60BA95305 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -512,21 +485,6 @@
 			inputPaths = (
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		87E9FB8DD7ACB6447CCCE095 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -571,12 +529,14 @@
 				A7593F231DC87EDA00FEFE71 /* AppointmentsTableView.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
 				A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */,
+				43C3C6831DD011620036EE91 /* TabViewController.swift in Sources */,
 				A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */,
 				BAF0F5A91DC884D800FBC443 /* ScrollViewSet.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
 				434395BD1DBF4E9800C12C37 /* ViewFrameExtension.swift in Sources */,
 				A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */,
+				43C3C6851DD012910036EE91 /* NavViewController.swift in Sources */,
 				A778611E1DBF573800BA17EE /* MKButton.swift in Sources */,
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
@@ -698,7 +658,7 @@
 		};
 		434395A81DBF4DBE00C12C37 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F649F164E8A4999BCF632DC8 /* Pods-LarsonApp.debug.xcconfig */;
+			baseConfigurationReference = A7C90335E5A69BA916759F9F /* Pods-LarsonApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;
@@ -721,7 +681,7 @@
 		};
 		434395A91DBF4DBE00C12C37 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D2A3C873133C7DA156DAB80 /* Pods-LarsonApp.release.xcconfig */;
+			baseConfigurationReference = 0EDDF6E8BFD14C3B62B983EC /* Pods-LarsonApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = LarsonApp/LarsonApp.entitlements;

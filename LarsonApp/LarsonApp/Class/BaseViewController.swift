@@ -12,7 +12,10 @@ class BaseViewController: UIViewController {
 
     var navHeaderView : NavHeaderView?
     var optionView : OptionView?
-    var scrollViewSet : ScrollViewSet?
+    
+    var sideBarTappedHandler : ReturnBlock?
+    
+    var bolLoaded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,34 +24,35 @@ class BaseViewController: UIViewController {
     }
     
     func initNavView(title : String){
-        navHeaderView = Bundle.main.loadNibNamed("NavHeaderView", owner: self, options: nil)?[0] as? NavHeaderView
-        navHeaderView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: 64)
-        navHeaderView?.initUI(str: title, bolBack: false)
-        self.view.addSubview(navHeaderView!)
-        navHeaderView?.testBtnHandler = {
+        if bolLoaded == false
+        {
+            navHeaderView = Bundle.main.loadNibNamed("NavHeaderView", owner: self, options: nil)?[0] as? NavHeaderView
+            navHeaderView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: 64)
+            navHeaderView?.initUI(str: title, bolBack: false)
+            self.view.addSubview(navHeaderView!)
+            bolLoaded = true
             
-        }
-        navHeaderView?.opertionBtnHandler = {
-            self.optionView = Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView
-            self.optionView!.frame = self.view.bounds
-            self.optionView?.initUI()
-            
-            self.view.addSubview(self.optionView!)
-            self.optionView?.cellTouchUpHandler = {(index, obj) -> Void in
-               
-                    self.optionView?.handleSwipeGesture()
+            navHeaderView?.testBtnHandler = {
+                
             }
+            navHeaderView?.opertionBtnHandler = {
+                self.optionView = Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView
+                self.optionView!.frame = self.view.bounds
+                self.optionView?.initUI()
+                
+                self.view.addSubview(self.optionView!)
+                self.optionView?.cellTouchUpHandler = {(index, obj) -> Void in
+                    
+                    self.optionView?.handleSwipeGesture()
+                    if self.sideBarTappedHandler != nil
+                    {
+                        self.sideBarTappedHandler!(index.row as AnyObject)
+                    }
+                }
+            }
+
         }
-        
-
-        
-        scrollViewSet = ScrollViewSet.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64 ))
-        self.view.addSubview(scrollViewSet!)
-
-
-
-        
-    }
+}
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
