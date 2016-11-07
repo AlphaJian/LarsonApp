@@ -13,7 +13,7 @@ class AppointmentViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        print()
         initNavView(title: "Appointment List")
         initUI()
     }
@@ -22,7 +22,6 @@ class AppointmentViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
-            print(obj)
             DispatchQueue.main.async {
                 self.tableview.items = obj as! [AppointmentModel]
                 self.tableview.reloadData()
