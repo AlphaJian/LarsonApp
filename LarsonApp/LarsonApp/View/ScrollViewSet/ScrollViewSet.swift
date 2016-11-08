@@ -48,15 +48,15 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
         scrollView?.delegate = self
         self.addSubview(scrollView!)
     
-        for i in 0...titleArr.count - 1 {
-            
-            let view = UIView.init(frame: CGRect(x: CGFloat(i) * LCDW, y: 0, width: LCDW, height: frame.height))
-            
-            view.backgroundColor = StringUtil.getColorWithRGB(red: 30 * CGFloat(i), green: 20 * CGFloat(i), blue: 155)
-        
-            self.scrollView?.addSubview(view)
-            
-        }
+//        for i in 0...titleArr.count - 1 {
+//            
+//            let view = UIView.init(frame: CGRect(x: CGFloat(i) * LCDW, y: 0, width: LCDW, height: frame.height))
+//            
+//            view.backgroundColor = StringUtil.getColorWithRGB(red: 30 * CGFloat(i), green: 20 * CGFloat(i), blue: 155)
+//        
+//            self.scrollView?.addSubview(view)
+//            
+//        }
         
     }
     

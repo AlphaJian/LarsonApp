@@ -16,7 +16,6 @@ class DataManager: NSObject {
     
     var ref = FIRDatabase.database().reference()
     var items: NSMutableDictionary = ["0":"Appointment List", "1":"Current Job", "2":"Parts Search", "3":"Chat Help", "4":"Log out", "didSelect": 0]
-    var tt = 0
     class var shareManager : DataManager {
         return single
     }
