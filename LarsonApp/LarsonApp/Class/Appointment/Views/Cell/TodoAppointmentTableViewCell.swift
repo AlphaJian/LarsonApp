@@ -14,9 +14,12 @@ class TodoAppointmentTableViewCell: UITableViewCell {
     @IBOutlet weak var legacyIdLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var containerView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        self.containerView.layer.cornerRadius = 4.0
+        self.containerView.layer.shouldRasterize = true
         // Initialization code
     }
 

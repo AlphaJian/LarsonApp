@@ -34,6 +34,10 @@ class AppointmentViewController: BaseViewController {
     func initUI(){
         tableview = AppointmentsTableView(frame:CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64)
  , style: .plain)
+        tableview.cellClickBlock = { (model: AnyObject) in
+            let appointmentModel = model as! AppointmentModel
+            print(appointmentModel.appointmentId)
+        }
         self.view.addSubview(tableview)
     }
     override func didReceiveMemoryWarning() {
