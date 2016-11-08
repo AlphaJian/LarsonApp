@@ -10,6 +10,12 @@
 		43137B3F1DD16A4700F2D553 /* JobPartsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B3E1DD16A4700F2D553 /* JobPartsTableView.swift */; };
 		43137B411DD16E8600F2D553 /* PartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B401DD16E8600F2D553 /* PartsManager.swift */; };
 		43137B431DD171F700F2D553 /* NSDictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B421DD171F700F2D553 /* NSDictionaryExtension.swift */; };
+		43137B461DD1956100F2D553 /* JobPartsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B441DD1956100F2D553 /* JobPartsTableViewCell.swift */; };
+		43137B471DD1956100F2D553 /* JobPartsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43137B451DD1956100F2D553 /* JobPartsTableViewCell.xib */; };
+		43137B491DD1AB2C00F2D553 /* PartSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B481DD1AB2C00F2D553 /* PartSearchViewController.swift */; };
+		43137B4B1DD1AE3400F2D553 /* NavSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B4A1DD1AE3400F2D553 /* NavSearchView.swift */; };
+		43137B4D1DD1AE4B00F2D553 /* NavSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43137B4C1DD1AE4B00F2D553 /* NavSearchView.xib */; };
+		43137B501DD1B0CE00F2D553 /* PartsResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B4F1DD1B0CE00F2D553 /* PartsResultTableView.swift */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -69,6 +75,12 @@
 		43137B3E1DD16A4700F2D553 /* JobPartsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPartsTableView.swift; sourceTree = "<group>"; };
 		43137B401DD16E8600F2D553 /* PartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsManager.swift; sourceTree = "<group>"; };
 		43137B421DD171F700F2D553 /* NSDictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtension.swift; sourceTree = "<group>"; };
+		43137B441DD1956100F2D553 /* JobPartsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPartsTableViewCell.swift; sourceTree = "<group>"; };
+		43137B451DD1956100F2D553 /* JobPartsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobPartsTableViewCell.xib; sourceTree = "<group>"; };
+		43137B481DD1AB2C00F2D553 /* PartSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartSearchViewController.swift; sourceTree = "<group>"; };
+		43137B4A1DD1AE3400F2D553 /* NavSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavSearchView.swift; sourceTree = "<group>"; };
+		43137B4C1DD1AE4B00F2D553 /* NavSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavSearchView.xib; sourceTree = "<group>"; };
+		43137B4F1DD1B0CE00F2D553 /* PartsResultTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsResultTableView.swift; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,8 +157,18 @@
 			isa = PBXGroup;
 			children = (
 				43137B3E1DD16A4700F2D553 /* JobPartsTableView.swift */,
+				43137B441DD1956100F2D553 /* JobPartsTableViewCell.swift */,
+				43137B451DD1956100F2D553 /* JobPartsTableViewCell.xib */,
 			);
 			path = Parts;
+			sourceTree = "<group>";
+		};
+		43137B4E1DD1B0B800F2D553 /* PartResultTableView */ = {
+			isa = PBXGroup;
+			children = (
+				43137B4F1DD1B0CE00F2D553 /* PartsResultTableView.swift */,
+			);
+			path = PartResultTableView;
 			sourceTree = "<group>";
 		};
 		4343958C1DBF4DBE00C12C37 = {
@@ -237,8 +259,10 @@
 		434395AF1DBF4E9800C12C37 /* Parts */ = {
 			isa = PBXGroup;
 			children = (
+				43137B4E1DD1B0B800F2D553 /* PartResultTableView */,
 				434395D31DBF4F4900C12C37 /* PartsViewController.swift */,
 				434395D41DBF4F4900C12C37 /* PartsViewController.xib */,
+				43137B481DD1AB2C00F2D553 /* PartSearchViewController.swift */,
 			);
 			path = Parts;
 			sourceTree = "<group>";
@@ -335,6 +359,8 @@
 			children = (
 				434395F01DC044A400C12C37 /* NavHeaderView.swift */,
 				434395F11DC044A400C12C37 /* NavHeaderView.xib */,
+				43137B4A1DD1AE3400F2D553 /* NavSearchView.swift */,
+				43137B4C1DD1AE4B00F2D553 /* NavSearchView.xib */,
 			);
 			path = NavView;
 			sourceTree = "<group>";
@@ -489,11 +515,13 @@
 			files = (
 				D87DCD721DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib in Resources */,
 				A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */,
+				43137B471DD1956100F2D553 /* JobPartsTableViewCell.xib in Resources */,
 				434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
 				D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
+				43137B4D1DD1AE4B00F2D553 /* NavSearchView.xib in Resources */,
 				BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */,
 				434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */,
 				A77861211DBF573800BA17EE /* OptionView.xib in Resources */,
@@ -565,6 +593,8 @@
 				434395BC1DBF4E9800C12C37 /* BlockDefination.swift in Sources */,
 				BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */,
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
+				43137B4B1DD1AE3400F2D553 /* NavSearchView.swift in Sources */,
+				43137B491DD1AB2C00F2D553 /* PartSearchViewController.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */,
@@ -581,6 +611,7 @@
 				43137B411DD16E8600F2D553 /* PartsManager.swift in Sources */,
 				BAF0F5A91DC884D800FBC443 /* ScrollViewSet.swift in Sources */,
 				43137B431DD171F700F2D553 /* NSDictionaryExtension.swift in Sources */,
+				43137B461DD1956100F2D553 /* JobPartsTableViewCell.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
 				434395BD1DBF4E9800C12C37 /* ViewFrameExtension.swift in Sources */,
@@ -592,6 +623,7 @@
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
 				434395D11DBF4F3B00C12C37 /* LoginViewController.swift in Sources */,
 				A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */,
+				43137B501DD1B0CE00F2D553 /* PartsResultTableView.swift in Sources */,
 				A77861201DBF573800BA17EE /* OptionView.swift in Sources */,
 				4344BA061DD023B4007C3872 /* FileUtility.swift in Sources */,
 				43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */,

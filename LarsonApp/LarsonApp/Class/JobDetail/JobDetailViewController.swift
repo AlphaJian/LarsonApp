@@ -19,6 +19,7 @@ class JobDetailViewController: BaseViewController {
         
         initNavView(title: "Appointment Detail")
         initUI()
+        initPartTab()
     }
     
     override func viewDidLoad() {
@@ -38,9 +39,16 @@ class JobDetailViewController: BaseViewController {
     func initUI(){
         scrollViewSet = ScrollViewSet.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64 ))
         self.view.addSubview(scrollViewSet!)
-        
+    }
+    
+    func initPartTab(){
         partsView = JobPartsTableView(frame: CGRect(x: 0, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!), style: .plain)
-        scrollViewSet?.addSubview(partsView!)
+        scrollViewSet?.scrollView?.addSubview(partsView!)
+        
+        partsView?.buttonTapHandler = {
+            let vc = PartSearchViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

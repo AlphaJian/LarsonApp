@@ -30,7 +30,7 @@ class NavHeaderView: UIView {
     func initUI(str : String, bolBack : Bool){
         navTitleLbl.text = str
         if bolBack == true {
-            optionBtn.setImage(UIImage(named: "closeW"), for: UIControlState.normal)
+            optionBtn.setImage(UIImage(named: "CloseWhite"), for: UIControlState.normal)
         } else {
             optionBtn.imageView?.image = UIImage(named: "Menu")
         }

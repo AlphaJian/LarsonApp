@@ -45,7 +45,7 @@
                         </mask>
                     </variation>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B31-ni-615">
+                <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B31-ni-615">
                     <frame key="frameInset" minX="260" minY="21" width="21" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Button"/>
@@ -81,7 +81,7 @@
                 <outlet property="navTitleLbl" destination="GWx-xf-iNp" id="rCv-Me-vhx"/>
                 <outlet property="optionBtn" destination="Kew-1V-stA" id="P9l-rw-hHH"/>
             </connections>
-            <point key="canvasLocation" x="-62" y="-91"/>
+            <point key="canvasLocation" x="-205" y="-128"/>
         </view>
     </objects>
     <resources>

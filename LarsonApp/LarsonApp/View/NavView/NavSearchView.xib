@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NavSearchView" customModule="LarsonApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iig-8T-chk">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="I3P-R3-dcO"/>
+                        <constraint firstAttribute="height" constant="30" id="uVn-vR-kqf"/>
+                    </constraints>
+                    <state key="normal" image="CloseWhite"/>
+                    <connections>
+                        <action selector="btnTapped:" destination="iN0-l3-epB" eventType="touchUpInside" id="Xy7-fg-ipV"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wfh-3b-CbR">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="zdl-3v-zSl"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iig-8T-chk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="EzO-QZ-S4C"/>
+                <constraint firstAttribute="trailing" secondItem="wfh-3b-CbR" secondAttribute="trailing" constant="20" id="cbY-XS-2Hc"/>
+                <constraint firstItem="wfh-3b-CbR" firstAttribute="centerY" secondItem="iig-8T-chk" secondAttribute="centerY" id="jWu-Lv-wB9"/>
+                <constraint firstItem="iig-8T-chk" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="stO-1k-tIl"/>
+                <constraint firstItem="wfh-3b-CbR" firstAttribute="leading" secondItem="iig-8T-chk" secondAttribute="trailing" constant="20" id="uWx-Dh-qBA"/>
+            </constraints>
+            <connections>
+                <outlet property="btn" destination="iig-8T-chk" id="C9F-vN-8bJ"/>
+                <outlet property="searchTF" destination="wfh-3b-CbR" id="HHU-Lf-dRs"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="CloseWhite" width="18" height="12"/>
+    </resources>
+</document>
