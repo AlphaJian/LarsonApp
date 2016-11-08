@@ -161,4 +161,9 @@ class DataManager: NSObject {
             failHandeler("Can't load parts" as AnyObject)
         }
     }
+    
+    func searchParts(keywords : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
+    {
+//        ref.child("parts").queryStarting(atValue: <#T##Any?#>)
+    }
 }
