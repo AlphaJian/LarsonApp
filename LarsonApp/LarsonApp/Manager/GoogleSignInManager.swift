@@ -48,11 +48,12 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
         let authentication = user.authentication
         let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
                                                           accessToken: (authentication?.accessToken)!)
-        
+        let emial = user.profile.email
+        let token = authentication?.accessToken
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             // ...
             print(user,error)
-            
+//            DataManager.shareManager.insertUser(emial: emial!, accessToken: token!)
         }
     }
     

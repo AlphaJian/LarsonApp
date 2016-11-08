@@ -9,32 +9,32 @@
 import UIKit
 
 class PartModel: NSObject {
-    var _id : String!
-    var alternateNumber : String!
-    var emergencyRequest : Bool!
-    var inTruck : Int!
-    var name : String!
-    var needDeliveryService : Bool!
-    var number : String!
-    var partRequestId : String!
-    var price : CGFloat!
-    var qty : Int!
-    var stock : Int!
-    var userId : String!
+    var _id = ""
+    var alternateNumber = ""
+    var emergencyRequest = false
+    var inTruck = 0
+    var name = ""
+    var needDeliveryService = false
+    var number = ""
+    var partRequestId = ""
+    var price : CGFloat = 0.0
+    var qty = 0
+    var stock = 0
+    var userId = ""
     
     func parseDicToSelf(dic : NSDictionary) {
-        self._id = dic["_id"] as! String
-        self.alternateNumber = dic["alternateNumber"] as! String
-        self.emergencyRequest = dic["emergencyRequest"] as! Bool
-        self.inTruck = dic["inTruck"] as! Int
-        self.name = dic["name"] as! String
-        self.needDeliveryService = dic["needDeliveryService"] as! Bool
-        self.number = dic["number"] as! String
-        self.partRequestId = dic["partRequestId"] as! String
-        self.price = dic["price"] as! CGFloat
-        self.qty = dic["qty"] as! Int
-        self.stock = dic["stock"] as! Int
-        self.userId = dic["userId"] as! String
+        self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
+        self.alternateNumber = dic.checkValueIfNil(key: "alternateNumber", oldValue: self.alternateNumber)
+        self.emergencyRequest = dic.checkBoolIfNil(key: "emergencyRequest", oldValue: self.emergencyRequest)
+        self.inTruck = dic.checkIntIfNil(key: "inTruck", oldValue: self.inTruck)
+        self.name = dic.checkValueIfNil(key: "name", oldValue: self.name)
+        self.needDeliveryService = dic.checkBoolIfNil(key: "needDeliveryService", oldValue: self.needDeliveryService)
+        self.number = dic.checkValueIfNil(key: "number", oldValue: self.number)
+        self.partRequestId = dic.checkValueIfNil(key: "partRequestId", oldValue: self.partRequestId)
+        self.price = dic.checkFloatIfNil(key: "price", oldValue: self.price)
+        self.qty = dic.checkIntIfNil(key: "qty", oldValue: self.qty)
+        self.stock = dic.checkIntIfNil(key: "stock", oldValue: self.stock)
+        self.userId = dic.checkValueIfNil(key: "userId", oldValue: self.userId)
     }
     
     func initWithDic (dic : NSDictionary) {
