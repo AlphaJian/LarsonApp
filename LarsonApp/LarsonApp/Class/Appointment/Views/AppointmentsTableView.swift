@@ -13,6 +13,7 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     var items = [AppointmentModel]()
     
     var cellClickBlock: ReturnBlock?
+    var cellPhoneBlock: ReturnBlock?
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -49,6 +50,9 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         } else {
             let cell: TodoAppointmentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TODO", for: indexPath) as! TodoAppointmentTableViewCell
             cell.setupCellData(model: appointModel)
+            cell.phoneCallback = { (urlStr: AnyObject) in
+                self.cellPhoneBlock!(urlStr)
+            }
             return cell
         }
     }

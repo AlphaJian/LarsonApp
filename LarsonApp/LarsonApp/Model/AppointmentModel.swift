@@ -29,6 +29,8 @@ class AppointmentModel: NSObject {
     var streetViewUrl : String!
     var telephoneNumber : String!
     var legacyId : String!
+    var partsReqInTruckNum: Int!
+    var partsReqNum: Int!
     
     func parseDicToSelf(dic : NSDictionary) {
         self._id = dic["_id"] as! String
@@ -50,6 +52,8 @@ class AppointmentModel: NSObject {
         self.streetViewUrl = dic["streetViewUrl"] as! String
         self.telephoneNumber = dic["telephoneNumber"] as! String
         self.legacyId = dic["legacyId"] as! String
+        self.partsReqInTruckNum = dic["partsReqInTruckNum"] as! Int
+        self.partsReqNum = dic["partsReqNum"] as! Int
     }
     
     func initWithDic (dic : NSDictionary) {

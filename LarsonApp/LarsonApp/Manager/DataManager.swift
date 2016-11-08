@@ -30,8 +30,8 @@ class DataManager: NSObject {
             {
                 let tempDic = dic?.allValues[i] as? NSDictionary
                 let model = AppointmentModel()
-                model.initWithDic(dic: tempDic!)
-//                model.parseDicToSelf(dic: tempDic!)
+//                model.initWithDic(dic: tempDic!)
+                model.parseDicToSelf(dic: tempDic!)
                 arr.append(model)
             }
             successHandler(arr as AnyObject)
