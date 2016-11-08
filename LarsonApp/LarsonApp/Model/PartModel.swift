@@ -21,6 +21,7 @@ class PartModel: NSObject {
     var qty = 0
     var stock = 0
     var userId = ""
+    var vendorId = ""
     
     func parseDicToSelf(dic : NSDictionary) {
         self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
@@ -35,6 +36,7 @@ class PartModel: NSObject {
         self.qty = dic.checkIntIfNil(key: "qty", oldValue: self.qty)
         self.stock = dic.checkIntIfNil(key: "stock", oldValue: self.stock)
         self.userId = dic.checkValueIfNil(key: "userId", oldValue: self.userId)
+        self.vendorId = dic.checkValueIfNil(key: "vendorId", oldValue: self.vendorId)
     }
     
     func initWithDic (dic : NSDictionary) {
