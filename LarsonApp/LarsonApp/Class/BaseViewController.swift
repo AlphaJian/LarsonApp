@@ -44,6 +44,11 @@ class BaseViewController: UIViewController {
                 
                 self.view.addSubview(self.optionView)
                 self.optionView.cellTouchUpHandler = {(index, obj) -> Void in
+                    if index.row == 4
+                    {
+                        GoogleSignInManager.sharedManager.signOut()
+                        return
+                    }
                     self.items["didSelect"] = index.item
                     self.optionView.handleSwipeGesture()
                     if self.sideBarTappedHandler != nil
@@ -52,7 +57,6 @@ class BaseViewController: UIViewController {
                     }
                 }
             }
-
         }
 }
 

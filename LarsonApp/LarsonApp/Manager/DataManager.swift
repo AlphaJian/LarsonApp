@@ -20,6 +20,12 @@ class DataManager: NSObject {
         return single
     }
     
+    func insertUser(emial : String, accessToken : String){
+        let tempRef = ref.child("engineerApp").child("user-info").childByAutoId()
+        tempRef.setValue(["email":emial, "token":accessToken])
+//        tempRef.updateChildValues([tempRef.childByAutoId():["email":emial, "token":accessToken]])
+    }
+    
     func fetchAppointList(successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
         ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
@@ -37,6 +43,18 @@ class DataManager: NSObject {
         }) { (error) in
             print(error.localizedDescription)
             failHandeler("Can't load appointments" as AnyObject)
+        }
+    }
+    
+    func fetchJobParts(jobId : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
+    {
+        ref.child("engineerApp").child("appointment-parts").child(jobId).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let dic = snapshot.value as? NSDictionary
+            successHandler(dic!)
+        }) { (error) in
+            print(error.localizedDescription)
+            failHandeler("Can't load parts" as AnyObject)
         }
     }
 }

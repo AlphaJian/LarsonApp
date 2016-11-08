@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43137B3F1DD16A4700F2D553 /* JobPartsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B3E1DD16A4700F2D553 /* JobPartsTableView.swift */; };
+		43137B411DD16E8600F2D553 /* PartsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B401DD16E8600F2D553 /* PartsManager.swift */; };
+		43137B431DD171F700F2D553 /* NSDictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B421DD171F700F2D553 /* NSDictionaryExtension.swift */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -58,10 +61,17 @@
 		BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A51DC884CB00FBC443 /* TabBarView.swift */; };
 		BAF0F5A91DC884D800FBC443 /* ScrollViewSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF0F5A81DC884D800FBC443 /* ScrollViewSet.swift */; };
 		BDC52A008C4A0DA2831CE980 /* Pods_LarsonApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 681B656FFD9DF694B2602670 /* Pods_LarsonApp.framework */; };
+		D87DCD6D1DD069C700C6284B /* TodoAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCD6B1DD069C700C6284B /* TodoAppointmentTableViewCell.swift */; };
+		D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */; };
+		D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */; };
+		D87DCD721DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87DCD701DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0EDDF6E8BFD14C3B62B983EC /* Pods-LarsonApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LarsonApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-LarsonApp/Pods-LarsonApp.release.xcconfig"; sourceTree = "<group>"; };
+		43137B3E1DD16A4700F2D553 /* JobPartsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobPartsTableView.swift; sourceTree = "<group>"; };
+		43137B401DD16E8600F2D553 /* PartsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsManager.swift; sourceTree = "<group>"; };
+		43137B421DD171F700F2D553 /* NSDictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDictionaryExtension.swift; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -118,6 +128,10 @@
 		BAE3E0001DD07C6E006E2B69 /* JobDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobDetailView.xib; sourceTree = "<group>"; };
 		BAF0F5A51DC884CB00FBC443 /* TabBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		BAF0F5A81DC884D800FBC443 /* ScrollViewSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewSet.swift; sourceTree = "<group>"; };
+		D87DCD6B1DD069C700C6284B /* TodoAppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoAppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoAppointmentTableViewCell.xib; sourceTree = "<group>"; };
+		D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteAppointmentTableViewCell.swift; sourceTree = "<group>"; };
+		D87DCD701DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +147,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		43137B3D1DD16A4700F2D553 /* Parts */ = {
+			isa = PBXGroup;
+			children = (
+				43137B3E1DD16A4700F2D553 /* JobPartsTableView.swift */,
+			);
+			path = Parts;
+			sourceTree = "<group>";
+		};
 		4343958C1DBF4DBE00C12C37 = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				BAE3DFF91DD06E06006E2B69 /* JobDetailViews */,
+				43137B3D1DD16A4700F2D553 /* Parts */,
 				434395CB1DBF4F2E00C12C37 /* JobDetailViewController.swift */,
 				434395CC1DBF4F2E00C12C37 /* JobDetailViewController.xib */,
 			);
@@ -240,6 +263,7 @@
 			children = (
 				434395B31DBF4E9800C12C37 /* ViewFrameExtension.swift */,
 				A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */,
+				43137B421DD171F700F2D553 /* NSDictionaryExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -249,6 +273,7 @@
 			children = (
 				A70495221DC33980004AEA98 /* GoogleSignInManager.swift */,
 				43CEC5181DC1D96900A44F4E /* DataManager.swift */,
+				43137B401DD16E8600F2D553 /* PartsManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -324,6 +349,7 @@
 		A7593F211DC87EDA00FEFE71 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D87DCD6A1DD069AF00C6284B /* Cell */,
 				A7593F221DC87EDA00FEFE71 /* AppointmentsTableView.swift */,
 			);
 			path = Views;
@@ -376,6 +402,17 @@
 				BAF0F5A81DC884D800FBC443 /* ScrollViewSet.swift */,
 			);
 			path = ScrollViewSet;
+			sourceTree = "<group>";
+		};
+		D87DCD6A1DD069AF00C6284B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D87DCD6B1DD069C700C6284B /* TodoAppointmentTableViewCell.swift */,
+				D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */,
+				D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */,
+				D87DCD701DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F45F7559015A46EBB6F8CE32 /* Frameworks */ = {
@@ -468,9 +505,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D87DCD721DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib in Resources */,
 				A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */,
 				434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
+				D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
 				BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */,
@@ -514,7 +553,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8202505D3110AC660B49E213 /* Embed Pods Frameworks */ = {
@@ -563,6 +602,7 @@
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
+				D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */,
 				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				4344BA041DD0224C007C3872 /* UserModel.swift in Sources */,
@@ -574,12 +614,15 @@
 				A70495291DC34B84004AEA98 /* InvoicesModel.swift in Sources */,
 				43C3C6831DD011620036EE91 /* TabViewController.swift in Sources */,
 				A70495231DC33980004AEA98 /* GoogleSignInManager.swift in Sources */,
+				43137B411DD16E8600F2D553 /* PartsManager.swift in Sources */,
 				BAF0F5A91DC884D800FBC443 /* ScrollViewSet.swift in Sources */,
+				43137B431DD171F700F2D553 /* NSDictionaryExtension.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
 				434395BD1DBF4E9800C12C37 /* ViewFrameExtension.swift in Sources */,
 				A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */,
 				43C3C6851DD012910036EE91 /* NavViewController.swift in Sources */,
+				D87DCD6D1DD069C700C6284B /* TodoAppointmentTableViewCell.swift in Sources */,
 				A778611E1DBF573800BA17EE /* MKButton.swift in Sources */,
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
@@ -589,6 +632,7 @@
 				4344BA061DD023B4007C3872 /* FileUtility.swift in Sources */,
 				43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */,
 				43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */,
+				43137B3F1DD16A4700F2D553 /* JobPartsTableView.swift in Sources */,
 				434395C11DBF4EC900C12C37 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
