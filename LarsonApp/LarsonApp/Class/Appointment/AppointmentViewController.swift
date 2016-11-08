@@ -38,13 +38,7 @@ class AppointmentViewController: BaseViewController {
             let appointmentModel = model as! AppointmentModel
             print(appointmentModel.appointmentId)
         }
-        tableview.cellPhoneBlock = { (str: AnyObject) in
-            print(str)
-            if UIApplication.shared.canOpenURL(str as! URL) {
-                UIApplication.shared.openURL(str as! URL)
-                
-            }
-        }
+
         self.view.addSubview(tableview)
     }
     override func didReceiveMemoryWarning() {

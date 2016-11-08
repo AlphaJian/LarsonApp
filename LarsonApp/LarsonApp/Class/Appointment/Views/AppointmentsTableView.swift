@@ -50,9 +50,6 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         } else {
             let cell: TodoAppointmentTableViewCell = tableView.dequeueReusableCell(withIdentifier: "TODO", for: indexPath) as! TodoAppointmentTableViewCell
             cell.setupCellData(model: appointModel)
-            cell.phoneCallback = { (urlStr: AnyObject) in
-                self.cellPhoneBlock!(urlStr)
-            }
             return cell
         }
     }

@@ -18,6 +18,7 @@ class TodoAppointmentTableViewCell: UITableViewCell {
     @IBOutlet weak var trunkLabel: UILabel!
     
     private var phoneStr: String = ""
+    private var legacyID: String = ""
     
     var phoneCallback: ReturnBlock?
     
@@ -34,12 +35,17 @@ class TodoAppointmentTableViewCell: UITableViewCell {
         self.addressLabel.text = model.customerAddress
         self.trunkLabel.text = "\(model.partsReqInTruckNum!) of \(model.partsReqNum!) parts\n in Truck"
         self.phoneStr = model.telephoneNumber
+        self.legacyID = model.legacyId
     }
     
     @IBAction func phoneAction(_ sender: UIButton) {
-        let phoneURL = NSURL(string: "tel://\(self.phoneStr)")
-        if self.phoneCallback != nil {
-            self.phoneCallback!(phoneURL!)
+        print(self.legacyID)
+        let phoneURL = NSURL(string: "telprompt://\(self.phoneStr)")
+        let phoneCallbackURL = NSURL(string: "tel://\(self.phoneStr)")
+        if UIApplication.shared.canOpenURL(phoneURL as! URL) {
+            UIApplication.shared.openURL(phoneURL as! URL)
+        } else if UIApplication.shared.canOpenURL(phoneCallbackURL as! URL) {
+            UIApplication.shared.openURL(phoneCallbackURL as! URL)
         }
     }
     
