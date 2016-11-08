@@ -38,6 +38,7 @@ class AppointmentViewController: BaseViewController {
             let appointmentModel = model as! AppointmentModel
             print(appointmentModel.appointmentId)
         }
+
         self.view.addSubview(tableview)
     }
     override func didReceiveMemoryWarning() {
