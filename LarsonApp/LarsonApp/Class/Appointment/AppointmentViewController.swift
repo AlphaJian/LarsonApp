@@ -13,7 +13,7 @@ class AppointmentViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        print()
         initNavView(title: "Appointment List")
         initUI()
     }
@@ -22,7 +22,6 @@ class AppointmentViewController: BaseViewController {
 
         // Do any additional setup after loading the view.
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
-            print(obj)
             DispatchQueue.main.async {
                 self.tableview.items = obj as! [AppointmentModel]
                 self.tableview.reloadData()
@@ -35,6 +34,10 @@ class AppointmentViewController: BaseViewController {
     func initUI(){
         tableview = AppointmentsTableView(frame:CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64)
  , style: .plain)
+        tableview.cellClickBlock = { (model: AnyObject) in
+            let appointmentModel = model as! AppointmentModel
+            print(appointmentModel.appointmentId)
+        }
         self.view.addSubview(tableview)
     }
     override func didReceiveMemoryWarning() {
