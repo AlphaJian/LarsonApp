@@ -19,7 +19,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1by-wV-Rk6">
-                        <rect key="frame" x="5" y="0.0" width="310" height="174"/>
+                        <rect key="frame" x="5" y="0.0" width="310" height="173"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C92-0W-kZR">
                                 <rect key="frame" x="10" y="15" width="190" height="16"/>
@@ -40,29 +40,55 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAM-8X-ZcQ">
-                                <rect key="frame" x="10" y="96" width="190" height="18"/>
+                                <rect key="frame" x="10" y="96" width="190" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" translatesAutoresizingMaskIntoConstraints="NO" id="Bp2-kj-w5j">
-                                <rect key="frame" x="0.0" y="134" width="200" height="40"/>
+                                <rect key="frame" x="0.0" y="133" width="200" height="40"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OxD-RU-aiY">
                                         <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CALL SITE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p3K-a5-LYS">
+                                        <rect key="frame" x="10" y="11" width="72" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="p3K-a5-LYS" firstAttribute="centerY" secondItem="Bp2-kj-w5j" secondAttribute="centerY" id="1FB-JW-2U1"/>
+                                    <constraint firstItem="p3K-a5-LYS" firstAttribute="leading" secondItem="Bp2-kj-w5j" secondAttribute="leading" constant="10" id="OZV-YQ-QIb"/>
                                     <constraint firstAttribute="height" constant="40" id="auj-mr-VU2"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="soP-Pl-65T">
-                                <rect key="frame" x="210" y="0.0" width="100" height="173"/>
-                                <color key="backgroundColor" red="0.51794943559999995" green="0.95423982090000004" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="210" y="0.0" width="100" height="172"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="parts" translatesAutoresizingMaskIntoConstraints="NO" id="hNY-hH-PHj">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="172"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMB-DC-Yfe">
+                                        <rect key="frame" x="10" y="144" width="80" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="2L4-Gm-hlO"/>
+                                    <constraint firstAttribute="bottom" secondItem="hNY-hH-PHj" secondAttribute="bottom" id="4lH-Qo-Pno"/>
+                                    <constraint firstAttribute="trailing" secondItem="hNY-hH-PHj" secondAttribute="trailing" id="Kdj-bP-nax"/>
+                                    <constraint firstItem="hNY-hH-PHj" firstAttribute="leading" secondItem="soP-Pl-65T" secondAttribute="leading" id="QHG-Yd-yej"/>
+                                    <constraint firstItem="JMB-DC-Yfe" firstAttribute="leading" secondItem="soP-Pl-65T" secondAttribute="leading" constant="10" id="Rb7-bk-yHf"/>
+                                    <constraint firstAttribute="trailing" secondItem="JMB-DC-Yfe" secondAttribute="trailing" constant="10" id="ZFY-Nx-KIL"/>
+                                    <constraint firstItem="hNY-hH-PHj" firstAttribute="top" secondItem="soP-Pl-65T" secondAttribute="top" id="lUh-YL-Mnv"/>
+                                    <constraint firstAttribute="bottom" secondItem="JMB-DC-Yfe" secondAttribute="bottom" constant="10" id="r1N-VZ-zGf"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -101,11 +127,15 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <connections>
                 <outlet property="addressLabel" destination="CAM-8X-ZcQ" id="vN6-RL-PMa"/>
+                <outlet property="containerView" destination="1by-wV-Rk6" id="U67-5H-u3b"/>
                 <outlet property="legacyIdLabel" destination="uFH-ad-fCM" id="ttC-FY-tzh"/>
                 <outlet property="nameLabel" destination="XcD-9o-zyb" id="Oeq-ZG-W4e"/>
                 <outlet property="placeholderLabel" destination="C92-0W-kZR" id="1gu-qS-A3k"/>
             </connections>
-            <point key="canvasLocation" x="49" y="-7"/>
+            <point key="canvasLocation" x="-329" y="-100"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="parts" width="16" height="16"/>
+    </resources>
 </document>
