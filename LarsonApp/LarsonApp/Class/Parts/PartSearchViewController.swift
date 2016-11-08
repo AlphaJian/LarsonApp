@@ -10,16 +10,18 @@ import UIKit
 
 class PartSearchViewController: BaseViewController {
 
+    var partsResultTableView : PartsResultTableView?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        initNav()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initNav()
+        initUI()
     }
     
     func initNav()
@@ -31,6 +33,22 @@ class PartSearchViewController: BaseViewController {
         navSearchView?.btnTappedHandler = {
             self.navigationController?.popViewController(animated: true)
         }
+        navSearchView?.searchHandler = {(keywords) -> Void in
+            self.view.showhud()
+            DataManager.shareManager.searchParts(keywords: keywords as! String, successHandler: { (results) in
+                DispatchQueue.main.async {
+                    self.view.hidehud()
+                    self.partsResultTableView?.dataItems = PartsManager.shareManager.parsePartsDicToModel(dic: results as! NSDictionary)
+                    self.partsResultTableView?.reloadData()
+                }
+                
+                }, failHandeler: {(obj)in})
+        }
+    }
+    
+    func initUI(){
+        partsResultTableView = PartsResultTableView(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64), style: .plain)
+        self.view.addSubview(partsResultTableView!)
     }
 
     override func didReceiveMemoryWarning() {

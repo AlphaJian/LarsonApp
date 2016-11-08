@@ -56,4 +56,11 @@ class StringUtil: NSObject {
         let rect = str.boundingRect(with: CGSize(width: 10000, height: height), options: options, context: nil)
         return rect.width
     }
+    
+    class func getSpecWordToEnd(oldStr : String, middleStr : String) -> String
+    {
+        let oldStr2 = oldStr
+        let range = oldStr.range(of: middleStr + "/")
+        return oldStr2.replacingCharacters(in: range!, with: "")
+    }
 }

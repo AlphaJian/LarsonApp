@@ -18,10 +18,15 @@ class JobDetailViewController: BaseViewController {
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        // Do any additional setup after loading the view.
         initNavView(title: "Appointment Detail")
         initUI()
-
+        
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
             print(obj)
             DispatchQueue.main.async {
@@ -40,14 +45,6 @@ class JobDetailViewController: BaseViewController {
         }) { (obj) in
             print(obj)
         }
-
-        
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
     }
     
     func initUI(){

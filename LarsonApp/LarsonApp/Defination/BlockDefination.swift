@@ -25,6 +25,9 @@ let LCDW : CGFloat = UIScreen.main.bounds.size.width
 let LCDH : CGFloat = UIScreen.main.bounds.size.height
 
 let kAccountFileName = "userAccount"
+let kPartSearchIndex = "firebase-reln"
+let kPartSearchSize = 20
+let kPartSearchType = "part-inventory"
 
 class BlockDefination: NSObject {
 

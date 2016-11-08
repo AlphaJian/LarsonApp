@@ -16,7 +16,7 @@ class PartsResultTableView: UITableView, UITableViewDelegate, UITableViewDataSou
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        self.register(UINib(nibName: "JobPartsTableViewCell", bundle: nil) , forCellReuseIdentifier: "JobPartsTableViewCell")
+        self.register(UINib(nibName: "PartsResultTableViewCell", bundle: nil) , forCellReuseIdentifier: "PartsResultTableViewCell")
         self.separatorStyle = .none
     }
     
@@ -29,15 +29,16 @@ class PartsResultTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "JobPartsTableViewCell") as! JobPartsTableViewCell
-        
-        let dic = dataItems[indexPath.section] as! NSDictionary
-        let str = dic.allKeys[0] as! String
-        let arr = dic.value(forKey: str) as! NSArray
-        let model = arr[indexPath.row] as! PartModel
-        cell.initUI(model: model, index: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PartsResultTableViewCell") as! PartsResultTableViewCell
+        cell.clearCell()
+        let model = dataItems[indexPath.row] 
+        cell.initUI(partmodel: model, index: indexPath)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
     }
 
 }
