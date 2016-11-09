@@ -32,6 +32,18 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         fatalError("")
     }
     
+    func updateItem(model: AppointmentModel) {
+        
+    }
+    
+    func insertItem(model: AppointmentModel) {
+        
+    }
+    
+    func removeItem(model: AppointmentModel) {
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
