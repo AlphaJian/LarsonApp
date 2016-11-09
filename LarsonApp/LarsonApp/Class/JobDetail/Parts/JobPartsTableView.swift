@@ -14,6 +14,8 @@ class JobPartsTableView: UITableView, UITableViewDelegate, UITableViewDataSource
     
     var buttonTapHandler : ButtonTouchUpBlock?
     
+    var partDeleteHandler : CellTouchUpBlock?
+    
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
@@ -50,6 +52,14 @@ class JobPartsTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         let arr = dic.value(forKey: str) as! NSArray
         let model = arr[indexPath.row] as! PartModel
         cell.initUI(model: model, index: indexPath)
+        
+        cell.deleteHandler = {(index, model) -> Void in
+            if self.partDeleteHandler != nil
+            {
+                self.partDeleteHandler!(index, model)
+            }
+        }
+        
         
         return cell
     }

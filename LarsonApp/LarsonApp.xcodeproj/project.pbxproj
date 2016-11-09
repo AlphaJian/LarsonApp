@@ -16,6 +16,8 @@
 		43137B4B1DD1AE3400F2D553 /* NavSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B4A1DD1AE3400F2D553 /* NavSearchView.swift */; };
 		43137B4D1DD1AE4B00F2D553 /* NavSearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43137B4C1DD1AE4B00F2D553 /* NavSearchView.xib */; };
 		43137B501DD1B0CE00F2D553 /* PartsResultTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B4F1DD1B0CE00F2D553 /* PartsResultTableView.swift */; };
+		43137B531DD1E19300F2D553 /* PartsResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B511DD1E19300F2D553 /* PartsResultTableViewCell.swift */; };
+		43137B541DD1E19300F2D553 /* PartsResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43137B521DD1E19300F2D553 /* PartsResultTableViewCell.xib */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -84,6 +86,8 @@
 		43137B4A1DD1AE3400F2D553 /* NavSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavSearchView.swift; sourceTree = "<group>"; };
 		43137B4C1DD1AE4B00F2D553 /* NavSearchView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavSearchView.xib; sourceTree = "<group>"; };
 		43137B4F1DD1B0CE00F2D553 /* PartsResultTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsResultTableView.swift; sourceTree = "<group>"; };
+		43137B511DD1E19300F2D553 /* PartsResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartsResultTableViewCell.swift; sourceTree = "<group>"; };
+		43137B521DD1E19300F2D553 /* PartsResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartsResultTableViewCell.xib; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -173,6 +177,8 @@
 			isa = PBXGroup;
 			children = (
 				43137B4F1DD1B0CE00F2D553 /* PartsResultTableView.swift */,
+				43137B511DD1E19300F2D553 /* PartsResultTableViewCell.swift */,
+				43137B521DD1E19300F2D553 /* PartsResultTableViewCell.xib */,
 			);
 			path = PartResultTableView;
 			sourceTree = "<group>";
@@ -541,6 +547,7 @@
 				43137B4D1DD1AE4B00F2D553 /* NavSearchView.xib in Resources */,
 				BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */,
 				434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */,
+				43137B541DD1E19300F2D553 /* PartsResultTableViewCell.xib in Resources */,
 				A77861211DBF573800BA17EE /* OptionView.xib in Resources */,
 				434395D21DBF4F3B00C12C37 /* LoginViewController.xib in Resources */,
 				BAE3E0011DD07C6E006E2B69 /* JobDetailView.xib in Resources */,
@@ -648,6 +655,7 @@
 				4344BA061DD023B4007C3872 /* FileUtility.swift in Sources */,
 				43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */,
 				43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */,
+				43137B531DD1E19300F2D553 /* PartsResultTableViewCell.swift in Sources */,
 				43137B3F1DD16A4700F2D553 /* JobPartsTableView.swift in Sources */,
 				434395C11DBF4EC900C12C37 /* BaseViewController.swift in Sources */,
 			);
