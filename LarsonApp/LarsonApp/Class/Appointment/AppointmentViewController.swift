@@ -15,7 +15,6 @@ class AppointmentViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print()
         initNavView(title: "Appointment List")
         initUI()
     }
@@ -23,7 +22,7 @@ class AppointmentViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.view.showhud()
+        self.tableview.showhud()
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
             
             DispatchQueue.main.async {
@@ -48,6 +47,17 @@ class AppointmentViewController: BaseViewController {
                 self.view.hidehud()
                 print(obj)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
     }
 
     func initUI(){
