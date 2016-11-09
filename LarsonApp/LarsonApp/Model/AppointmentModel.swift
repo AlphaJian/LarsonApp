@@ -21,7 +21,7 @@ class AppointmentModel: NSObject {
     var currentStatus : String!
     var customerAddress : String!
     var customerName : String!
-    var division : String!
+    var division = ""
     var jobDetail : String!
     var jobID : String!
     var jobType : String!
@@ -54,6 +54,7 @@ class AppointmentModel: NSObject {
         self.legacyId = dic["legacyId"] as! String
         self.partsReqInTruckNum = dic["partsReqInTruckNum"] as! Int
         self.partsReqNum = dic["partsReqNum"] as! Int
+        self.division = dic.checkValueIfNil(key: "division", oldValue: self.division)
     }
     
     func initWithDic (dic : NSDictionary) {

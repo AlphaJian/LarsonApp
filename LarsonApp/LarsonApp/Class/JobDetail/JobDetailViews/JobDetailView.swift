@@ -76,7 +76,7 @@ class JobDetailView: UIView {
         sitePhone.initUI(title: "Site Phone", text: "\(model.contactNumber!)")
         
         appointmentStatus.initUI(title: "Appointment Status", text: "\(model.currentStatus!)")
-        division.initUI(title: "Division", text: "\(model.division!)")
+        division.initUI(title: "Division", text: "\(model.division)")
         
         callStatus.initUI(title: "Call Status", text: "\(model.callStatus!)")
         

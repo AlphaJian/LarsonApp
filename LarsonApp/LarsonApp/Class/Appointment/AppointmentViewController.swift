@@ -36,6 +36,9 @@ class AppointmentViewController: BaseViewController {
  , style: .plain)
         tableview.cellClickBlock = { (model: AnyObject) in
             let appointmentModel = model as! AppointmentModel
+            let vc = JobDetailViewController()
+            vc.model = appointmentModel
+            self.navigationController?.pushViewController(vc, animated: true)
             print(appointmentModel.appointmentId)
         }
 
