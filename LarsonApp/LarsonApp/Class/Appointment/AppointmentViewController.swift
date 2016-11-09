@@ -11,6 +11,8 @@ import UIKit
 class AppointmentViewController: BaseViewController {
     var tableview : AppointmentsTableView!
     
+    var listBlock : ReturnBlock?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print()
@@ -21,12 +23,29 @@ class AppointmentViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.view.showhud()
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
+            
             DispatchQueue.main.async {
+                var arrNew = [AppointmentModel]()
+                if self.listBlock != nil {
+                    let arrayList = obj as! [AppointmentModel]
+                    arrNew = arrayList.filter({ (model) -> Bool in
+                        model.currentStatus.lowercased() == "new"
+                    })
+                    if arrNew.count > 0 {
+                        self.listBlock!(arrNew[0] as AnyObject)
+                    } else {
+                        self.listBlock!(AppointmentModel() as AnyObject)
+                    }
+                    
+                }
+                self.view.hidehud()
                 self.tableview.items = obj as! [AppointmentModel]
                 self.tableview.reloadData()
             }
             }) { (obj) in
+                self.view.hidehud()
                 print(obj)
         }
     }

@@ -9,51 +9,51 @@
 import UIKit
 
 class AppointmentModel: NSObject {
-    var _id : String!
-    var appointmentId : String!
-    var callStatus : String!
-    var clientId : String!
-    var complete : Bool!
-    var contactName : String!
-    var contactNumber : String!
-    var contactPerson : String!
-    var currentFieldEngineerId : String!
-    var currentStatus : String!
-    var customerAddress : String!
-    var customerName : String!
-    var division : String!
-    var jobDetail : String!
-    var jobID : String!
-    var jobType : String!
-    var purchaseOrder : String!
-    var streetViewUrl : String!
-    var telephoneNumber : String!
-    var legacyId : String!
-    var partsReqInTruckNum: Int!
-    var partsReqNum: Int!
+    var _id = ""
+    var appointmentId = ""
+    var callStatus = ""
+    var clientId = ""
+    var complete = false
+    var contactName = ""
+    var contactNumber = ""
+    var contactPerson = ""
+    var currentFieldEngineerId = ""
+    var currentStatus = ""
+    var customerAddress = ""
+    var customerName = ""
+    var division = ""
+    var jobDetail = ""
+    var jobID = ""
+    var jobType = ""
+    var purchaseOrder = ""
+    var streetViewUrl = ""
+    var telephoneNumber = ""
+    var legacyId = ""
+    var partsReqInTruckNum = 0
+    var partsReqNum = 0
     
     func parseDicToSelf(dic : NSDictionary) {
-        self._id = dic["_id"] as! String
-        self.appointmentId = dic["appointmentId"] as! String
-        self.callStatus = dic["callStatus"] as! String
-        self.clientId = dic["clientId"] as! String
-        self.complete = dic["complete"] as! Bool
-        self.contactName = dic["contactName"] as! String
-        self.contactNumber = dic["contactNumber"] as! String
-        self.contactPerson = dic["contactPerson"] as! String
-        self.currentFieldEngineerId = dic["currentFieldEngineerId"] as! String
-        self.currentStatus = dic["currentStatus"] as! String
-        self.customerAddress = dic["customerAddress"] as! String
-        self.customerName = dic["customerName"] as! String
-        self.jobDetail = dic["jobDetail"] as! String
-        self.jobID = dic["jobID"] as! String
-        self.jobType = dic["jobType"] as! String
-        self.purchaseOrder = dic["purchaseOrder"] as! String
-        self.streetViewUrl = dic["streetViewUrl"] as! String
-        self.telephoneNumber = dic["telephoneNumber"] as! String
-        self.legacyId = dic["legacyId"] as! String
-        self.partsReqInTruckNum = dic["partsReqInTruckNum"] as! Int
-        self.partsReqNum = dic["partsReqNum"] as! Int
+        self._id = dic.checkValueIfNil(key: "id", oldValue: self._id)
+        self.appointmentId = dic.checkValueIfNil(key: "appointmentId", oldValue: self.appointmentId)
+        self.callStatus = dic.checkValueIfNil(key: "cellStatus", oldValue: self.callStatus)
+        self.clientId = dic.checkValueIfNil(key: "clientId", oldValue: self.clientId)
+        self.complete = dic.checkBoolIfNil(key: "complete", oldValue: self.complete)
+        self.contactName = dic.checkValueIfNil(key: "contactName", oldValue: self.contactName)
+        self.contactNumber = dic.checkValueIfNil(key: "contactNumber", oldValue: self.contactNumber)
+        self.contactPerson = dic.checkValueIfNil(key: "contactPerson", oldValue: self.contactPerson)
+        self.currentFieldEngineerId = dic.checkValueIfNil(key: "currentFieldEngineerId", oldValue: self.currentFieldEngineerId)
+        self.currentStatus = dic.checkValueIfNil(key: "currentStatus", oldValue: self.currentStatus)
+        self.customerAddress = dic.checkValueIfNil(key: "customerAddress", oldValue: self.customerAddress)
+        self.customerName = dic.checkValueIfNil(key: "customerName", oldValue: self.customerName)
+        self.jobDetail = dic.checkValueIfNil(key: "jobDetail", oldValue: self.jobDetail)
+        self.jobID = dic.checkValueIfNil(key: "jobID", oldValue: self.jobID)
+        self.jobType = dic.checkValueIfNil(key: "jobType", oldValue: self.jobType)
+        self.purchaseOrder = dic.checkValueIfNil(key: "purchaseOrder", oldValue: self.purchaseOrder)
+        self.streetViewUrl = dic.checkValueIfNil(key: "streetViewUrl", oldValue: self.streetViewUrl)
+        self.telephoneNumber = dic.checkValueIfNil(key: "telephoneNumber", oldValue: self.telephoneNumber)
+        self.legacyId = dic.checkValueIfNil(key: "legacyId", oldValue: self.legacyId)
+        self.partsReqInTruckNum = dic.checkIntIfNil(key: "partsReqInTruckNum", oldValue: self.partsReqInTruckNum)
+        self.partsReqNum = dic.checkIntIfNil(key: "partsReqNum", oldValue: self.partsReqNum)
     }
     
     func initWithDic (dic : NSDictionary) {
