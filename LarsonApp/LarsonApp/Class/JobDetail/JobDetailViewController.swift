@@ -13,7 +13,6 @@ class JobDetailViewController: BaseViewController {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
-    var titleArr = ["DETAILS","PARTS","SITE HISTORY","WORK ORDER","TIMESHEET","INVOICE"]
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -26,24 +25,15 @@ class JobDetailViewController: BaseViewController {
         // Do any additional setup after loading the view.
         initNavView(title: "Appointment Detail")
         initUI()
-        fetchData()
+        loadData()
+        fetchPartsData()
         
     }
     
-    func fetchData(){
+    func loadData(){
         if model != nil
         {
             self.jobDetailView?.initUI(model: self.model!)
-
-            DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
-                DispatchQueue.main.async {
-                    self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
-                    self.partsView?.reloadData()
-                }
-            }) { (obj) in
-                print(obj)
-            }
-
         }
         
     }
@@ -77,12 +67,24 @@ class JobDetailViewController: BaseViewController {
         partsView?.partDeleteHandler = {[unowned self](indexPath, partModel) -> Void in
             let childStr = (self.partsView?.dataItems[indexPath.section] as! NSDictionary).allKeys[0] as! String
             DataManager.shareManager.deleteJobParts(jobId: (self.model?._id)!, childStr: childStr, partId: partModel._id, successHandler: { (obj) in
-                print("----")
+                self.fetchPartsData()
                 }, failHandeler: { (obj) in
                     
             })
         }
     }
+    
+    func fetchPartsData(){
+        DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
+            DispatchQueue.main.async {
+                self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
+                self.partsView?.reloadData()
+            }
+        }) { (obj) in
+            print(obj)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
