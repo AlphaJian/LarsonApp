@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var tabVC : TabViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //        FIRApp.configure()
@@ -56,8 +57,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initMainVC(){
-        let vc = TabViewController()
-        self.window?.rootViewController = vc
+        tabVC = TabViewController()
+        self.window?.rootViewController = tabVC
         self.window?.makeKeyAndVisible()
         
     }

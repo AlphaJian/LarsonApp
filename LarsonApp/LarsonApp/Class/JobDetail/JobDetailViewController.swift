@@ -13,7 +13,7 @@ class JobDetailViewController: BaseViewController {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
-    var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
+    var titleArr = ["DETAILS","PARTS","SITE HISTORY","WORK ORDER","TIMESHEET","INVOICE"]
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -26,28 +26,26 @@ class JobDetailViewController: BaseViewController {
         // Do any additional setup after loading the view.
         initNavView(title: "Appointment Detail")
         initUI()
+        fetchData()
         
-        DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
-            print(obj)
-            DispatchQueue.main.async {
-                self.model = (obj as! [AppointmentModel])[0]
-                self.jobDetailView?.initUI(model: self.model!)
-            }
-        }) { (obj) in
-            print(obj)
-        }
-        if model?._id == nil
+    }
+    
+    func fetchData(){
+        if model != nil
         {
-            model?._id = "-KTTnbrt7qeWyMx02KOU"
-        }
-        DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
-            DispatchQueue.main.async {
-                self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
-                self.partsView?.reloadData()
+            self.jobDetailView?.initUI(model: self.model!)
+
+            DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
+                DispatchQueue.main.async {
+                    self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
+                    self.partsView?.reloadData()
+                }
+            }) { (obj) in
+                print(obj)
             }
-        }) { (obj) in
-            print(obj)
+
         }
+        
     }
     
     func initUI(){

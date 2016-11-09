@@ -51,7 +51,7 @@ class DataManager: NSObject {
 //        let data = ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").queryOrdered(byChild: "currentStatus")
 //        print("data => \(data)")
         var appointmentLists = [AppointmentModel]()
-        let firebaseQuery = ref.child("engineerApp").child("engineers-appointments").child("zQr2KES4X9bLham9UBKh4bkjDDE3").queryOrdered(byChild: "currentStatus")
+        let firebaseQuery = ref.child("engineerApp").child("engineers-appointments").child("2Rat7LNQQNeuyJhCBej8rbwY4rl2").queryOrdered(byChild: "currentStatus")
         
         
         let group = DispatchGroup()
@@ -139,7 +139,14 @@ class DataManager: NSObject {
         ref.child("engineerApp").child("appointment-parts").child(jobId).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let dic = snapshot.value as? NSDictionary
-            successHandler(dic!)
+            if dic == nil
+            {
+                failHandeler("No Parts Here" as AnyObject)
+            }
+            else
+            {
+                successHandler(dic!)
+            }
         }) { (error) in
             print(error.localizedDescription)
             failHandeler("Can't load parts" as AnyObject)

@@ -33,7 +33,7 @@ class AppointmentModel: NSObject {
     var partsReqNum = 0
     
     func parseDicToSelf(dic : NSDictionary) {
-        self._id = dic.checkValueIfNil(key: "id", oldValue: self._id)
+        self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
         self.appointmentId = dic.checkValueIfNil(key: "appointmentId", oldValue: self.appointmentId)
         self.callStatus = dic.checkValueIfNil(key: "cellStatus", oldValue: self.callStatus)
         self.clientId = dic.checkValueIfNil(key: "clientId", oldValue: self.clientId)

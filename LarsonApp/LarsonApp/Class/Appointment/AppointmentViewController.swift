@@ -15,14 +15,13 @@ class AppointmentViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print()
-        initNavView(title: "Appointment List")
-        initUI()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initNavView(title: "Appointment List")
+        initUI()
         self.view.showhud()
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
             
@@ -55,7 +54,9 @@ class AppointmentViewController: BaseViewController {
  , style: .plain)
         tableview.cellClickBlock = { (model: AnyObject) in
             let appointmentModel = model as! AppointmentModel
-            print(appointmentModel.appointmentId)
+            let vc = JobDetailViewController()
+            vc.model = appointmentModel
+            self.navigationController?.pushViewController(vc, animated: true)
         }
 
         self.view.addSubview(tableview)
