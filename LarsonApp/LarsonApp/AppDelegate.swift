@@ -22,12 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        FIRApp.configure()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        //        initMainVC()
-                
+        self.window?.backgroundColor = UIColor.white
+
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.white
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
         GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
+            vc.removeFromParentViewController()
             self.initMainVC()
         }) {
-            
+            vc.removeFromParentViewController()
             self.initLogin()
         }
         
@@ -59,13 +64,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func initMainVC(){
         tabVC = TabViewController()
         self.window?.rootViewController = tabVC
-        self.window?.makeKeyAndVisible()
         
     }
     func initLogin() {
         let vc = LoginViewController()
         self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
         
     }
     func application(_ application: UIApplication,

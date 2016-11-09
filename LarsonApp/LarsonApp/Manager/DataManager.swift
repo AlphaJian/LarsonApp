@@ -52,10 +52,7 @@ class DataManager: NSObject {
 //        let data = ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").queryOrdered(byChild: "currentStatus")
 //        print("data => \(data)")
         var appointmentLists = [AppointmentModel]()
-        
         let firebaseQuery = ref.child("engineerApp").child("engineers-appointments").child(self.referenceStr).queryOrdered(byChild: "currentStatus")
-        
-        
         
         let group = DispatchGroup()
         let backgroundQueue = DispatchQueue(label: "com.app.queue",

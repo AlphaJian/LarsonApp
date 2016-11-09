@@ -12,6 +12,8 @@ class TabViewController: UITabBarController {
 
     var newAppointment = AppointmentModel()
     
+    var jobDetailModel = AppointmentModel()
+    
     var first : AppointmentViewController!
     var second : JobDetailViewController!
     var third : PartSearchViewController!

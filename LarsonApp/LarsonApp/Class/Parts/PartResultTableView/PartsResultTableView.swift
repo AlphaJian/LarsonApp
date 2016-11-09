@@ -12,6 +12,8 @@ class PartsResultTableView: UITableView, UITableViewDelegate, UITableViewDataSou
 
     var dataItems = [PartModel]()
     
+    var cellTapHandler : CellTouchUpBlock?
+
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
         self.delegate = self
@@ -39,6 +41,13 @@ class PartsResultTableView: UITableView, UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 70
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if cellTapHandler != nil
+        {
+            cellTapHandler!(indexPath, dataItems[indexPath.row])
+        }
     }
 
 }

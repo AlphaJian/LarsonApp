@@ -21,6 +21,11 @@ typealias ReturnWithTwoParmsBlock = (AnyObject,AnyObject) -> Void
 typealias ReturnWithThreeParmsBlock = (AnyObject,AnyObject,AnyObject) -> Void
 typealias ReturnWithFourParmsBlock = (AnyObject,AnyObject,AnyObject,AnyObject) -> Void
 
+typealias TextFieldStartBlock = () -> Void
+typealias TextFieldFinishBlock = (String) -> Void
+typealias TextFieldLeaveBlock = (String) -> Void
+typealias TextFieldReturnBlock = () -> Void
+
 let LCDW : CGFloat = UIScreen.main.bounds.size.width
 let LCDH : CGFloat = UIScreen.main.bounds.size.height
 

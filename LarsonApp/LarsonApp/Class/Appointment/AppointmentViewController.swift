@@ -25,7 +25,7 @@ class AppointmentViewController: BaseViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        initNavView(title: "Appointment List")
+        initNavView(title: "Appointment List", bolBack: false)
         initUI()
         self.view.showhud()
         
@@ -127,6 +127,10 @@ class AppointmentViewController: BaseViewController {
             let appointmentModel = model as! AppointmentModel
             let vc = JobDetailViewController()
             vc.model = appointmentModel
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.tabVC?.jobDetailModel = appointmentModel
+            
             self.navigationController?.pushViewController(vc, animated: true)
         }
 

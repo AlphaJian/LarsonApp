@@ -17,7 +17,7 @@ class PartsResultTableViewCell: UITableViewCell {
     
     var model : PartModel?
     var indexPath : IndexPath?
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -47,25 +47,36 @@ class PartSearchViewController: BaseViewController {
             }
             else
             {
-                self.navigationController?.popViewController(animated: true)
+                let _ = self.navigationController?.popViewController(animated: true)
             }
         }
         navSearchView?.searchHandler = {(keywords) -> Void in
-            self.view.showhud()
-            DataManager.shareManager.searchParts(keywords: keywords as! String, successHandler: { (results) in
-                DispatchQueue.main.async {
-                    self.view.hidehud()
-                    self.partsResultTableView?.dataItems = PartsManager.shareManager.parsePartsDicToModel(dic: results as! NSDictionary)
-                    self.partsResultTableView?.reloadData()
-                }
-                
-                }, failHandeler: {(obj)in})
+            self.fetchPartsResult(keywords: keywords as! String)
         }
+    }
+    
+    func fetchPartsResult(keywords : String){
+        self.view.showhud()
+        DataManager.shareManager.searchParts(keywords: keywords, successHandler: { (results) in
+            DispatchQueue.main.async {
+                self.view.hidehud()
+                self.partsResultTableView?.dataItems = PartsManager.shareManager.parsePartsDicToModel(dic: results as! NSDictionary)
+                self.partsResultTableView?.reloadData()
+            }
+            
+            }, failHandeler: {(obj)in})
+
     }
     
     func initUI(){
         partsResultTableView = PartsResultTableView(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64), style: .plain)
         self.view.addSubview(partsResultTableView!)
+        
+        partsResultTableView?.cellTapHandler = {(index, model) -> Void in
+            let vc = PartRequestViewController()
+            vc.partModel = model as? PartModel
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
     }
 
     override func didReceiveMemoryWarning() {
