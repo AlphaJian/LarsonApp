@@ -18,7 +18,6 @@ class CompleteAppointmentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.layer.cornerRadius = 4.0
-        self.containerView.layer.shouldRasterize = true
         // Initialization code
     }
     

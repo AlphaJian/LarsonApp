@@ -13,6 +13,7 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     var items = [AppointmentModel]()
     
     var cellClickBlock: ReturnBlock?
+    var cellPhoneBlock: ReturnBlock?
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
