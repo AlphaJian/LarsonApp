@@ -26,28 +26,26 @@ class JobDetailViewController: BaseViewController {
         // Do any additional setup after loading the view.
         initNavView(title: "Appointment Detail")
         initUI()
+        fetchData()
         
-        DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
-            print(obj)
-            DispatchQueue.main.async {
-                self.model = (obj as! [AppointmentModel])[0]
-                self.jobDetailView?.initUI(model: self.model!)
-            }
-        }) { (obj) in
-            print(obj)
-        }
-        if model?._id == nil
+    }
+    
+    func fetchData(){
+        if model != nil
         {
-            model?._id = "-KTTnbUhVzkCaJDHgzVt"
-        }
-        DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
-            DispatchQueue.main.async {
-                self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
-                self.partsView?.reloadData()
+            self.jobDetailView?.initUI(model: self.model!)
+
+            DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
+                DispatchQueue.main.async {
+                    self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
+                    self.partsView?.reloadData()
+                }
+            }) { (obj) in
+                print(obj)
             }
-        }) { (obj) in
-            print(obj)
+
         }
+        
     }
     
     func initUI(){
@@ -78,7 +76,7 @@ class JobDetailViewController: BaseViewController {
         }
         partsView?.partDeleteHandler = {[unowned self](indexPath, partModel) -> Void in
             let childStr = (self.partsView?.dataItems[indexPath.section] as! NSDictionary).allKeys[0] as! String
-            DataManager.shareManager.deleteJobParts(jobId: "-KTTnbUhVzkCaJDHgzVt", childStr: childStr, partId: partModel._id, successHandler: { (obj) in
+            DataManager.shareManager.deleteJobParts(jobId: (self.model?._id)!, childStr: childStr, partId: partModel._id, successHandler: { (obj) in
                 print("----")
                 }, failHandeler: { (obj) in
                     

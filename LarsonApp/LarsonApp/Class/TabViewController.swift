@@ -10,6 +10,13 @@ import UIKit
 
 class TabViewController: UITabBarController {
 
+    var newAppointment = AppointmentModel()
+    
+    var first : AppointmentViewController!
+    var second : JobDetailViewController!
+    var third : PartSearchViewController!
+    var four : ChatViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,29 +25,33 @@ class TabViewController: UITabBarController {
     }
 
     func initUI() {
-        let first = AppointmentViewController()
+        first = AppointmentViewController()
         self.addChildVC(childVC: first)
         first.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)
             
         }
+        first.listBlock = { (obj) in
+            self.newAppointment = obj as! AppointmentModel
+            self.second.model = self.newAppointment
+        }
         
-        let second = JobDetailViewController()
-        second.model = AppointmentModel()
+        second = JobDetailViewController()
+        second.model = self.newAppointment
         self.addChildVC(childVC: second)
         second.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)
             
         }
         
-        let third = PartSearchViewController()
+        third = PartSearchViewController()
         self.addChildVC(childVC: third)
         third.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)
             
         }
         
-        let four = ChatViewController()
+        four = ChatViewController()
         self.addChildVC(childVC: four)
         four.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)

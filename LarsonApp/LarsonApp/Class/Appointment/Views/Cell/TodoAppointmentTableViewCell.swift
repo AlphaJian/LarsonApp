@@ -33,7 +33,7 @@ class TodoAppointmentTableViewCell: UITableViewCell {
         self.legacyIdLabel.text = model.legacyId
         self.nameLabel.text = model.customerName
         self.addressLabel.text = model.customerAddress
-        self.trunkLabel.text = "\(model.partsReqInTruckNum!) of \(model.partsReqNum!) parts\n in Truck"
+        self.trunkLabel.text = "\(model.partsReqInTruckNum) of \(model.partsReqNum) parts\n in Truck"
         self.phoneStr = model.telephoneNumber
         self.legacyID = model.legacyId
     }

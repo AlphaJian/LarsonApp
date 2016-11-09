@@ -72,17 +72,17 @@ class JobDetailView: UIView {
         middleViewHeight.constant =  descriptionHeight.constant + 280
         
         
-        contactPerson.initUI(title: "Contact Person", text: "\(model.contactName!)")
-        sitePhone.initUI(title: "Site Phone", text: "\(model.contactNumber!)")
+        contactPerson.initUI(title: "Contact Person", text: "\(model.contactName)")
+        sitePhone.initUI(title: "Site Phone", text: "\(model.contactNumber)")
         
-        appointmentStatus.initUI(title: "Appointment Status", text: "\(model.currentStatus!)")
+        appointmentStatus.initUI(title: "Appointment Status", text: "\(model.currentStatus)")
         division.initUI(title: "Division", text: "\(model.division)")
         
-        callStatus.initUI(title: "Call Status", text: "\(model.callStatus!)")
+        callStatus.initUI(title: "Call Status", text: "\(model.callStatus)")
         
-        typeOfCall.initUI(title: "Type of Call", text: "\(model.jobType!)")
+        typeOfCall.initUI(title: "Type of Call", text: "\(model.jobType)")
         
-        po.initUI(title: "PO#", text: "\(model.purchaseOrder!)")
+        po.initUI(title: "PO#", text: "\(model.purchaseOrder)")
         
         
     }

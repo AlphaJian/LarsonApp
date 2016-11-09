@@ -11,22 +11,40 @@ import UIKit
 class AppointmentViewController: BaseViewController {
     var tableview : AppointmentsTableView!
     
+    var listBlock : ReturnBlock?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print()
-        initNavView(title: "Appointment List")
-        initUI()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        initNavView(title: "Appointment List")
+        initUI()
+        self.view.showhud()
         DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
+            
             DispatchQueue.main.async {
+                var arrNew = [AppointmentModel]()
+                if self.listBlock != nil {
+                    let arrayList = obj as! [AppointmentModel]
+                    arrNew = arrayList.filter({ (model) -> Bool in
+                        model.currentStatus.lowercased() == "new"
+                    })
+                    if arrNew.count > 0 {
+                        self.listBlock!(arrNew[0] as AnyObject)
+                    } else {
+                        self.listBlock!(AppointmentModel() as AnyObject)
+                    }
+                    
+                }
+                self.view.hidehud()
                 self.tableview.items = obj as! [AppointmentModel]
                 self.tableview.reloadData()
             }
             }) { (obj) in
+                self.view.hidehud()
                 print(obj)
         }
     }
@@ -39,7 +57,6 @@ class AppointmentViewController: BaseViewController {
             let vc = JobDetailViewController()
             vc.model = appointmentModel
             self.navigationController?.pushViewController(vc, animated: true)
-            print(appointmentModel.appointmentId)
         }
 
         self.view.addSubview(tableview)
