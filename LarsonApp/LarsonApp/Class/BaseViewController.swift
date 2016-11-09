@@ -38,28 +38,31 @@ class BaseViewController: UIViewController {
                 
             }
             navHeaderView?.opertionBtnHandler = {
-                self.optionView = (Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView)!
-                 self.optionView.items = self.items
-                self.optionView.frame = self.view.bounds
-                self.optionView.initUI()
-                
-                self.view.addSubview(self.optionView)
-                self.optionView.cellTouchUpHandler = {(index, obj) -> Void in
-                    if index.row == 4
-                    {
-                        GoogleSignInManager.sharedManager.signOut()
-                        return
-                    }
-                    self.items["didSelect"] = index.item
-                    self.optionView.handleSwipeGesture()
-                    if self.sideBarTappedHandler != nil
-                    {
-                        self.sideBarTappedHandler!(index.row as AnyObject)
-                    }
-                }
+                self.initSideBar()
             }
         }
-}
+    }
+    func initSideBar(){
+        self.optionView = (Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView)!
+        self.optionView.items = self.items
+        self.optionView.frame = self.view.bounds
+        self.optionView.initUI()
+        
+        self.view.addSubview(self.optionView)
+        self.optionView.cellTouchUpHandler = {(index, obj) -> Void in
+            if index.row == 4
+            {
+                GoogleSignInManager.sharedManager.signOut()
+                return
+            }
+            self.items["didSelect"] = index.item
+            self.optionView.handleSwipeGesture()
+            if self.sideBarTappedHandler != nil
+            {
+                self.sideBarTappedHandler!(index.row as AnyObject)
+            }
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

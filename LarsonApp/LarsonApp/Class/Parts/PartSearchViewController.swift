@@ -12,6 +12,8 @@ class PartSearchViewController: BaseViewController {
 
     var partsResultTableView : PartsResultTableView?
     
+    var bolTabVC  = true
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -29,9 +31,24 @@ class PartSearchViewController: BaseViewController {
         let navSearchView = Bundle.main.loadNibNamed("NavSearchView", owner: self, options: nil)?[0] as? NavSearchView
         navSearchView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: 64)
         self.view.addSubview(navSearchView!)
+        if bolTabVC == true
+        {
+            navSearchView?.btn.setImage(UIImage(named: "Menu"), for: .normal)
+        }
+        else
+        {
+            navSearchView?.btn.setImage(UIImage(named: "CloseWhite"), for: .normal)
+        }
         
         navSearchView?.btnTappedHandler = {
-            self.navigationController?.popViewController(animated: true)
+            if self.bolTabVC == true
+            {
+                self.initSideBar()
+            }
+            else
+            {
+                self.navigationController?.popViewController(animated: true)
+            }
         }
         navSearchView?.searchHandler = {(keywords) -> Void in
             self.view.showhud()

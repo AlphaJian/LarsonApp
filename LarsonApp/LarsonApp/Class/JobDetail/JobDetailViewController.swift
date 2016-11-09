@@ -36,8 +36,11 @@ class JobDetailViewController: BaseViewController {
         }) { (obj) in
             print(obj)
         }
-        
-        DataManager.shareManager.fetchJobParts(jobId: "-KTTnbrt7qeWyMx02KOU", successHandler: { (obj) in
+        if model?._id == nil
+        {
+            model?._id = "-KTTnbrt7qeWyMx02KOU"
+        }
+        DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
             DispatchQueue.main.async {
                 self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
                 self.partsView?.reloadData()
@@ -70,7 +73,16 @@ class JobDetailViewController: BaseViewController {
         
         partsView?.buttonTapHandler = {
             let vc = PartSearchViewController()
+            vc.bolTabVC = false
             self.navigationController?.pushViewController(vc, animated: true)
+        }
+        partsView?.partDeleteHandler = {[unowned self](indexPath, partModel) -> Void in
+            let childStr = (self.partsView?.dataItems[indexPath.section] as! NSDictionary).allKeys[0] as! String
+            DataManager.shareManager.deleteJobParts(jobId: (self.model?._id)!, childStr: childStr, partId: partModel._id, successHandler: { (obj) in
+                print("----")
+                }, failHandeler: { (obj) in
+                    
+            })
         }
     }
     override func didReceiveMemoryWarning() {

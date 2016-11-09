@@ -26,13 +26,14 @@ class TabViewController: UITabBarController {
         }
         
         let second = JobDetailViewController()
+        second.model = AppointmentModel()
         self.addChildVC(childVC: second)
         second.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)
             
         }
         
-        let third = PartsViewController()
+        let third = PartSearchViewController()
         self.addChildVC(childVC: third)
         third.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)

@@ -23,11 +23,11 @@ class DataManager: NSObject {
     func insertUser(emial : String, accessToken : String){
         let tempRef = ref.child("engineerApp").child("user-info").childByAutoId()
         tempRef.setValue(["email":emial, "token":accessToken])
-//        tempRef.updateChildValues([tempRef.childByAutoId():["email":emial, "token":accessToken]])
+        //        tempRef.updateChildValues([tempRef.childByAutoId():["email":emial, "token":accessToken]])
     }
     
     func fetchAppointList(successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
-        ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("engineerApp").child("engineers-appointments").child("2Rat7LNQQNeuyJhCBej8rbwY4rl2").observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
             let dic = snapshot.value as? NSDictionary
             var arr = [AppointmentModel]()
@@ -36,7 +36,7 @@ class DataManager: NSObject {
                 let tempDic = dic?.allValues[i] as? NSDictionary
                 let model = AppointmentModel()
                 model.initWithDic(dic: tempDic!)
-//                model.parseDicToSelf(dic: tempDic!)
+                //                model.parseDicToSelf(dic: tempDic!)
                 arr.append(model)
             }
             successHandler(arr as AnyObject)
@@ -60,6 +60,32 @@ class DataManager: NSObject {
     
     func searchParts(keywords : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
     {
-//        ref.child("parts").queryStarting(atValue: <#T##Any?#>)
+        ref.child("search").child("response").observe(.childAdded, with: { (snapshot) in
+            print(snapshot)
+        })
+        let tempRef = ref.child("search").child("request").childByAutoId()
+        let tempStr = ref.child("search").child("request").description()
+        let requestId = StringUtil.getSpecWordToEnd(oldStr: tempRef.description(), middleStr: tempStr)
+        
+        tempRef.setValue(["index":kPartSearchIndex,"query":"ab","size":kPartSearchSize,"type":kPartSearchType]) { (error, ref) in
+            self.fetchRes(req: requestId, successHandler: successHandler, failHandeler: failHandeler)
+        }
+    }
+    
+    func fetchRes(req : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
+        ref.child("search").child("response").child(req).observeSingleEvent(of: .value, with: { (snapshot) in
+            let dic = snapshot.value as? NSDictionary
+            successHandler(dic!)
+        })
+    }
+    
+    func deleteJobParts(jobId : String, childStr : String, partId : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
+        deleteDataRequest(ref:ref.child("engineerApp").child("appointment-parts").child(jobId).child(childStr).child(partId)
+            , successHandler: successHandler, failHandeler: failHandeler)
+    }
+    
+    func deleteDataRequest(ref : FIRDatabaseReference, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
+        ref.removeValue()
+        successHandler(NSNull.self)
     }
 }

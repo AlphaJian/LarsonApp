@@ -11,7 +11,7 @@ import UIKit
 typealias ButtonTouchUpBlock = () -> Void
 typealias ButtonTouchUpWithParmBlock = (AnyObject) -> Void
 
-typealias CellTouchUpBlock = (NSIndexPath, AnyObject) -> Void
+typealias CellTouchUpBlock = (IndexPath, AnyObject) -> Void
 
 typealias ReturnBlock = (AnyObject) -> Void
 
