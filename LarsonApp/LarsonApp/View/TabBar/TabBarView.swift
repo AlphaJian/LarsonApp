@@ -18,7 +18,7 @@ class TabBarView: UIScrollView {
     }
     */
     var tabHandler : ReturnBlock?
-    var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
+    var titleArr = ["DETAILS","PARTS","SITE HISTORY","WORK ORDER","TIMESHEET","INVOICE"]
     let btnWidth = LCDW / 3
     let redLineHeight: CGFloat = 2
     
@@ -38,6 +38,7 @@ class TabBarView: UIScrollView {
         let btn = MKButton.init(frame: CGRect(x: CGFloat(i) * btnWidth, y: 0, width: btnWidth, height: frame.height))
             btn.tag = 10 + i
             btn.setTitle(titleArr[i], for: .normal)
+            btn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
             btn.addTarget(self, action: #selector(TabBarView.btnTapped), for: .touchUpInside)
             self.addSubview(btn)
         }
