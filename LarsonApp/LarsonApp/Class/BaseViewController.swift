@@ -25,12 +25,12 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = UIColor.white
     }
     
-    func initNavView(title : String){
+    func initNavView(title : String, bolBack : Bool){
         if bolLoaded == false
         {
             navHeaderView = Bundle.main.loadNibNamed("NavHeaderView", owner: self, options: nil)?[0] as? NavHeaderView
             navHeaderView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: 64)
-            navHeaderView?.initUI(str: title, bolBack: false)
+            navHeaderView?.initUI(str: title, bolBack: bolBack)
             self.view.addSubview(navHeaderView!)
             bolLoaded = true
             
@@ -38,10 +38,18 @@ class BaseViewController: UIViewController {
                 
             }
             navHeaderView?.opertionBtnHandler = {
-                self.initSideBar()
+                if bolBack == true
+                {
+                    let _ = self.navigationController?.popViewController(animated: true)
+                }
+                else
+                {
+                    self.initSideBar()
+                }
             }
         }
     }
+    
     func initSideBar(){
         self.optionView = (Bundle.main.loadNibNamed("OptionView", owner: self, options: nil)?[0] as? OptionView)!
         self.optionView.items = self.items
@@ -70,6 +78,11 @@ class BaseViewController: UIViewController {
 //                self.sideBarTappedHandler!(index.row as AnyObject)
 //            }
         }
+    }
+    
+    func getBaseTabVC() -> TabViewController{
+        let appDelegate = UIApplication.shared.delegate as? AppDelegate
+        return (appDelegate?.tabVC)!
     }
 
     override func didReceiveMemoryWarning() {

@@ -23,7 +23,7 @@ class JobDetailViewController: BaseViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        initNavView(title: "Appointment Detail")
+        initNavView(title: "Appointment Detail", bolBack: false)
         initUI()
         loadData()
         fetchPartsData()
