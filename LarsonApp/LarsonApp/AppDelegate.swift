@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         //        initMainVC()
-        
+                
         GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
             self.initMainVC()
         }) {
@@ -31,7 +31,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         configReceiveNotification(application: application)
-        
         return true
     }
     
