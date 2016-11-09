@@ -34,6 +34,7 @@ class AppointmentViewController: BaseViewController {
             if self.tableview != nil {
                 var inProgressIndex = 0
                 var completeIndex = 0
+                var tempModel: AppointmentModel? = nil
                 
                 let dic = snapshot.value as? NSDictionary
                 var arr = [AppointmentModel]()
@@ -46,6 +47,7 @@ class AppointmentViewController: BaseViewController {
                     
                     if model.currentStatus.lowercased() == "new" {
                         arr.insert(model, at: 0)
+                        tempModel = model
                         inProgressIndex += 1
                         completeIndex += 1
                     } else if model.currentStatus.lowercased() == "in progress" {
@@ -59,12 +61,9 @@ class AppointmentViewController: BaseViewController {
                 }
 
                 DispatchQueue.main.async {
-                    var arrNew = arr.filter({ (model) -> Bool in
-                        model.currentStatus.lowercased() == "new"
-                    })
                     if self.listBlock != nil {
-                        if arrNew.count > 0 {
-                            self.listBlock!(arrNew[0] as AnyObject)
+                        if tempModel != nil {
+                            self.listBlock!(tempModel as AnyObject)
                         } else {
                             self.listBlock!(AppointmentModel() as AnyObject)
                         }
