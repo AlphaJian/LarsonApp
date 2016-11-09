@@ -10,6 +10,8 @@ import UIKit
 
 class TabViewController: UITabBarController {
 
+    var newAppointment = AppointmentModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +25,10 @@ class TabViewController: UITabBarController {
         first.sideBarTappedHandler = {(inex) -> Void in
             self.selectedIndex = NSInteger(inex as! NSNumber)
             
+        }
+        first.listBlock = { (obj) in
+            self.newAppointment = obj as! AppointmentModel
+            print("newAppointment =>=> \(self.newAppointment)")
         }
         
         let second = JobDetailViewController()

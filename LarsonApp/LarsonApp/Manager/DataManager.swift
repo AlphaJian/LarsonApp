@@ -51,7 +51,7 @@ class DataManager: NSObject {
 //        let data = ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").queryOrdered(byChild: "currentStatus")
 //        print("data => \(data)")
         var appointmentLists = [AppointmentModel]()
-        let firebaseQuery = ref.child("engineerApp").child("engineers-appointments").child("2Rat7LNQQNeuyJhCBej8rbwY4rl2").queryOrdered(byChild: "currentStatus")
+        let firebaseQuery = ref.child("engineerApp").child("engineers-appointments").child("zQr2KES4X9bLham9UBKh4bkjDDE3").queryOrdered(byChild: "currentStatus")
         
         
         let group = DispatchGroup()
@@ -67,14 +67,15 @@ class DataManager: NSObject {
             group.enter()
             firebaseQuery.queryEqual(toValue: "NEW").observeSingleEvent(of: .value, with: { (snapshot) in
                 let dic = snapshot.value as? NSDictionary
-                
-                for i in 0...(dic?.allValues.count)! - 1
-                {
-                    let tempDic = dic?.allValues[i] as? NSDictionary
-                    let model = AppointmentModel()
-                    //                model.initWithDic(dic: tempDic!)
-                    model.parseDicToSelf(dic: tempDic!)
-                    arrNew.append(model)
+                if dic != nil {
+                    for i in 0...(dic?.allValues.count)! - 1
+                    {
+                        let tempDic = dic?.allValues[i] as? NSDictionary
+                        let model = AppointmentModel()
+                        //                model.initWithDic(dic: tempDic!)
+                        model.parseDicToSelf(dic: tempDic!)
+                        arrNew.append(model)
+                    }
                 }
                 group.leave()
             }, withCancel: { (error) in
@@ -86,15 +87,17 @@ class DataManager: NSObject {
             group.enter()
             firebaseQuery.queryEqual(toValue: "IN PROGRESS").observeSingleEvent(of: .value, with: { (snapshot) in
                 let dic = snapshot.value as? NSDictionary
-                
-                for i in 0...(dic?.allValues.count)! - 1
-                {
-                    let tempDic = dic?.allValues[i] as? NSDictionary
-                    let model = AppointmentModel()
-                    //                model.initWithDic(dic: tempDic!)
-                    model.parseDicToSelf(dic: tempDic!)
-                    arrProgress.append(model)
+                if dic != nil {
+                    for i in 0...(dic?.allValues.count)! - 1
+                    {
+                        let tempDic = dic?.allValues[i] as? NSDictionary
+                        let model = AppointmentModel()
+                        //                model.initWithDic(dic: tempDic!)
+                        model.parseDicToSelf(dic: tempDic!)
+                        arrProgress.append(model)
+                    }
                 }
+
                 group.leave()
             }, withCancel: { (error) in
                 print(error.localizedDescription)
@@ -105,14 +108,15 @@ class DataManager: NSObject {
             group.enter()
             firebaseQuery.queryEqual(toValue: "COMPLETED").observeSingleEvent(of: .value, with: { (snapshot) in
                 let dic = snapshot.value as? NSDictionary
-                
-                for i in 0...(dic?.allValues.count)! - 1
-                {
-                    let tempDic = dic?.allValues[i] as? NSDictionary
-                    let model = AppointmentModel()
-                    //                model.initWithDic(dic: tempDic!)
-                    model.parseDicToSelf(dic: tempDic!)
-                    arrCompleted.append(model)
+                if dic != nil {
+                    for i in 0...(dic?.allValues.count)! - 1
+                    {
+                        let tempDic = dic?.allValues[i] as? NSDictionary
+                        let model = AppointmentModel()
+                        //                model.initWithDic(dic: tempDic!)
+                        model.parseDicToSelf(dic: tempDic!)
+                        arrCompleted.append(model)
+                    }
                 }
                 group.leave()
             }, withCancel: { (error) in
@@ -128,26 +132,6 @@ class DataManager: NSObject {
             
             successHandler(appointmentLists as AnyObject)
         }
-//        ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").queryOrdered(byChild: "complete").observe(.value, with: { (snapshot) in
-//            // Get user value
-//            print("snapshot.value => \(snapshot.value)")
-//            let dic = snapshot.value as? NSDictionary
-//            var arr = [AppointmentModel]()
-//
-//            for i in 0...(dic?.allValues.count)! - 1
-//            {
-//                let tempDic = dic?.allValues[i] as? NSDictionary
-//                let model = AppointmentModel()
-//                //                model.initWithDic(dic: tempDic!)
-//                model.parseDicToSelf(dic: tempDic!)
-//                arr.append(model)
-//            }
-//            successHandler(arr as AnyObject)
-//        }) { (error) in
-//            print(error.localizedDescription)
-//            failHandeler("Can't load appointments" as AnyObject)
-//        }
-    
     }
     
     func fetchJobParts(jobId : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
