@@ -57,10 +57,18 @@ class BaseViewController: UIViewController {
             }
             self.items["didSelect"] = index.item
             self.optionView.handleSwipeGesture()
-            if self.sideBarTappedHandler != nil
-            {
-                self.sideBarTappedHandler!(index.row as AnyObject)
+            
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            DispatchQueue.main.async {
+                appDelegate.tabVC?.selectedIndex = index.row
+                let currentVC = appDelegate.tabVC?.childViewControllers[index.row] as! UINavigationController
+                currentVC.popToRootViewController(animated: false)
+                
             }
+//            if self.sideBarTappedHandler != nil
+//            {
+//                self.sideBarTappedHandler!(index.row as AnyObject)
+//            }
         }
     }
 
