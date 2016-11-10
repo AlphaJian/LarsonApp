@@ -133,6 +133,9 @@
                     <state key="normal" title="SUBMIT">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="requestTapped:" destination="sKi-j4-Qxj" eventType="touchUpInside" id="cFR-z5-eMF"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -164,7 +167,7 @@
                 <outlet property="partQualityContainer" destination="gz9-X9-XhL" id="4nV-QK-eZC"/>
                 <outlet property="questionContainer" destination="khb-Je-u1h" id="Qup-ys-xwd"/>
             </connections>
-            <point key="canvasLocation" x="-1115" y="-634"/>
+            <point key="canvasLocation" x="-1337" y="-670"/>
         </scrollView>
     </objects>
     <resources>

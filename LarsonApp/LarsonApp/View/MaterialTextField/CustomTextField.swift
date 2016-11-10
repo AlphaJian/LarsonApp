@@ -101,7 +101,6 @@ class CustomTextField: UIView, UITextFieldDelegate {
                     self.bottomLineInterval.constant = self.uneditedInterval
                     self.layoutIfNeeded()
                     }, completion: { (bol) -> Void in
-                        self.titleLbl.font = UIFont.systemFont(ofSize: self.uneditedFont)
                 })
             }
             titleLbl.textColor = uneditedColor
