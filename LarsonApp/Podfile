@@ -11,4 +11,7 @@ target 'LarsonApp' do
     pod 'Firebase/Auth'
     pod 'Firebase/Storage'
     pod 'JGProgressHUD'
+    pod 'GoogleMaps'
+    pod 'GooglePlaces'
+    
 end

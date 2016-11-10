@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import UserNotifications
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
         //        initMainVC()
+        GMSServices.provideAPIKey("AIzaSyA3LHt6wZPtFZe08M5uS25BxZ9gbQ7VPWo")
         
         GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
             self.initMainVC()

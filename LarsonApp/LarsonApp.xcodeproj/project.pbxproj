@@ -62,6 +62,8 @@
 		A79278D31DC86C42005FA025 /* ViewProgressExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A79278D21DC86C42005FA025 /* ViewProgressExtension.swift */; };
 		BA062EAE1DCB188300C43F82 /* libJGProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
+		BAC7EC461DD416AD0095FD01 /* MKWhiteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7EC451DD416AD0095FD01 /* MKWhiteBtn.swift */; };
+		BAC7EC491DD424930095FD01 /* SiteHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7EC481DD424930095FD01 /* SiteHistoryTableView.swift */; };
 		BAE3DFFB1DD06EC4006E2B69 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3DFFA1DD06EC4006E2B69 /* JobDetailView.swift */; };
 		BAE3DFFF1DD074CE006E2B69 /* TextTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3DFFE1DD074CE006E2B69 /* TextTitleView.swift */; };
 		BAE3E0011DD07C6E006E2B69 /* JobDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE3E0001DD07C6E006E2B69 /* JobDetailView.xib */; };
@@ -134,6 +136,8 @@
 		BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libJGProgressHUD.a; sourceTree = "<group>"; };
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
+		BAC7EC451DD416AD0095FD01 /* MKWhiteBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKWhiteBtn.swift; sourceTree = "<group>"; };
+		BAC7EC481DD424930095FD01 /* SiteHistoryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryTableView.swift; sourceTree = "<group>"; };
 		BAE3DFFA1DD06EC4006E2B69 /* JobDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		BAE3DFFE1DD074CE006E2B69 /* TextTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTitleView.swift; sourceTree = "<group>"; };
 		BAE3E0001DD07C6E006E2B69 /* JobDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobDetailView.xib; sourceTree = "<group>"; };
@@ -226,6 +230,7 @@
 				434395AD1DBF4E9800C12C37 /* JobDetail */,
 				434395AE1DBF4E9800C12C37 /* Login */,
 				434395AF1DBF4E9800C12C37 /* Parts */,
+				BAC7EC471DD424110095FD01 /* SiteHistory */,
 				434395C01DBF4EC900C12C37 /* BaseViewController.swift */,
 				43C3C6821DD011620036EE91 /* TabViewController.swift */,
 				43C3C6841DD012910036EE91 /* NavViewController.swift */,
@@ -387,6 +392,7 @@
 				A77861131DBF573800BA17EE /* MKBlueButton.swift */,
 				A77861141DBF573800BA17EE /* MKButton.swift */,
 				A77861151DBF573800BA17EE /* MKLayer.swift */,
+				BAC7EC451DD416AD0095FD01 /* MKWhiteBtn.swift */,
 			);
 			path = MKButton;
 			sourceTree = "<group>";
@@ -402,6 +408,14 @@
 				A778611C1DBF573800BA17EE /* SlideTableViewCell.xib */,
 			);
 			path = SideBar;
+			sourceTree = "<group>";
+		};
+		BAC7EC471DD424110095FD01 /* SiteHistory */ = {
+			isa = PBXGroup;
+			children = (
+				BAC7EC481DD424930095FD01 /* SiteHistoryTableView.swift */,
+			);
+			path = SiteHistory;
 			sourceTree = "<group>";
 		};
 		BAE3DFF91DD06E06006E2B69 /* JobDetailViews */ = {
@@ -580,7 +594,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F8AE0CEFCC1B5E09CF4BDF8D /* [CP] Embed Pods Frameworks */ = {
@@ -610,6 +624,7 @@
 				43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */,
 				434395BC1DBF4E9800C12C37 /* BlockDefination.swift in Sources */,
 				BAE3DFFF1DD074CE006E2B69 /* TextTitleView.swift in Sources */,
+				BAC7EC491DD424930095FD01 /* SiteHistoryTableView.swift in Sources */,
 				BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */,
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				43137B4B1DD1AE3400F2D553 /* NavSearchView.swift in Sources */,
@@ -617,6 +632,7 @@
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */,
+				BAC7EC461DD416AD0095FD01 /* MKWhiteBtn.swift in Sources */,
 				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				4344BA041DD0224C007C3872 /* UserModel.swift in Sources */,

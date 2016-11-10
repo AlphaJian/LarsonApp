@@ -8,12 +8,13 @@
 
 import UIKit
 
-class JobDetailViewController: BaseViewController {
+class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
     var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
+    var scrollView : UIScrollView?
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -59,14 +60,28 @@ class JobDetailViewController: BaseViewController {
     }
     
     func initDetailTab(){
-        let scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128))
-        self.scrollViewSet?.scrollView?.addSubview(scrollView)
+        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128))
+        scrollView?.delegate = self
+       
+        
+        self.scrollViewSet?.scrollView?.addSubview(scrollView!)
         jobDetailView = Bundle.main.loadNibNamed("JobDetailView", owner: self, options: nil)?[0] as? JobDetailView
-        scrollView.contentSize.height = (jobDetailView?.frame.height)!
-        scrollView.addSubview(jobDetailView!)
+        scrollView?.contentSize.height = (jobDetailView?.frame.height)!
+        scrollView?.addSubview(jobDetailView!)
+        
+        jobDetailView?.mapMovingHandler = {
+            self.scrollViewSet?.scrollView?.isScrollEnabled = false
+            self.scrollView?.isScrollEnabled = false
+        }
+        jobDetailView?.movingHandler = {
+            DispatchQueue.main.async {
+                self.scrollViewSet?.scrollView?.isScrollEnabled = true
+                self.scrollView?.isScrollEnabled = true
+            }
+        }
+        
     }
-    
-    
+
     func initPartTab(){
         partsView = JobPartsTableView(frame: CGRect(x: LCDW, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!), style: .plain)
         scrollViewSet?.scrollView?.addSubview(partsView!)
@@ -80,4 +95,11 @@ class JobDetailViewController: BaseViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        print("aaaaaa")
+    }
+    
+    
+    
 }
