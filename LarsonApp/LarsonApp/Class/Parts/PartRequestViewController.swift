@@ -26,6 +26,7 @@ class PartRequestViewController: BaseViewController {
         partRequestView = Bundle.main.loadNibNamed("PartRequestContainerView", owner: self, options: nil)?[0] as? PartRequestContainerView
         partRequestView?.frame = CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64)
         partRequestView?.initUpper(appointmentModel: self.getBaseTabVC().jobDetailModel)
+        partRequestView?.initPart(partModel: partModel!)
         self.view.addSubview(partRequestView!)
         
         
