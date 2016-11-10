@@ -37,4 +37,19 @@ class PartsManager: NSObject {
         
         return partArr
     }
+    
+    func parsePartsDicToModel(dic : NSDictionary) -> [PartModel]
+    {
+        var partsArr = [PartModel]()
+        let arr = dic.value(forKey: "hits") as! NSArray
+        for item in arr
+        {
+            let dic = (item as! NSDictionary).value(forKey: "_source") as! NSDictionary
+            let model = PartModel()
+            model.parseDicToSelf(dic: dic)
+            partsArr.append(model)
+        }
+        
+        return partsArr
+    }
 }

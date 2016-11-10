@@ -17,23 +17,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var tabVC : TabViewController?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         //        FIRApp.configure()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        //        initMainVC()
+
         GMSServices.provideAPIKey("AIzaSyA3LHt6wZPtFZe08M5uS25BxZ9gbQ7VPWo")
         
+        self.window?.backgroundColor = UIColor.white
+
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.white
+        self.window?.rootViewController = vc
+        self.window?.makeKeyAndVisible()
         GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
+            vc.removeFromParentViewController()
             self.initMainVC()
         }) {
-            
+            vc.removeFromParentViewController()
             self.initLogin()
         }
         
         configReceiveNotification(application: application)
-        
         return true
     }
     
@@ -59,15 +66,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func initMainVC(){
-        let vc = TabViewController()
-        self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
+        tabVC = TabViewController()
+        self.window?.rootViewController = tabVC
         
     }
     func initLogin() {
         let vc = LoginViewController()
         self.window?.rootViewController = vc
-        self.window?.makeKeyAndVisible()
         
     }
     func application(_ application: UIApplication,

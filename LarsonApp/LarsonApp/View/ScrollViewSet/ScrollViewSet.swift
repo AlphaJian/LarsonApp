@@ -21,7 +21,7 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
     var tabBarView : TabBarView?
 
     var scrollView : UIScrollView?
-    var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
+    var titleArr = ["DETAILS","PARTS","SITE HISTORY","WORK ORDER","TIMESHEET","INVOICE"]
     var scrolledHandler : ReturnBlock?
 
     override init(frame: CGRect) {

@@ -13,6 +13,7 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     var items = [AppointmentModel]()
     
     var cellClickBlock: ReturnBlock?
+    var cellPhoneBlock: ReturnBlock?
     
     override init(frame: CGRect, style: UITableViewStyle) {
         super.init(frame: frame, style: style)
@@ -29,6 +30,18 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("")
+    }
+    
+    func updateItem(model: AppointmentModel) {
+        
+    }
+    
+    func insertItem(model: AppointmentModel) {
+        
+    }
+    
+    func removeItem(model: AppointmentModel) {
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

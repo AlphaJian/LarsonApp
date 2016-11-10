@@ -59,17 +59,17 @@ class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
         
         str.addAttribute(NSFontAttributeName, value:UIFont.systemFont(ofSize: 15.0), range:NSRange(location:0,length: (model.jobDetail as NSString).uppercased.characters.count ))
         
-        descriptionHeight.constant = StringUtil.getAttributeString(str: str, width: LCDW - 40 )
+        descriptionHeight.constant = StringUtil.getAttributeString(str: str, width: LCDW - 40 ) + 10
         middleViewHeight.constant =  descriptionHeight.constant + 280
         
-        
-        contactPerson.initUI(title: "Contact Person", text: "\(model.contactName!)")
-        sitePhone.initUI(title: "Site Phone", text: "\(model.contactNumber!)")
-        appointmentStatus.initUI(title: "Appointment Status", text: "\(model.currentStatus!)")
-        division.initUI(title: "Division", text: "\(model.division!)")
-        callStatus.initUI(title: "Call Status", text: "\(model.callStatus!)")
-        typeOfCall.initUI(title: "Type of Call", text: "\(model.jobType!)")
-        po.initUI(title: "PO#", text: "\(model.purchaseOrder!)")
+ 
+        contactPerson.initUI(title: "Contact Person", text: "\(model.contactName)")
+        sitePhone.initUI(title: "Site Phone", text: "\(model.contactNumber)")
+        appointmentStatus.initUI(title: "Appointment Status", text: "\(model.currentStatus)")
+        division.initUI(title: "Division", text: "\(model.division)")
+        callStatus.initUI(title: "Call Status", text: "\(model.callStatus)")
+        typeOfCall.initUI(title: "Type of Call", text: "\(model.jobType)")
+        po.initUI(title: "PO#", text: "\(model.purchaseOrder)")
         
         initMap()
         
@@ -80,6 +80,7 @@ class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
     }
     
     func initMap(){
+        layoutIfNeeded()
         
         let panoView = GMSPanoramaView(frame: self.mapView.bounds)
         

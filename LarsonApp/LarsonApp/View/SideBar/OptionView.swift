@@ -109,7 +109,7 @@ class OptionView: UIView, UITableViewDelegate, UITableViewDataSource {
         tableView.reloadData()
        
             if cellTouchUpHandler != nil {
-                cellTouchUpHandler!(indexPath as NSIndexPath,"" as AnyObject)
+                cellTouchUpHandler!(indexPath as IndexPath,"" as AnyObject)
             
         }
     }

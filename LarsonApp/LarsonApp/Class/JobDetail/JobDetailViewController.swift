@@ -13,42 +13,32 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
-    var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
+ //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
+
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        initNavView(title: "Appointment Detail")
-        initUI()
-
-        DataManager.shareManager.fetchAppointList(successHandler: { (obj) in
-            print(obj)
-            DispatchQueue.main.async {
-                self.model = (obj as! [AppointmentModel])[0]
-                self.jobDetailView?.initUI(model: self.model!)
-            }
-        }) { (obj) in
-            print(obj)
-        }
-        
-        DataManager.shareManager.fetchJobParts(jobId: "-KTTnbrt7qeWyMx02KOU", successHandler: { (obj) in
-            DispatchQueue.main.async {
-                self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
-                self.partsView?.reloadData()
-            }
-        }) { (obj) in
-            print(obj)
-        }
-
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        initNavView(title: "Appointment Detail", bolBack: false)
+        initUI()
+        loadData()
+        fetchPartsData()
+        
+    }
+    
+    func loadData(){
+        if model != nil
+        {
+            self.jobDetailView?.initUI(model: self.model!)
+        }
+        
     }
     
     func initUI(){
@@ -88,9 +78,30 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         
         partsView?.buttonTapHandler = {
             let vc = PartSearchViewController()
+            vc.bolTabVC = false
             self.navigationController?.pushViewController(vc, animated: true)
         }
+        partsView?.partDeleteHandler = {[unowned self](indexPath, partModel) -> Void in
+            let childStr = (self.partsView?.dataItems[indexPath.section] as! NSDictionary).allKeys[0] as! String
+            DataManager.shareManager.deleteJobParts(jobId: (self.model?._id)!, childStr: childStr, partId: partModel._id, successHandler: { (obj) in
+                self.fetchPartsData()
+                }, failHandeler: { (obj) in
+                    
+            })
+        }
     }
+    
+    func fetchPartsData(){
+        DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
+            DispatchQueue.main.async {
+                self.partsView?.dataItems = PartsManager.shareManager.parseJobPartsDicToModel(dic: obj as! NSDictionary)
+                self.partsView?.reloadData()
+            }
+        }) { (obj) in
+            print(obj)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
