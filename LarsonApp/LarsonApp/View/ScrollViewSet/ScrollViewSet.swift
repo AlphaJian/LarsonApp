@@ -29,14 +29,15 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
         
         tabBarView = TabBarView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: 64))
         tabBarView?.titleArr = self.titleArr
-        
+        scrollView?.delegate = self
+        //scrollView?.delegatePass = self
         self.addSubview(tabBarView!)
         
         tabBarView?.tabHandler = {(index)-> Void in
             let page = index as! Int
             self.scrollByTab(index: page)
         }
-
+        
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 128 ))
         scrollView?.contentSize.height = (scrollView?.frame.height)!
         scrollView?.contentSize.width = LCDW * CGFloat(titleArr.count)
@@ -46,16 +47,6 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
         scrollView?.delegate = self
         self.addSubview(scrollView!)
     
-//        for i in 0...titleArr.count - 1 {
-//            
-//            let view = UIView.init(frame: CGRect(x: CGFloat(i) * LCDW, y: 0, width: LCDW, height: frame.height))
-//            
-//            view.backgroundColor = StringUtil.getColorWithRGB(red: 30 * CGFloat(i), green: 20 * CGFloat(i), blue: 155)
-//        
-//            self.scrollView?.addSubview(view)
-//            
-//        }
-        
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -74,5 +65,6 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
     func scrollByTab (index : Int) {
         scrollView?.contentOffset.x = LCDW * CGFloat(index)
     }
-    
+  
+
 }

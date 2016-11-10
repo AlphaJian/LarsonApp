@@ -12,7 +12,9 @@
             <rect key="frame" x="0.0" y="0.0" width="516" height="219"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeadBg" translatesAutoresizingMaskIntoConstraints="NO" id="0de-Pj-ctn"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0de-Pj-ctn">
+                    <color key="backgroundColor" red="0.0" green="0.41568627450000001" blue="0.74901960779999999" alpha="1" colorSpace="calibratedRGB"/>
+                </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="heyfromjohnathan@gmail.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iis-Zm-vjc">
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="XvI-Z0-eYV"/>
@@ -56,7 +58,6 @@
         </view>
     </objects>
     <resources>
-        <image name="HeadBg" width="304" height="148"/>
         <image name="joe-malone" width="40" height="40"/>
         <image name="triangle_w" width="10" height="5"/>
     </resources>
