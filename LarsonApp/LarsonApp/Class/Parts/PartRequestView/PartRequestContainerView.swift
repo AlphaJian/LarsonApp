@@ -19,10 +19,12 @@ class PartRequestContainerView: UIScrollView {
     @IBOutlet weak var partIdLbl: UILabel!
     @IBOutlet weak var partQualityContainer: UIView!
     @IBOutlet weak var questionContainer: UIView!
+    @IBOutlet weak var notesContainer: UIView!
     
     var qualityTF : CustomTextField?
     var emergencyView : SelectionView?
     var deliveryView : SelectionView?
+    var notesTF : CustomTextField?
     
     func initUpper(appointmentModel : AppointmentModel){
         legacyIdLabel.text = appointmentModel.legacyId
@@ -37,7 +39,7 @@ class PartRequestContainerView: UIScrollView {
         partPriceLbl.text = "$\(partModel.price)/ piece"
         
         qualityTF = Bundle.main.loadNibNamed("CustomTextField", owner: self, options: nil)?[0] as? CustomTextField
-        qualityTF?.createCustomField(_title: "Quality", _bolTextfield: true)
+        qualityTF?.createCustomField(_title: "Quality *", _bolTextfield: true)
         qualityTF?.frame = partQualityContainer.bounds
         partQualityContainer.addSubview(qualityTF!)
         qualityTF?.finishEditHandler = {(str) -> Void in
@@ -50,6 +52,13 @@ class PartRequestContainerView: UIScrollView {
         deliveryView = SelectionView(frame: CGRect(x: 10, y: (emergencyView?.bottom())! + 10, width: questionContainer.width(), height: 40))
         deliveryView?.initUI(title: "Do you need delivery service?*", strY: "Yes", strNo: "No, pick up at the warehouse")
         questionContainer.addSubview(deliveryView!)
+        
+        notesTF = Bundle.main.loadNibNamed("CustomTextField", owner: self, options: nil)?[0] as? CustomTextField
+        notesTF?.createCustomField(_title: "Notes", _bolTextfield: true)
+        notesTF?.frame = notesContainer.bounds
+        notesContainer.addSubview(notesTF!)
+        notesTF?.finishEditHandler = {(str) -> Void in
+        }
         
     }
 }
