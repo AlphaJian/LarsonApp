@@ -21,9 +21,27 @@ class WorkOrderStaticView: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    private var strTitle = ""
+    private var strContent = ""
+//    
+//    override func layoutSubviews() {
+//
+//        print(self.frame)
+//    }
     
     func initUI(parameter: (String, String)) {
-        self.titleLabel.text = parameter.0
-        self.contentLabel.text = parameter.1
+        self.strTitle = parameter.0
+        self.strContent = parameter.1 //"\(parameter.1)\(parameter.1)\(parameter.1)\(parameter.1)"
+        
+        self.titleLabel.text = self.strTitle
+        self.contentLabel.text = self.strContent
+        self.contentLabel.setNeedsLayout()
+        self.setNeedsLayout()
+//        self.titleLabel.text = parameter.0
+//        self.contentLabel.text = "\(parameter.1)\(parameter.1)\(parameter.1)\(parameter.1)"
+//        self.contentLabel.layoutIfNeeded()
+//        self.layoutIfNeeded()
     }
+    
+    
 }

@@ -55,7 +55,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     func initDetailTab(){
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128))
         scrollView?.delegate = self
-       
+        
         
         self.scrollViewSet?.scrollView?.addSubview(scrollView!)
         jobDetailView = Bundle.main.loadNibNamed("JobDetailView", owner: self, options: nil)?[0] as? JobDetailView

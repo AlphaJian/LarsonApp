@@ -32,11 +32,19 @@ class WorkOrderScrollView: UIScrollView {
     
     
     func initUI(model: AppointmentModel) {
-        var height : CGFloat = 0
         let callNumberView = Bundle.main.loadNibNamed("WorkOrderStaticView", owner: self, options: nil)?[0] as? WorkOrderStaticView
+        
+        let str = NSMutableAttributedString(string: (model.telephoneNumber as NSString).uppercased)
+        
+        str.addAttribute(NSFontAttributeName, value:UIFont.systemFont(ofSize: 15.0), range:NSRange(location:0, length: (model.telephoneNumber as NSString).uppercased.characters.count ))
+        
+        let floatHight = StringUtil.getAttributeString(str: str, width: LCDW - 30)
+        
+        callNumberView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: floatHight+42.0)
+        
         callNumberView?.initUI(parameter: ("Call Number", model.telephoneNumber))
+        print("===> frame (\(NSStringFromCGRect((callNumberView?.frame)!)))")
         self.callNumberContainer.addSubview(callNumberView!)
-//        height += (callNumberView?.frame.size.height)!
         
         let stationNumberView = Bundle.main.loadNibNamed("WorkOrderStaticView", owner: self, options: nil)?[0] as? WorkOrderStaticView
         stationNumberView?.initUI(parameter: ("Station Number", ""))
