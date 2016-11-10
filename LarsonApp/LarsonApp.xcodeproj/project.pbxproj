@@ -78,6 +78,10 @@
 		D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */; };
 		D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */; };
 		D87DCD721DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87DCD701DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib */; };
+		D8B139271DD4162B0022AD1C /* WorkOrderScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B139261DD4162B0022AD1C /* WorkOrderScrollView.swift */; };
+		D8B139291DD417510022AD1C /* WorkOrderStaticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B139281DD417510022AD1C /* WorkOrderStaticView.swift */; };
+		D8B1392B1DD417A50022AD1C /* WorkOrderStaticView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B1392A1DD417A50022AD1C /* WorkOrderStaticView.xib */; };
+		D8B139311DD4216E0022AD1C /* WorkOrderScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B139301DD4216E0022AD1C /* WorkOrderScrollView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,6 +161,10 @@
 		D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 		D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteAppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		D87DCD701DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CompleteAppointmentTableViewCell.xib; sourceTree = "<group>"; };
+		D8B139261DD4162B0022AD1C /* WorkOrderScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrderScrollView.swift; sourceTree = "<group>"; };
+		D8B139281DD417510022AD1C /* WorkOrderStaticView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrderStaticView.swift; sourceTree = "<group>"; };
+		D8B1392A1DD417A50022AD1C /* WorkOrderStaticView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkOrderStaticView.xib; sourceTree = "<group>"; };
+		D8B139301DD4216E0022AD1C /* WorkOrderScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkOrderScrollView.xib; sourceTree = "<group>"; };
 		E78F7E5AB076FFFD78B44B90 /* Pods_LarsonApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LarsonApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -282,6 +290,7 @@
 			children = (
 				BAE3DFF91DD06E06006E2B69 /* JobDetailViews */,
 				43137B3D1DD16A4700F2D553 /* Parts */,
+				D8B139251DD411330022AD1C /* WorkOrderViews */,
 				434395CB1DBF4F2E00C12C37 /* JobDetailViewController.swift */,
 				434395CC1DBF4F2E00C12C37 /* JobDetailViewController.xib */,
 			);
@@ -478,6 +487,17 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D8B139251DD411330022AD1C /* WorkOrderViews */ = {
+			isa = PBXGroup;
+			children = (
+				D8B139261DD4162B0022AD1C /* WorkOrderScrollView.swift */,
+				D8B139301DD4216E0022AD1C /* WorkOrderScrollView.xib */,
+				D8B139281DD417510022AD1C /* WorkOrderStaticView.swift */,
+				D8B1392A1DD417A50022AD1C /* WorkOrderStaticView.xib */,
+			);
+			path = WorkOrderViews;
+			sourceTree = "<group>";
+		};
 		E4B67D4EFBD39A170C59FA65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -572,6 +592,7 @@
 				43137B471DD1956100F2D553 /* JobPartsTableViewCell.xib in Resources */,
 				434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
+				D8B139311DD4216E0022AD1C /* WorkOrderScrollView.xib in Resources */,
 				D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
@@ -584,6 +605,7 @@
 				A77861211DBF573800BA17EE /* OptionView.xib in Resources */,
 				434395D21DBF4F3B00C12C37 /* LoginViewController.xib in Resources */,
 				BAE3E0011DD07C6E006E2B69 /* JobDetailView.xib in Resources */,
+				D8B1392B1DD417A50022AD1C /* WorkOrderStaticView.xib in Resources */,
 				434395CE1DBF4F2E00C12C37 /* JobDetailViewController.xib in Resources */,
 				434395CA1DBF4F2100C12C37 /* ChatViewController.xib in Resources */,
 				434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */,
@@ -658,6 +680,7 @@
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */,
 				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
+				D8B139271DD4162B0022AD1C /* WorkOrderScrollView.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				43137B621DD32F7D00F2D553 /* PartRequestContainerView.swift in Sources */,
 				4344BA041DD0224C007C3872 /* UserModel.swift in Sources */,
@@ -681,6 +704,7 @@
 				43C3C6851DD012910036EE91 /* NavViewController.swift in Sources */,
 				D87DCD6D1DD069C700C6284B /* TodoAppointmentTableViewCell.swift in Sources */,
 				43137B581DD2EA9B00F2D553 /* CustomTextField.swift in Sources */,
+				D8B139291DD417510022AD1C /* WorkOrderStaticView.swift in Sources */,
 				A778611E1DBF573800BA17EE /* MKButton.swift in Sources */,
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,

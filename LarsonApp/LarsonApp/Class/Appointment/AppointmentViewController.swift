@@ -29,11 +29,11 @@ class AppointmentViewController: BaseViewController {
         initUI()
         self.view.showhud()
         
-        appointmentListRef.observe(.value, with: { (snapshot) in
+        appointmentListRefHandle = appointmentListRef.observe(.value, with: { (snapshot) in
             self.view.hidehud()
             if self.tableview != nil {
-                var inProgressIndex = 0
-                var completeIndex = 0
+                var inProgressIndex = 0     // 记录in progress在数组中的第一个元素的index
+                var completeIndex = 0       // 记录completed在数组中的第一个元素的index
                 var tempModel: AppointmentModel? = nil
                 
                 let dic = snapshot.value as? NSDictionary
@@ -112,7 +112,7 @@ class AppointmentViewController: BaseViewController {
     
     deinit {
         print("#### deinit ####")
-        appointmentListRef.removeAllObservers()
+        appointmentListRef.removeObserver(withHandle: appointmentListRefHandle!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

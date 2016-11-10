@@ -13,6 +13,7 @@ class JobDetailViewController: BaseViewController {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
+    var workOrderView : WorkOrderScrollView?
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -34,6 +35,7 @@ class JobDetailViewController: BaseViewController {
         if model != nil
         {
             self.jobDetailView?.initUI(model: self.model!)
+            self.workOrderView?.initUI(model: self.model!)
         }
         
     }
@@ -44,6 +46,7 @@ class JobDetailViewController: BaseViewController {
         
         initDetailTab()
         initPartTab()
+        initWorkOrderTab()
     }
     
     func initDetailTab(){
@@ -72,6 +75,12 @@ class JobDetailViewController: BaseViewController {
                     
             })
         }
+    }
+    
+    func initWorkOrderTab() {
+        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
+        workOrderView?.frame = CGRect(x: LCDW*3, y: 0, width: LCDW, height: LCDH-128)
+        scrollViewSet?.scrollView?.addSubview(workOrderView!)
     }
     
     func fetchPartsData(){
