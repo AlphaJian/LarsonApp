@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import GoogleSignIn
 import UserNotifications
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //        FIRApp.configure()
         // Override point for customization after application launch.
         self.window = UIWindow(frame: UIScreen.main.bounds)
+
+        GMSServices.provideAPIKey("AIzaSyA3LHt6wZPtFZe08M5uS25BxZ9gbQ7VPWo")
+        
         self.window?.backgroundColor = UIColor.white
 
         let vc = UIViewController()

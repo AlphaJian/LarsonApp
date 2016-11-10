@@ -63,7 +63,7 @@ class AppointmentViewController: BaseViewController {
                 DispatchQueue.main.async {
                     if self.listBlock != nil {
                         if tempModel != nil {
-                            self.listBlock!(tempModel as AnyObject)
+                            self.listBlock!(tempModel! as AppointmentModel)
                         } else {
                             self.listBlock!(AppointmentModel() as AnyObject)
                         }
