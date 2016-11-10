@@ -26,23 +26,34 @@ class PartRequestContainerView: UIScrollView {
     var deliveryView : SelectionView?
     var notesTF : CustomTextField?
     
-    func initUpper(appointmentModel : AppointmentModel){
-        legacyIdLabel.text = appointmentModel.legacyId
-        customerNameLbl.text = appointmentModel.customerName
-        addressLbl.text = appointmentModel.customerAddress
+    var requestHandler : ReturnWithTwoParmsBlock?
+    
+    var partModel : PartModel?
+    var appointmentModel : AppointmentModel?
+    
+    func initUpper(model : AppointmentModel){
+        appointmentModel = model
+        legacyIdLabel.text = model.legacyId
+        customerNameLbl.text = model.customerName
+        addressLbl.text = model.customerAddress
     }
 
-    func initPart(partModel : PartModel)
+    func initPart(model : PartModel)
     {
-        partNameLbl.text = partModel.name
-        partIdLbl.text = "#\(partModel.number)"
-        partPriceLbl.text = "$\(partModel.price)/ piece"
+        partModel = model
+        partNameLbl.text = model.name
+        partIdLbl.text = "#\(model.number)"
+        partPriceLbl.text = "$\(model.price)/ piece"
         
         qualityTF = Bundle.main.loadNibNamed("CustomTextField", owner: self, options: nil)?[0] as? CustomTextField
         qualityTF?.createCustomField(_title: "Quality *", _bolTextfield: true)
         qualityTF?.frame = partQualityContainer.bounds
         partQualityContainer.addSubview(qualityTF!)
         qualityTF?.finishEditHandler = {(str) -> Void in
+            if str != ""
+            {
+                self.partModel?.qty = Int(str)!
+            }
         }
         
         emergencyView = SelectionView(frame: CGRect(x: 10, y: 0, width: questionContainer.width(), height: 40))
@@ -58,7 +69,29 @@ class PartRequestContainerView: UIScrollView {
         notesTF?.frame = notesContainer.bounds
         notesContainer.addSubview(notesTF!)
         notesTF?.finishEditHandler = {(str) -> Void in
+            self.partModel?.notes = str 
         }
         
+    }
+    @IBAction func requestTapped(_ sender: AnyObject) {
+        let str = checkValue()
+        if str.characters.count > 0
+        {
+            self.showhudForError(str)
+            return
+        }
+        if requestHandler != nil
+        {
+            requestHandler!(partModel!, (appointmentModel?._id)! as AnyObject)
+        }
+    }
+    
+    func checkValue() -> String
+    {
+        if partModel?.qty == 0
+        {
+            return "Please enter parts quality"
+        }
+        return ""
     }
 }

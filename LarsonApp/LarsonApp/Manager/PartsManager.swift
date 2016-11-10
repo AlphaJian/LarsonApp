@@ -44,9 +44,11 @@ class PartsManager: NSObject {
         let arr = dic.value(forKey: "hits") as! NSArray
         for item in arr
         {
+            let strId = (item as! NSDictionary).value(forKey: "_id") as! String
             let dic = (item as! NSDictionary).value(forKey: "_source") as! NSDictionary
             let model = PartModel()
             model.parseDicToSelf(dic: dic)
+            model._id = strId
             partsArr.append(model)
         }
         
