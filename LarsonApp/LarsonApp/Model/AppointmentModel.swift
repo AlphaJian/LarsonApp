@@ -35,7 +35,7 @@ class AppointmentModel: NSObject {
     func parseDicToSelf(dic : NSDictionary) {
         self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
         self.appointmentId = dic.checkValueIfNil(key: "appointmentId", oldValue: self.appointmentId)
-        self.callStatus = dic.checkValueIfNil(key: "cellStatus", oldValue: self.callStatus)
+        self.callStatus = dic.checkValueIfNil(key: "callStatus", oldValue: self.callStatus)
         self.clientId = dic.checkValueIfNil(key: "clientId", oldValue: self.clientId)
         self.complete = dic.checkBoolIfNil(key: "complete", oldValue: self.complete)
         self.contactName = dic.checkValueIfNil(key: "contactName", oldValue: self.contactName)
@@ -54,6 +54,7 @@ class AppointmentModel: NSObject {
         self.legacyId = dic.checkValueIfNil(key: "legacyId", oldValue: self.legacyId)
         self.partsReqInTruckNum = dic.checkIntIfNil(key: "partsReqInTruckNum", oldValue: self.partsReqInTruckNum)
         self.partsReqNum = dic.checkIntIfNil(key: "partsReqNum", oldValue: self.partsReqNum)
+        self.division = dic.checkValueIfNil(key: "division", oldValue: self.division)
     }
     
     func initWithDic (dic : NSDictionary) {
