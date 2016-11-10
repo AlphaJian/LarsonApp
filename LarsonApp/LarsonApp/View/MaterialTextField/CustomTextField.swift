@@ -16,14 +16,14 @@ class CustomTextField: UIView, UITextFieldDelegate {
     var bolTextfield : Bool = true
     var isOptional : Bool = false
     
-    let editedColor = UIColor(red: 231/255, green: 155/255, blue: 53/255, alpha: 1)
-    let uneditedColor = UIColor(red: 156/255, green: 156/255, blue: 156/255, alpha: 1)
+    let editedColor = UIColor(red: 30/255, green: 144/255, blue: 255/255, alpha: 1)
+    let uneditedColor = UIColor.lightGray
     let fieldColor = UIColor(red: 74/255, green: 74/255, blue: 74/255, alpha: 1)
     
-    let editedInterval : CGFloat = 35
+    let editedInterval : CGFloat = 20
     let uneditedInterval : CGFloat = 10
     
-    let editedFont : CGFloat = 13
+    let editedFont : CGFloat = 11
     let uneditedFont : CGFloat = 14
     
     var tapHandler : ButtonTouchUpBlock?
@@ -77,7 +77,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
         bolEdited = bol
         if bolEdited
         {
-//            bottomLineView.backgroundColor = editedColor
+            bottomLineView.backgroundColor = editedColor
             titleLbl.textColor = editedColor
             self.titleLbl.font = UIFont.systemFont(ofSize: self.editedFont)
 //            titleLbl.text = title.stringByReplacingOccurrencesOfString("(optional)", withString: "")
@@ -91,18 +91,22 @@ class CustomTextField: UIView, UITextFieldDelegate {
         }
         else
         {
-//            bottomLineView.backgroundColor = uneditedColor
+            if fieldTF.text?.characters.count != 0
+            {
+                titleLbl.text = title
+            }
+            else
+            {
+                UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                    self.bottomLineInterval.constant = self.uneditedInterval
+                    self.layoutIfNeeded()
+                    }, completion: { (bol) -> Void in
+                        self.titleLbl.font = UIFont.systemFont(ofSize: self.uneditedFont)
+                })
+            }
             titleLbl.textColor = uneditedColor
+            bottomLineView.backgroundColor = uneditedColor
 
-            titleLbl.text = title
-
-            
-            UIView.animate(withDuration: 0.3, animations: { () -> Void in
-                self.bottomLineInterval.constant = self.uneditedInterval
-                self.layoutIfNeeded()
-                }, completion: { (bol) -> Void in
-                    self.titleLbl.font = UIFont.systemFont(ofSize: self.uneditedFont)
-            })
         }
     }
     
@@ -132,14 +136,7 @@ class CustomTextField: UIView, UITextFieldDelegate {
         return true
     }
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if (textField.text?.isEmpty == true)
-        {
-            bolEdited = false
-        }
-        else
-        {
-            bolEdited = true
-        }
+        bolEdited = false
         if finishEditHandler != nil
         {
             finishEditHandler!(strValue)

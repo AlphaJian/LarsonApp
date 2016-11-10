@@ -23,6 +23,7 @@
 		43137B5B1DD2FD0000F2D553 /* PartRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B5A1DD2FD0000F2D553 /* PartRequestViewController.swift */; };
 		43137B621DD32F7D00F2D553 /* PartRequestContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B611DD32F7D00F2D553 /* PartRequestContainerView.swift */; };
 		43137B641DD32F8900F2D553 /* PartRequestContainerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 43137B631DD32F8900F2D553 /* PartRequestContainerView.xib */; };
+		43137B671DD3F94A00F2D553 /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43137B661DD3F94A00F2D553 /* SelectionView.swift */; };
 		434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434395981DBF4DBE00C12C37 /* AppDelegate.swift */; };
 		434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4343959F1DBF4DBE00C12C37 /* Assets.xcassets */; };
 		434395A31DBF4DBE00C12C37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434395A11DBF4DBE00C12C37 /* LaunchScreen.storyboard */; };
@@ -104,6 +105,7 @@
 		43137B5A1DD2FD0000F2D553 /* PartRequestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartRequestViewController.swift; sourceTree = "<group>"; };
 		43137B611DD32F7D00F2D553 /* PartRequestContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartRequestContainerView.swift; sourceTree = "<group>"; };
 		43137B631DD32F8900F2D553 /* PartRequestContainerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartRequestContainerView.xib; sourceTree = "<group>"; };
+		43137B661DD3F94A00F2D553 /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		434395951DBF4DBE00C12C37 /* LarsonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LarsonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		434395981DBF4DBE00C12C37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4343959F1DBF4DBE00C12C37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -221,6 +223,14 @@
 				43137B631DD32F8900F2D553 /* PartRequestContainerView.xib */,
 			);
 			path = PartRequestView;
+			sourceTree = "<group>";
+		};
+		43137B651DD3F92C00F2D553 /* SelectionView */ = {
+			isa = PBXGroup;
+			children = (
+				43137B661DD3F94A00F2D553 /* SelectionView.swift */,
+			);
+			path = SelectionView;
 			sourceTree = "<group>";
 		};
 		4343958C1DBF4DBE00C12C37 = {
@@ -393,6 +403,7 @@
 		434395BB1DBF4E9800C12C37 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				43137B651DD3F92C00F2D553 /* SelectionView */,
 				43137B551DD2EA9B00F2D553 /* MaterialTextField */,
 				BAF0F5A71DC884D800FBC443 /* ScrollViewSet */,
 				BAF0F5A41DC884CB00FBC443 /* TabBar */,
@@ -734,6 +745,7 @@
 				43137B531DD1E19300F2D553 /* PartsResultTableViewCell.swift in Sources */,
 				43137B3F1DD16A4700F2D553 /* JobPartsTableView.swift in Sources */,
 				434395C11DBF4EC900C12C37 /* BaseViewController.swift in Sources */,
+				43137B671DD3F94A00F2D553 /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
