@@ -25,7 +25,7 @@ class JobPartsTableView: UITableView, UITableViewDelegate, UITableViewDataSource
         self.separatorStyle = .none
         
         let button = UIButton(type: .custom)
-        button.frame = CGRect(x: self.width() - 70, y: self.height() - 130, width: 50, height: 50)
+        button.frame = CGRect(x: self.width() - 70, y: self.height() - 70, width: 50, height: 50)
         button.setImage(UIImage(named: "Add"), for: .normal)
         button.addTarget(self, action: #selector(JobPartsTableView.addPartTapped(_:)), for: .touchUpInside)
         self.addSubview(button)

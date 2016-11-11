@@ -35,7 +35,7 @@ class JobPartsTableViewCell: UITableViewCell {
         partNameLblHeight.constant = height + 5
         self.layoutIfNeeded()
         partNameLbl.text = model.name
-        partInfoLbl.text = "#\(model.vendorId)   $\(model.price)"
+        partInfoLbl.text = "#\(model.number)   $\(model.price)"
     }
     @IBAction func deleteTapped(_ sender: AnyObject) {
         if deleteHandler != nil
