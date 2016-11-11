@@ -28,11 +28,6 @@ class BaseViewController: UIViewController {
         listenTapGesture()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-//        self.view.removeGestureRecognizer(tapGes!)
-    }
-    
     func listenTapGesture(){
         tapGes = UITapGestureRecognizer(target: self, action: #selector(BaseViewController.viewTapped))
         tapGes?.cancelsTouchesInView = false
@@ -106,5 +101,9 @@ class BaseViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    deinit {
+        self.view.removeGestureRecognizer(tapGes!)
     }
 }
