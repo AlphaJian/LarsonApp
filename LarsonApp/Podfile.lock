@@ -108,6 +108,8 @@ PODS:
   - libwebp/utils (0.5.1):
     - libwebp/core
   - libwebp/webp (0.5.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SDWebImage/WebP (3.8.2):
     - libwebp
@@ -125,6 +127,7 @@ DEPENDENCIES:
   - GooglePlaces
   - IQKeyboardManagerSwift
   - JGProgressHUD
+  - SDWebImage (~> 3.8)
   - SDWebImage/WebP
 
 SPEC CHECKSUMS:
@@ -151,6 +154,6 @@ SPEC CHECKSUMS:
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 454fd8741b70ca76e53ec01dc818583de3d74de4
+PODFILE CHECKSUM: 5759d683a7199c4cc3fc5f4b3b569ddd382c95c1
 
 COCOAPODS: 1.1.1

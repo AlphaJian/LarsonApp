@@ -14,6 +14,8 @@ class PartSearchViewController: BaseViewController {
     
     var bolTabVC  = true
     
+    var nextVC : PartRequestViewController?
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
     }
@@ -73,9 +75,9 @@ class PartSearchViewController: BaseViewController {
         self.view.addSubview(partsResultTableView!)
         
         partsResultTableView?.cellTapHandler = {(index, model) -> Void in
-            let vc = PartRequestViewController()
-            vc.partModel = model as? PartModel
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.nextVC = PartRequestViewController()
+            self.nextVC?.partModel = model as? PartModel
+            self.navigationController?.pushViewController(self.nextVC!, animated: true)
         }
     }
 

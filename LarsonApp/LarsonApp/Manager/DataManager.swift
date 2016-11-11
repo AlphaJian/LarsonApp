@@ -33,7 +33,7 @@ class DataManager: NSObject {
     
     func insertPartRequest(appointmentId : String, dic : NSDictionary, successHandler : @escaping ReturnBlock)
     {
-        let tempRef = ref.child("engineerApp").child("appointment-parts").child(appointmentId).child("requested").childByAutoId()
+        let tempRef = ref.child("engineerApp").child("appointment-parts").child(appointmentId).child("requested").child(dic["_id"] as! String)
         tempRef.setValue(dic) { (err, ref) in
             successHandler(NSNull.self)
         }

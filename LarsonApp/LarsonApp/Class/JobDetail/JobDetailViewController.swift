@@ -17,6 +17,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
  //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
     var workOrderTableView : WorkOrderTableView?
+    var nextPartSearchVC : PartSearchViewController?
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -79,16 +80,15 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         scrollViewSet?.scrollView?.addSubview(partsView!)
         
         partsView?.buttonTapHandler = {
-            let vc = PartSearchViewController()
-            vc.bolTabVC = false
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.nextPartSearchVC = PartSearchViewController()
+            self.nextPartSearchVC?.bolTabVC = false
+            self.navigationController?.pushViewController(self.nextPartSearchVC!, animated: true)
         }
         partsView?.partDeleteHandler = {[unowned self](indexPath, partModel) -> Void in
             let childStr = (self.partsView?.dataItems[indexPath.section] as! NSDictionary).allKeys[0] as! String
             DataManager.shareManager.deleteJobParts(jobId: (self.model?._id)!, childStr: childStr, partId: partModel._id, successHandler: { (obj) in
                 self.fetchPartsData()
                 }, failHandeler: { (obj) in
-                    
             })
         }
     }
@@ -114,7 +114,11 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
                 self.partsView?.reloadData()
             }
         }) { (obj) in
-            print(obj)
+            DispatchQueue.main.async {
+                self.partsView?.dataItems = NSMutableArray()
+                self.partsView?.reloadData()
+            }
+            
         }
     }
     

@@ -1,4 +1,4 @@
-
+platform :ios, '8.0'
 use_frameworks!
 target 'LarsonApp' do
     
@@ -14,7 +14,6 @@ target 'LarsonApp' do
     pod 'GoogleMaps'
     pod 'GooglePlaces'
     pod 'IQKeyboardManagerSwift'
-    
-
+    pod 'SDWebImage', '~>3.8'
     
 end

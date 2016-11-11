@@ -48,8 +48,6 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
         let authentication = user.authentication
         let credential = FIRGoogleAuthProvider.credential(withIDToken: (authentication?.idToken)!,
                                                           accessToken: (authentication?.accessToken)!)
-        let emial = user.profile.email
-        let token = authentication?.accessToken
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             // ...
             print(user,error)
@@ -76,6 +74,6 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
         }
         usermodel?.google_email = account.email
         usermodel?.google_imageURL = account.imageURL(withDimension: 120)
-        FileUtility.archive(fileName: kAccountFileName, object: usermodel!)
+        let _ = FileUtility.archive(fileName: kAccountFileName, object: usermodel!)
     }
 }
