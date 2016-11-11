@@ -19,10 +19,28 @@ class BaseViewController: UIViewController {
     var bolLoaded = false
     var items = DataManager.shareManager.items
     
+    var tapGes : UITapGestureRecognizer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = UIColor.white
+        listenTapGesture()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.view.removeGestureRecognizer(tapGes!)
+    }
+    
+    func listenTapGesture(){
+        tapGes = UITapGestureRecognizer(target: self, action: #selector(BaseViewController.viewTapped))
+        tapGes?.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tapGes!)
+    }
+    
+    func viewTapped(){
+        UIApplication.shared.keyWindow?.endEditing(true)
     }
     
     func initNavView(title : String, bolBack : Bool){

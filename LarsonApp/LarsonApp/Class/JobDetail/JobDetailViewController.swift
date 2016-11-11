@@ -76,7 +76,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     }
 
     func initPartTab(){
-        partsView = JobPartsTableView(frame: CGRect(x: LCDW, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!), style: .plain)
+        partsView = JobPartsTableView(frame: CGRect(x: LCDW, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.scrollView?.height())!), style: .plain)
         scrollViewSet?.scrollView?.addSubview(partsView!)
         
         partsView?.buttonTapHandler = {
