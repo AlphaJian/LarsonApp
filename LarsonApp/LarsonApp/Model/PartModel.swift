@@ -22,6 +22,7 @@ class PartModel: NSObject {
     var stock = 0
     var userId = ""
     var vendorId = ""
+    var notes = ""
     
     func parseDicToSelf(dic : NSDictionary) {
         self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
@@ -45,6 +46,13 @@ class PartModel: NSObject {
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {
         print("\(value)" + key)
+    }
+    
+    func parseSelfToDic() -> NSDictionary
+    {
+        return ["_id" : _id, "alternateNumber": alternateNumber, "emergencyRequest" : emergencyRequest, "inTruck" : inTruck,
+                "name" : name, "needDeliveryService" : needDeliveryService, "number" : number, "price" : price,
+                "qty" : qty, "requestedBy" : userId, "stock" : stock, "userId" : userId, "notes" : notes]
     }
     
 }

@@ -31,6 +31,14 @@ class DataManager: NSObject {
         //        tempRef.updateChildValues([tempRef.childByAutoId():["email":emial, "token":accessToken]])
     }
     
+    func insertPartRequest(appointmentId : String, dic : NSDictionary, successHandler : @escaping ReturnBlock)
+    {
+        let tempRef = ref.child("engineerApp").child("appointment-parts").child(appointmentId).child("requested").child(dic["_id"] as! String)
+        tempRef.setValue(dic) { (err, ref) in
+            successHandler(NSNull.self)
+        }
+    }
+    
     func fetchAppointList(successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock){
 //        ref.child("engineerApp").child("engineers-appointments").child("2hVdrYsU4jQzSmaK0xEp154dy6s1").observeSingleEvent(of: .value, with: { (snapshot) in
 //            // Get user value

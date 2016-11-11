@@ -25,10 +25,19 @@ class PartRequestViewController: BaseViewController {
     func initUI(){
         partRequestView = Bundle.main.loadNibNamed("PartRequestContainerView", owner: self, options: nil)?[0] as? PartRequestContainerView
         partRequestView?.frame = CGRect(x: 0, y: 64, width: LCDW, height: LCDH - 64)
-        partRequestView?.initUpper(appointmentModel: self.getBaseTabVC().jobDetailModel)
+        partRequestView?.initUpper(model: self.getBaseTabVC().jobDetailModel)
+        partRequestView?.initPart(model: partModel!)
         self.view.addSubview(partRequestView!)
         
-        
+        partRequestView?.requestHandler = {(part, jobId) -> Void in
+            DataManager.shareManager.insertPartRequest(appointmentId: jobId as! String, dic: (part as! PartModel).parseSelfToDic(), successHandler: { (obj) in
+                let destinationVC = self.navigationController?.viewControllers[1] as! JobDetailViewController
+                
+                let _ = self.navigationController?.popToViewController(destinationVC, animated: true)
+                destinationVC.fetchPartsData()
+
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {

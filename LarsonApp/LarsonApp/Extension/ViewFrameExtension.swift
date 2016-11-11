@@ -56,6 +56,13 @@ extension UIView
     {
         self.frame.size.width = width
     }
+    
+    func addBottomShadow(){
+        self.layer.shadowOpacity = 0.5
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowRadius = 3
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+    }
 }
 
 extension CALayer {

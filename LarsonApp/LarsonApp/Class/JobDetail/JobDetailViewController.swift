@@ -13,10 +13,15 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
+    var workOrderView : WorkOrderScrollView?
  //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
 
     var siteHistoryTableView : SiteHistoryTableView?
+
+    var workOrderTableView : WorkOrderTableView?
+    var nextPartSearchVC : PartSearchViewController?
+
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -31,8 +36,10 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initUI()
         loadData()
         fetchPartsData()
+
         fetchSiteHistoryData()
-        
+ 
+        fetchWorkOrderData()
     }
     
     func loadData(){
@@ -50,12 +57,13 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initDetailTab()
         initPartTab()
         initSiteHistory()
+        initWorkOrderTab()
     }
     
     func initDetailTab(){
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128))
         scrollView?.delegate = self
-       
+        
         
         self.scrollViewSet?.scrollView?.addSubview(scrollView!)
         jobDetailView = Bundle.main.loadNibNamed("JobDetailView", owner: self, options: nil)?[0] as? JobDetailView
@@ -76,20 +84,19 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     }
 
     func initPartTab(){
-        partsView = JobPartsTableView(frame: CGRect(x: LCDW, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!), style: .plain)
+        partsView = JobPartsTableView(frame: CGRect(x: LCDW, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.scrollView?.height())!), style: .plain)
         scrollViewSet?.scrollView?.addSubview(partsView!)
         
         partsView?.buttonTapHandler = {
-            let vc = PartSearchViewController()
-            vc.bolTabVC = false
-            self.navigationController?.pushViewController(vc, animated: true)
+            self.nextPartSearchVC = PartSearchViewController()
+            self.nextPartSearchVC?.bolTabVC = false
+            self.navigationController?.pushViewController(self.nextPartSearchVC!, animated: true)
         }
         partsView?.partDeleteHandler = {[unowned self](indexPath, partModel) -> Void in
             let childStr = (self.partsView?.dataItems[indexPath.section] as! NSDictionary).allKeys[0] as! String
             DataManager.shareManager.deleteJobParts(jobId: (self.model?._id)!, childStr: childStr, partId: partModel._id, successHandler: { (obj) in
                 self.fetchPartsData()
                 }, failHandeler: { (obj) in
-                    
             })
         }
     }
@@ -101,6 +108,19 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     
+    func initWorkOrderTab() {
+//        workorderScrollView = UIScrollView.init(frame: CGRect(x: LCDW * 3, y: 0, width: LCDW, height: LCDH - 128))
+//        workorderScrollView?.delegate = self
+//        
+//        
+//        self.scrollViewSet?.scrollView?.addSubview(workorderScrollView!)
+//        
+//        
+//        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
+//        workorderScrollView?.contentSize.height = (workOrderView?.frame.height)!
+        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64), style: .plain)
+        scrollViewSet?.scrollView?.addSubview(workOrderTableView!)
+    }
     
     func fetchPartsData(){
         DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
@@ -109,7 +129,11 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
                 self.partsView?.reloadData()
             }
         }) { (obj) in
-            print(obj)
+            DispatchQueue.main.async {
+                self.partsView?.dataItems = NSMutableArray()
+                self.partsView?.reloadData()
+            }
+            
         }
     }
     
@@ -127,8 +151,13 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         }
     }
     
+  
+    func fetchWorkOrderData() {
+        self.workOrderTableView?.model = self.model
+        self.workOrderTableView?.reloadData()
+    }
     
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
