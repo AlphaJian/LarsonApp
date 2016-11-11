@@ -10,6 +10,7 @@ import UIKit
 
 class PartRequestContainerView: UIScrollView {
 
+    @IBOutlet weak var appointContainer: CustomView!
     @IBOutlet weak var legacyIdLabel: UILabel!
     @IBOutlet weak var customerNameLbl: UILabel!
     @IBOutlet weak var addressLbl: UILabel!
@@ -30,6 +31,9 @@ class PartRequestContainerView: UIScrollView {
     
     var partModel : PartModel?
     var appointmentModel : AppointmentModel?
+    
+    var selectedEmergency = false
+    var selectedDelivery = false
     
     func initUpper(model : AppointmentModel){
         appointmentModel = model
@@ -56,14 +60,20 @@ class PartRequestContainerView: UIScrollView {
             }
         }
         
-        emergencyView = SelectionView(frame: CGRect(x: 10, y: 0, width: questionContainer.width(), height: 40))
+        emergencyView = SelectionView(frame: CGRect(x: 20, y: 0, width: questionContainer.width() - 20, height: 40))
         emergencyView?.initUI(title: "Is this an emergency request? *", strY: "Yes", strNo: "No")
         questionContainer.addSubview(emergencyView!)
-        
-        deliveryView = SelectionView(frame: CGRect(x: 10, y: (emergencyView?.bottom())! + 10, width: questionContainer.width(), height: 40))
+        emergencyView?.questionHandler = {(bol) -> Void in
+            self.selectedEmergency = true
+            self.partModel?.emergencyRequest = bol as! Bool
+        }
+        deliveryView = SelectionView(frame: CGRect(x: 20, y: (emergencyView?.bottom())! + 10, width: questionContainer.width() - 20, height: 40))
         deliveryView?.initUI(title: "Do you need delivery service?*", strY: "Yes", strNo: "No, pick up at the warehouse")
         questionContainer.addSubview(deliveryView!)
-        
+        deliveryView?.questionHandler = {(bol) -> Void in
+            self.selectedDelivery = true
+            self.partModel?.needDeliveryService = bol as! Bool
+        }
         notesTF = Bundle.main.loadNibNamed("CustomTextField", owner: self, options: nil)?[0] as? CustomTextField
         notesTF?.createCustomField(_title: "Notes", _bolTextfield: true)
         notesTF?.frame = notesContainer.bounds
@@ -91,6 +101,14 @@ class PartRequestContainerView: UIScrollView {
         if partModel?.qty == 0
         {
             return "Please enter parts quality"
+        }
+        if selectedEmergency == false
+        {
+            return "Please select emergency option"
+        }
+        if selectedDelivery == false
+        {
+            return "Please select delivery option"
         }
         return ""
     }
