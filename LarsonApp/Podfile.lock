@@ -82,6 +82,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.7)
   - GTMSessionFetcher/Full (1.1.7):
     - GTMSessionFetcher/Core (= 1.1.7)
+  - IQKeyboardManagerSwift (4.0.7)
   - JGProgressHUD (1.4)
   - libwebp (0.5.1):
     - libwebp/core (= 0.5.1)
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - Google/SignIn
   - GoogleMaps
   - GooglePlaces
+  - IQKeyboardManagerSwift
   - JGProgressHUD
   - SDWebImage (~> 3.8)
   - SDWebImage/WebP
@@ -147,10 +149,11 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
   GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: a1f8ed39e4fe21c68957daed472c7afbcdf29166
+  IQKeyboardManagerSwift: 58bbcf46b5cf9fd4ed625d28a60cb2fbae4ab0f4
   JGProgressHUD: 1617b0940cf80bb53e8f7d6f0fd69252ea45d6d4
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: 49df027505a57748e5fcfdb9fc3dd6b7ca4133fd
+PODFILE CHECKSUM: 5759d683a7199c4cc3fc5f4b3b569ddd382c95c1
 
 COCOAPODS: 1.1.1

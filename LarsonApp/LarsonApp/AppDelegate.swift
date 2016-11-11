@@ -11,6 +11,7 @@ import Firebase
 import GoogleSignIn
 import UserNotifications
 import GoogleMaps
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,7 +40,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.removeFromParentViewController()
             self.initLogin()
         }
-        
+        IQKeyboardManager.sharedManager().enable = true
         configReceiveNotification(application: application)
         return true
     }

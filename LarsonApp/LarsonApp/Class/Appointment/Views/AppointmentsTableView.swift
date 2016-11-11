@@ -19,7 +19,7 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         super.init(frame: frame, style: style)
         self.delegate = self
         self.dataSource = self
-        self.backgroundColor = UIColor(red: 236.0/255.0, green: 240/255.0, blue: 241/255.0, alpha: 1.0)
+        self.backgroundColor = UIColor(red: 226.0/255.0, green: 226.0/255.0, blue: 226.0/255.0, alpha: 1.0)
         
         self.register(UINib(nibName: "TodoAppointmentTableViewCell", bundle: nil), forCellReuseIdentifier: "TODO")
         self.register(UINib(nibName: "CompleteAppointmentTableViewCell", bundle: nil), forCellReuseIdentifier: "COMPLETE")
@@ -32,17 +32,6 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         fatalError("")
     }
     
-    func updateItem(model: AppointmentModel) {
-        
-    }
-    
-    func insertItem(model: AppointmentModel) {
-        
-    }
-    
-    func removeItem(model: AppointmentModel) {
-        
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -67,11 +56,11 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 5.0
+        return 10.0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let placeholderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 5))
+        let placeholderView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.size.width, height: 10))
         placeholderView.backgroundColor = .clear
         return placeholderView
     }
@@ -97,5 +86,5 @@ class AppointmentsTableView: UITableView, UITableViewDelegate, UITableViewDataSo
         }
         
     }
-    
+
 }

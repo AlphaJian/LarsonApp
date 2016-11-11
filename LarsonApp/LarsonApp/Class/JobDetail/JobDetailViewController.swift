@@ -13,9 +13,10 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
+    var workOrderView : WorkOrderScrollView?
  //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
-
+    var workOrderTableView : WorkOrderTableView?
     var nextPartSearchVC : PartSearchViewController?
     
     var partsView : JobPartsTableView?
@@ -31,7 +32,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initUI()
         loadData()
         fetchPartsData()
-        
+        fetchWorkOrderData()
     }
     
     func loadData(){
@@ -48,12 +49,13 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         
         initDetailTab()
         initPartTab()
+        initWorkOrderTab()
     }
     
     func initDetailTab(){
         scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128))
         scrollView?.delegate = self
-       
+        
         
         self.scrollViewSet?.scrollView?.addSubview(scrollView!)
         jobDetailView = Bundle.main.loadNibNamed("JobDetailView", owner: self, options: nil)?[0] as? JobDetailView
@@ -91,6 +93,20 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         }
     }
     
+    func initWorkOrderTab() {
+//        workorderScrollView = UIScrollView.init(frame: CGRect(x: LCDW * 3, y: 0, width: LCDW, height: LCDH - 128))
+//        workorderScrollView?.delegate = self
+//        
+//        
+//        self.scrollViewSet?.scrollView?.addSubview(workorderScrollView!)
+//        
+//        
+//        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
+//        workorderScrollView?.contentSize.height = (workOrderView?.frame.height)!
+        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64), style: .plain)
+        scrollViewSet?.scrollView?.addSubview(workOrderTableView!)
+    }
+    
     func fetchPartsData(){
         DataManager.shareManager.fetchJobParts(jobId: (model?._id)!, successHandler: { (obj) in
             DispatchQueue.main.async {
@@ -104,6 +120,11 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
             }
             
         }
+    }
+    
+    func fetchWorkOrderData() {
+        self.workOrderTableView?.model = self.model
+        self.workOrderTableView?.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
