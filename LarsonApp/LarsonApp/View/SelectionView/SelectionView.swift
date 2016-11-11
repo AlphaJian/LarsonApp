@@ -13,6 +13,8 @@ class SelectionView: UIView {
     var yesBtn : UIButton!
     var noBtn : UIButton!
     
+    var questionHandler : ReturnBlock?
+    
     func initUI(title : String, strY : String, strNo : String){
         let titleLbl = UILabel(frame: CGRect(x: 0, y: 0, width: self.width(), height: 20 ))
         titleLbl.font = UIFont.systemFont(ofSize: 13)
@@ -46,13 +48,29 @@ class SelectionView: UIView {
     
     func yesTapped(_ sender : UIButton)
     {
+        if sender.isSelected
+        {
+            return
+        }
         sender.isSelected = !sender.isSelected
         noBtn.isSelected = !sender.isSelected
+        if questionHandler != nil
+        {
+            questionHandler!(true as AnyObject)
+        }
     }
     
     func noTapped(_ sender : UIButton)
     {
+        if sender.isSelected
+        {
+            return
+        }
         sender.isSelected = !sender.isSelected
         yesBtn.isSelected = !sender.isSelected
+        if questionHandler != nil
+        {
+            questionHandler!(false as AnyObject)
+        }
     }
 }

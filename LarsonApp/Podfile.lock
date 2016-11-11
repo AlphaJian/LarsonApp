@@ -107,6 +107,8 @@ PODS:
   - libwebp/utils (0.5.1):
     - libwebp/core
   - libwebp/webp (0.5.1)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
   - SDWebImage/Core (3.8.2)
   - SDWebImage/WebP (3.8.2):
     - libwebp
@@ -123,6 +125,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - JGProgressHUD
+  - SDWebImage (~> 3.8)
   - SDWebImage/WebP
 
 SPEC CHECKSUMS:
@@ -148,6 +151,6 @@ SPEC CHECKSUMS:
   libwebp: b9126f8982a95370cf4eaad9bb3fefd57f052c15
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
 
-PODFILE CHECKSUM: db51033e0895c8d8cc4c25e1f278e84717daef57
+PODFILE CHECKSUM: 49df027505a57748e5fcfdb9fc3dd6b7ca4133fd
 
 COCOAPODS: 1.1.1

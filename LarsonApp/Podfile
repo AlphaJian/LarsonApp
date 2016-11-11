@@ -1,4 +1,4 @@
-
+platform :ios, '8.0'
 use_frameworks!
 target 'LarsonApp' do
     
@@ -13,5 +13,6 @@ target 'LarsonApp' do
     pod 'JGProgressHUD'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    pod 'SDWebImage', '~>3.8'
     
 end

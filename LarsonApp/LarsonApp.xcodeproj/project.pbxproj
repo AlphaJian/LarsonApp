@@ -46,6 +46,7 @@
 		434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434395F11DC044A400C12C37 /* NavHeaderView.xib */; };
 		4344BA041DD0224C007C3872 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BA031DD0224C007C3872 /* UserModel.swift */; };
 		4344BA061DD023B4007C3872 /* FileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BA051DD023B4007C3872 /* FileUtility.swift */; };
+		437279831DD594270090D253 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437279821DD594270090D253 /* CustomView.swift */; };
 		43C3C6831DD011620036EE91 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3C6821DD011620036EE91 /* TabViewController.swift */; };
 		43C3C6851DD012910036EE91 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3C6841DD012910036EE91 /* NavViewController.swift */; };
 		43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */; };
@@ -126,6 +127,7 @@
 		434395F11DC044A400C12C37 /* NavHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NavHeaderView.xib; sourceTree = "<group>"; };
 		4344BA031DD0224C007C3872 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4344BA051DD023B4007C3872 /* FileUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUtility.swift; path = LarsonApp/Model/FileUtility.swift; sourceTree = SOURCE_ROOT; };
+		437279821DD594270090D253 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		43C3C6821DD011620036EE91 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		43C3C6841DD012910036EE91 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 				434395EF1DC044A400C12C37 /* NavView */,
 				A77861121DBF573800BA17EE /* MKButton */,
 				A77861161DBF573800BA17EE /* SideBar */,
+				437279821DD594270090D253 /* CustomView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -677,6 +680,7 @@
 				BAE3DFFF1DD074CE006E2B69 /* TextTitleView.swift in Sources */,
 				BAC7EC491DD424930095FD01 /* SiteHistoryTableView.swift in Sources */,
 				BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */,
+				437279831DD594270090D253 /* CustomView.swift in Sources */,
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				43137B4B1DD1AE3400F2D553 /* NavSearchView.swift in Sources */,
 				43137B491DD1AB2C00F2D553 /* PartSearchViewController.swift in Sources */,
