@@ -92,23 +92,19 @@ extension WorkOrderTableView : UITableViewDataSource {
             return cell
         } else if indexPath.section == EnumTableViewCell.ServiceDescCell.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputWorkOrderCell", for: indexPath) as! InputWorkOrderCell
-            cell.initUI(parameter: ("service description", "service description"))
+            cell.initUI(parameter: ("Service Description", ""))
             cell.textViewUpdateBlock = { (str: AnyObject) in
-//                tableView.beginUpdates()
-//                tableView.endUpdates()
-                
                 let currentOffset = tableView.contentOffset
                 UIView.setAnimationsEnabled(false)
                 tableView.beginUpdates()
                 tableView.endUpdates()
                 UIView.setAnimationsEnabled(true)
                 tableView.setContentOffset(currentOffset, animated: false)
-
             }
             return cell
         } else if indexPath.section == EnumTableViewCell.WorkDescCell.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputWorkOrderCell", for: indexPath) as! InputWorkOrderCell
-            cell.initUI(parameter: ("work description", "work description"))
+            cell.initUI(parameter: ("Work Description", ""))
             cell.textViewUpdateBlock = { (str: AnyObject) in
                 let currentOffset = tableView.contentOffset
                 UIView.setAnimationsEnabled(false)
