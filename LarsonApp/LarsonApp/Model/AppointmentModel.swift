@@ -31,6 +31,9 @@ class AppointmentModel: NSObject {
     var legacyId = ""
     var partsReqInTruckNum = 0
     var partsReqNum = 0
+    var stationNumber = ""
+    var zipCode = ""
+    var techNumber = ""
     
     func parseDicToSelf(dic : NSDictionary) {
         self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
@@ -55,6 +58,9 @@ class AppointmentModel: NSObject {
         self.partsReqInTruckNum = dic.checkIntIfNil(key: "partsReqInTruckNum", oldValue: self.partsReqInTruckNum)
         self.partsReqNum = dic.checkIntIfNil(key: "partsReqNum", oldValue: self.partsReqNum)
         self.division = dic.checkValueIfNil(key: "division", oldValue: self.division)
+        self.stationNumber = dic.checkValueIfNil(key: "stationNumber", oldValue: self.stationNumber)
+        self.zipCode = dic.checkValueIfNil(key: "zipcode", oldValue: self.zipCode)
+        self.techNumber = dic.checkValueIfNil(key: "techNumber", oldValue: self.techNumber)
     }
     
     func initWithDic (dic : NSDictionary) {

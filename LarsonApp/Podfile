@@ -13,5 +13,8 @@ target 'LarsonApp' do
     pod 'JGProgressHUD'
     pod 'GoogleMaps'
     pod 'GooglePlaces'
+    pod 'IQKeyboardManagerSwift'
+    
+
     
 end

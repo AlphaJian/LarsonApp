@@ -18,6 +18,10 @@ class CompleteAppointmentTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.layer.cornerRadius = 4.0
+        self.containerView.layer.shadowColor = UIColor.gray.cgColor
+        self.containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.containerView.layer.shadowOpacity = 1;
+        self.containerView.layer.shadowRadius = 2.0;
         // Initialization code
     }
     

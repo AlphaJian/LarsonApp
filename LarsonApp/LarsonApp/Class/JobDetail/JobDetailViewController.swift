@@ -16,7 +16,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var workOrderView : WorkOrderScrollView?
  //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
-
+    var workOrderTableView : WorkOrderTableView?
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -31,14 +31,13 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initUI()
         loadData()
         fetchPartsData()
-        
+        fetchWorkOrderData()
     }
     
     func loadData(){
         if model != nil
         {
             self.jobDetailView?.initUI(model: self.model!)
-            self.workOrderView?.initUI(model: self.model!)
         }
         
     }
@@ -95,9 +94,17 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func initWorkOrderTab() {
-        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
-        workOrderView?.frame = CGRect(x: LCDW*3, y: 0, width: LCDW, height: LCDH-128)
-        scrollViewSet?.scrollView?.addSubview(workOrderView!)
+//        workorderScrollView = UIScrollView.init(frame: CGRect(x: LCDW * 3, y: 0, width: LCDW, height: LCDH - 128))
+//        workorderScrollView?.delegate = self
+//        
+//        
+//        self.scrollViewSet?.scrollView?.addSubview(workorderScrollView!)
+//        
+//        
+//        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
+//        workorderScrollView?.contentSize.height = (workOrderView?.frame.height)!
+        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64), style: .plain)
+        scrollViewSet?.scrollView?.addSubview(workOrderTableView!)
     }
     
     func fetchPartsData(){
@@ -109,6 +116,11 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         }) { (obj) in
             print(obj)
         }
+    }
+    
+    func fetchWorkOrderData() {
+        self.workOrderTableView?.model = self.model
+        self.workOrderTableView?.reloadData()
     }
     
     override func didReceiveMemoryWarning() {
