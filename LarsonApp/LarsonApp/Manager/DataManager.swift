@@ -154,6 +154,65 @@ class DataManager: NSObject {
         }
     }
     
+    func fetchSiteHistory(jobId : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
+    {
+        let siteHistoryData = NSMutableDictionary()
+        
+        ref.child("engineerApp").child("location-equipment").child(jobId).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let dic = snapshot.value as? NSArray
+            if dic == nil
+            {
+                failHandeler("No Parts Here" as AnyObject)
+            }
+            else
+            {
+                siteHistoryData.setValue(dic, forKey: "location-equipment")
+                successHandler(siteHistoryData)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+            failHandeler("Can't load parts" as AnyObject)
+        }
+        
+        ref.child("engineerApp").child("location-pastNotes").child(jobId).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let dic = snapshot.value as? NSDictionary
+            if dic == nil
+            {
+                failHandeler("No Parts Here" as AnyObject)
+            }
+            else
+            {
+                siteHistoryData.setValue(dic, forKey: "location-pastNotes")
+                successHandler(siteHistoryData)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+            failHandeler("Can't load parts" as AnyObject)
+        }
+        
+        ref.child("engineerApp").child("location-sitehistories").child(jobId).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let dic = snapshot.value as? NSArray
+            if dic == nil
+            {
+                failHandeler("No Parts Here" as AnyObject)
+            }
+            else
+            {
+                siteHistoryData.setValue(dic, forKey: "location-sitehistories")
+                successHandler(siteHistoryData)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
+            failHandeler("Can't load parts" as AnyObject)
+        }  
+    }
+    
+    
+    
+    
     func searchParts(keywords : String, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
     {
         ref.child("search").child("response").observe(.childAdded, with: { (snapshot) in
