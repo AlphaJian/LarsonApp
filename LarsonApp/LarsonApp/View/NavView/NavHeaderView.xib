@@ -19,7 +19,8 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kew-1V-stA" customClass="MKButton" customModule="LarsonApp" customModuleProvider="target">
                     <constraints>
-                        <constraint firstAttribute="width" constant="24" id="B8p-4F-aIG"/>
+                        <constraint firstAttribute="width" constant="54" id="B8p-4F-aIG"/>
+                        <constraint firstAttribute="height" constant="36" id="Cqp-gf-4bo"/>
                         <constraint firstAttribute="height" constant="24" id="P2E-8X-kzB"/>
                     </constraints>
                     <state key="normal" image="Menu"/>
@@ -65,7 +66,7 @@
                 <constraint firstItem="Kew-1V-stA" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="h77-Mt-MU5"/>
                 <constraint firstAttribute="trailing" secondItem="GWx-xf-iNp" secondAttribute="trailing" constant="10" id="kFM-w8-3qP"/>
                 <constraint firstItem="GWx-xf-iNp" firstAttribute="leading" secondItem="Kew-1V-stA" secondAttribute="trailing" constant="32" id="pT7-uJ-JK5"/>
-                <constraint firstItem="Kew-1V-stA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="uX2-TE-uKt"/>
+                <constraint firstItem="Kew-1V-stA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="uX2-TE-uKt"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <variation key="default">
