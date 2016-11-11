@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        self.view.removeGestureRecognizer(tapGes!)
+//        self.view.removeGestureRecognizer(tapGes!)
     }
     
     func listenTapGesture(){

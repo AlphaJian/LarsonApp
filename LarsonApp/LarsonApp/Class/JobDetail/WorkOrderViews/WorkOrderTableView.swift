@@ -17,13 +17,14 @@ enum EnumTableViewCell: Int{
     case techNumCell
     case ServiceDescCell
     case WorkDescCell
+    case AddPartsCell
     case SectionCount
 }
 
 class WorkOrderTableView: UITableView {
 
     var model: AppointmentModel?
-    
+    var partItems: [Int] = [Int]()
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -39,6 +40,8 @@ class WorkOrderTableView: UITableView {
         
         self.register(UINib(nibName: "StaticWorkOrderCell", bundle: nil), forCellReuseIdentifier: "StaticWorkOrderCell")
         self.register(UINib(nibName: "InputWorkOrderCell", bundle: nil), forCellReuseIdentifier: "InputWorkOrderCell")
+        self.register(UINib(nibName: "AddPartsCell", bundle: nil), forCellReuseIdentifier: "AddPartsCell")
+        self.register(UINib(nibName: "PartItemCell", bundle: nil), forCellReuseIdentifier: "PartItemCell")
         
         self.rowHeight = UITableViewAutomaticDimension
         self.estimatedRowHeight = 60.0
@@ -62,7 +65,11 @@ class WorkOrderTableView: UITableView {
 
 extension WorkOrderTableView : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if section == EnumTableViewCell.AddPartsCell.rawValue {
+            return 1 + partItems.count
+        } else {
+            return 1
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -104,7 +111,7 @@ extension WorkOrderTableView : UITableViewDataSource {
             return cell
         } else if indexPath.section == EnumTableViewCell.WorkDescCell.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputWorkOrderCell", for: indexPath) as! InputWorkOrderCell
-            cell.initUI(parameter: ("Work Description", ""))
+            cell.initUI(parameter: ("Description of Work", ""))
             cell.textViewUpdateBlock = { (str: AnyObject) in
                 let currentOffset = tableView.contentOffset
                 UIView.setAnimationsEnabled(false)
@@ -114,7 +121,20 @@ extension WorkOrderTableView : UITableViewDataSource {
                 tableView.setContentOffset(currentOffset, animated: false)
             }
             return cell
-        } else {
+        } else if indexPath.section == EnumTableViewCell.AddPartsCell.rawValue {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "AddPartsCell", for: indexPath) as! AddPartsCell
+                cell.initUI(parameter: ("Add Parts Used"))
+                return cell
+            } else {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "PartItemCell", for: indexPath) as! PartItemCell
+//                cell.initUI(parameter: ("Add Parts Used"))
+                return cell
+            }
+            
+        }
+        
+        else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "StaticWorkOrderCell", for: indexPath) as! StaticWorkOrderCell
             cell.initUI(parameter: ("Tech Number", (self.model?.techNumber)!))
             return cell
@@ -123,5 +143,13 @@ extension WorkOrderTableView : UITableViewDataSource {
 }
 
 extension WorkOrderTableView : UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == EnumTableViewCell.AddPartsCell.rawValue && indexPath.row == 0 {
+            self.partItems.append(1)
+            let indexPathItem = NSIndexPath(row: 1, section: indexPath.section)
+            tableView.beginUpdates()
+            tableView.insertRows(at: [indexPathItem as IndexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
 }
