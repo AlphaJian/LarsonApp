@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.makeKeyAndVisible()
         GoogleSignInManager.sharedManager.googleSignIn(userSignHandler: {
             vc.removeFromParentViewController()
+            UserManager.shareManager.userModel = FileUtility.unarchive(fileName: kAccountFileName) as? UserModel
+            
             self.initMainVC()
         }) {
             vc.removeFromParentViewController()
