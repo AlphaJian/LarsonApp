@@ -1,5 +1,5 @@
 //
-//  PartItemCell.swift
+//  AddPartsCell.swift
 //  LarsonApp
 //
 //  Created by Perry Z Chen on 11/11/16.
@@ -8,8 +8,9 @@
 
 import UIKit
 
-class PartItemCell: UITableViewCell {
+class AddPartsCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +20,10 @@ class PartItemCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initUI(parameter: (String)) {
+        self.titleLabel.text = parameter
     }
     
 }
