@@ -27,7 +27,9 @@ class SiteHistoryTableViewCell: UITableViewCell {
     
     func initSiteUI(model: SiteHistoryModel, index : IndexPath){
        
-        initShadowView(height: model.cellHeight)
+        initShadowView(height: model.cellHeight, isOpen: model.isOpen)
+       
+        
     let dateLabel = UILabel(frame: CGRect(x: 10, y: 5, width: 300, height: 30))
         
       let date = StringUtil.getDateFromString(date: model.dateOfServiceCall, format: "yyyy-MM-dd HH:mm:ss.s")
@@ -68,7 +70,8 @@ class SiteHistoryTableViewCell: UITableViewCell {
     
     func initNotesUI(model: SiteHistoryNotesModel, index : IndexPath){
        
-       initShadowView(height: model.cellHeight)
+       initShadowView(height: model.cellHeight,isOpen: model.isOpen)
+        
 
         let dateLabel = UILabel(frame: CGRect(x: 10, y: 5, width: 300, height: 30))
         dateLabel.font = UIFont.boldSystemFont(ofSize: 13)
@@ -84,17 +87,30 @@ class SiteHistoryTableViewCell: UITableViewCell {
           self.clipsToBounds = true
     }
     
-    func initShadowView(height: CGFloat){
+    func initShadowView(height: CGFloat, isOpen: Bool) {
         
         shadowView = UIView(frame: CGRect(x: 20, y: 10, width: self.width() - 40, height: height - 20))
         shadowView?.backgroundColor = UIColor.white
         shadowView?.layer.shadowOpacity = 0.3
         shadowView?.layer.shadowRadius = 2.0
         shadowView?.layer.shadowColor = UIColor.black.cgColor
-        shadowView?.layer.shadowOffset = CGSize(width: 2, height: 2)
+        shadowView?.layer.shadowOffset = CGSize(width: 0, height: 0)
+        
+        let imgView = UIImageView(frame: CGRect(x: (shadowView?.frame.width)! - 30, y: 15, width: 10, height: 6))
+        
+        if isOpen {
+            imgView.image = UIImage(named: "Close More")
+        } else {
+            imgView.image = UIImage(named: "Expand More")
+        }
+        shadowView?.addSubview(imgView)
+        
         self.contentView.addSubview(shadowView!)
-    
     }
+    
+//    UIView.animateWithDuration(0.3) {
+//    btn.transform = CGAffineTransformMakeRotation(corner * CGFloat(M_PI) / 180.0)
+//    }
     
 
     func clearCell(){
