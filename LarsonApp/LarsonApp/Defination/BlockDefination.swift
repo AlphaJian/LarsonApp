@@ -33,6 +33,7 @@ let kAccountFileName = "userAccount"
 let kPartSearchIndex = "firebase-reln"
 let kPartSearchSize = 20
 let kPartSearchType = "part-inventory"
+let kSiteHisCellHeight: CGFloat = 60
 
 class BlockDefination: NSObject {
 
