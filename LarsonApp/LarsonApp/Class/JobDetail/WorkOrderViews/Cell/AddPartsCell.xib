@@ -15,18 +15,18 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="48"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="47"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="47.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddAssets" translatesAutoresizingMaskIntoConstraints="NO" id="ucj-vf-2HW">
-                        <rect key="frame" x="15" y="15" width="18" height="16"/>
+                        <rect key="frame" x="15" y="15.5" width="18" height="18"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="18" id="5nj-Fw-YLC"/>
                             <constraint firstAttribute="width" constant="18" id="L7j-as-i79"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qcY-fS-wB6">
-                        <rect key="frame" x="48" y="14" width="257" height="18"/>
+                        <rect key="frame" x="48" y="15.5" width="257" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -34,6 +34,7 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="qcY-fS-wB6" firstAttribute="leading" secondItem="ucj-vf-2HW" secondAttribute="trailing" constant="15" id="93D-yV-aKW"/>
+                    <constraint firstItem="ucj-vf-2HW" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WJp-PA-6nu"/>
                     <constraint firstAttribute="bottom" secondItem="ucj-vf-2HW" secondAttribute="bottom" constant="15" id="XF8-P9-Cl0"/>
                     <constraint firstAttribute="trailing" secondItem="qcY-fS-wB6" secondAttribute="trailing" constant="15" id="jTj-sJ-RuL"/>
                     <constraint firstItem="ucj-vf-2HW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="m5p-px-9EY"/>
