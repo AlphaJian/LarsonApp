@@ -10,11 +10,23 @@ import UIKit
 
 class PartItemCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var quantityLabel: UILabel!
+    
+    var removeItemBlock: ReturnBlock?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
 
+    @IBAction func removeItemAction(_ sender: UIButton) {
+        if self.removeItemBlock != nil {
+            self.removeItemBlock?("" as AnyObject)
+        }
+    }
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

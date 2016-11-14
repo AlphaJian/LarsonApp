@@ -13,7 +13,6 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var scrollViewSet : ScrollViewSet?
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
-    var workOrderView : WorkOrderScrollView?
  //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
 
@@ -131,8 +130,10 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
 //        
 //        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
 //        workorderScrollView?.contentSize.height = (workOrderView?.frame.height)!
-        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-128), style: .plain)
+        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64), style: .plain)
+        workOrderTableView?.vc = self
         scrollViewSet?.scrollView?.addSubview(workOrderTableView!)
+        
     }
     
     func fetchPartsData(){

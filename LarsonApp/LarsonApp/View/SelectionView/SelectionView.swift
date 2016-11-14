@@ -12,11 +12,11 @@ class SelectionView: UIView {
 
     var yesBtn : UIButton!
     var noBtn : UIButton!
-    
+    var titleLbl : UILabel!
     var questionHandler : ReturnBlock?
     
     func initUI(title : String, strY : String, strNo : String){
-        let titleLbl = UILabel(frame: CGRect(x: 0, y: 0, width: self.width(), height: 20 ))
+        titleLbl = UILabel(frame: CGRect(x: 0, y: 0, width: self.width(), height: 20 ))
         titleLbl.font = UIFont.systemFont(ofSize: 13)
         titleLbl.text = title
         self.addSubview(titleLbl)
