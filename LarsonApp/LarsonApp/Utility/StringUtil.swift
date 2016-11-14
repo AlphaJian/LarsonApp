@@ -63,4 +63,14 @@ class StringUtil: NSObject {
         let range = oldStr.range(of: middleStr + "/")
         return oldStr2.replacingCharacters(in: range!, with: "")
     }
+    
+    class func getTime(timeStamp: Int) -> String {
+
+        let timeInterval:TimeInterval = TimeInterval(timeStamp/1000)
+        let date = NSDate(timeIntervalSince1970: timeInterval)
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "MMM d yyyy HH:mm a"
+        return "\(dformatter.string(from: date as Date))"
+    }
+    
 }

@@ -80,7 +80,8 @@
 		BA062EAE1DCB188300C43F82 /* libJGProgressHUD.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BA062EAD1DCB188300C43F82 /* libJGProgressHUD.a */; };
 		BA570D191DC07D50000E9E4D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */; };
 		BAC7EC461DD416AD0095FD01 /* MKWhiteBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7EC451DD416AD0095FD01 /* MKWhiteBtn.swift */; };
-		BAC7EC491DD424930095FD01 /* SiteHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7EC481DD424930095FD01 /* SiteHistoryTableView.swift */; };
+		BAC7EC4C1DD46D320095FD01 /* SiteHistoryTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7EC4B1DD46D320095FD01 /* SiteHistoryTableView.swift */; };
+		BAC7EC4F1DD46D6E0095FD01 /* SiteHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC7EC4D1DD46D6E0095FD01 /* SiteHistoryTableViewCell.swift */; };
 		BAE3DFFB1DD06EC4006E2B69 /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3DFFA1DD06EC4006E2B69 /* JobDetailView.swift */; };
 		BAE3DFFF1DD074CE006E2B69 /* TextTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAE3DFFE1DD074CE006E2B69 /* TextTitleView.swift */; };
 		BAE3E0011DD07C6E006E2B69 /* JobDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAE3E0001DD07C6E006E2B69 /* JobDetailView.xib */; };
@@ -94,7 +95,12 @@
 		D80008A51DD5692F008000EF /* InputWorkOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80008A31DD5692F008000EF /* InputWorkOrderCell.xib */; };
 		D80008A81DD56949008000EF /* OptionBtnCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80008A61DD56949008000EF /* OptionBtnCell.swift */; };
 		D80008A91DD56949008000EF /* OptionBtnCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80008A71DD56949008000EF /* OptionBtnCell.xib */; };
-		D80008AB1DD56981008000EF /* PartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80008AA1DD56981008000EF /* PartItemCell.swift */; };
+		D80008B01DD5BD70008000EF /* AddPartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80008AE1DD5BD70008000EF /* AddPartsCell.swift */; };
+		D80008B11DD5BD70008000EF /* AddPartsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80008AF1DD5BD70008000EF /* AddPartsCell.xib */; };
+		D80008B41DD5C20C008000EF /* PartItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80008B21DD5C20C008000EF /* PartItemCell.swift */; };
+		D80008B51DD5C20C008000EF /* PartItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80008B31DD5C20C008000EF /* PartItemCell.xib */; };
+		D80008B81DD5C5F7008000EF /* WorkOrderOptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80008B61DD5C5F7008000EF /* WorkOrderOptionCell.swift */; };
+		D80008B91DD5C5F7008000EF /* WorkOrderOptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D80008B71DD5C5F7008000EF /* WorkOrderOptionCell.xib */; };
 		D87DCD6D1DD069C700C6284B /* TodoAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCD6B1DD069C700C6284B /* TodoAppointmentTableViewCell.swift */; };
 		D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */; };
 		D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */; };
@@ -184,7 +190,8 @@
 		BA570D181DC07D50000E9E4D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA570D1A1DC08A32000E9E4D /* LarsonApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LarsonApp.entitlements; sourceTree = "<group>"; };
 		BAC7EC451DD416AD0095FD01 /* MKWhiteBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MKWhiteBtn.swift; sourceTree = "<group>"; };
-		BAC7EC481DD424930095FD01 /* SiteHistoryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryTableView.swift; sourceTree = "<group>"; };
+		BAC7EC4B1DD46D320095FD01 /* SiteHistoryTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryTableView.swift; sourceTree = "<group>"; };
+		BAC7EC4D1DD46D6E0095FD01 /* SiteHistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		BAE3DFFA1DD06EC4006E2B69 /* JobDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		BAE3DFFE1DD074CE006E2B69 /* TextTitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextTitleView.swift; sourceTree = "<group>"; };
 		BAE3E0001DD07C6E006E2B69 /* JobDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JobDetailView.xib; sourceTree = "<group>"; };
@@ -198,7 +205,12 @@
 		D80008A31DD5692F008000EF /* InputWorkOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InputWorkOrderCell.xib; sourceTree = "<group>"; };
 		D80008A61DD56949008000EF /* OptionBtnCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionBtnCell.swift; sourceTree = "<group>"; };
 		D80008A71DD56949008000EF /* OptionBtnCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OptionBtnCell.xib; sourceTree = "<group>"; };
-		D80008AA1DD56981008000EF /* PartItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartItemCell.swift; sourceTree = "<group>"; };
+		D80008AE1DD5BD70008000EF /* AddPartsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPartsCell.swift; sourceTree = "<group>"; };
+		D80008AF1DD5BD70008000EF /* AddPartsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddPartsCell.xib; sourceTree = "<group>"; };
+		D80008B21DD5C20C008000EF /* PartItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PartItemCell.swift; sourceTree = "<group>"; };
+		D80008B31DD5C20C008000EF /* PartItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PartItemCell.xib; sourceTree = "<group>"; };
+		D80008B61DD5C5F7008000EF /* WorkOrderOptionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkOrderOptionCell.swift; sourceTree = "<group>"; };
+		D80008B71DD5C5F7008000EF /* WorkOrderOptionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WorkOrderOptionCell.xib; sourceTree = "<group>"; };
 		D87DCD6B1DD069C700C6284B /* TodoAppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoAppointmentTableViewCell.swift; sourceTree = "<group>"; };
 		D87DCD6C1DD069C700C6284B /* TodoAppointmentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoAppointmentTableViewCell.xib; sourceTree = "<group>"; };
 		D87DCD6F1DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteAppointmentTableViewCell.swift; sourceTree = "<group>"; };
@@ -318,7 +330,6 @@
 				434395AD1DBF4E9800C12C37 /* JobDetail */,
 				434395AE1DBF4E9800C12C37 /* Login */,
 				434395AF1DBF4E9800C12C37 /* Parts */,
-				BAC7EC471DD424110095FD01 /* SiteHistory */,
 				434395C01DBF4EC900C12C37 /* BaseViewController.swift */,
 				43C3C6821DD011620036EE91 /* TabViewController.swift */,
 				43C3C6841DD012910036EE91 /* NavViewController.swift */,
@@ -340,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				438258591DD9504900B2E190 /* TimeSheet */,
+				BAC7EC4A1DD46D320095FD01 /* SiteHistory */,
 				BAE3DFF91DD06E06006E2B69 /* JobDetailViews */,
 				43137B3D1DD16A4700F2D553 /* Parts */,
 				D8B139251DD411330022AD1C /* WorkOrderViews */,
@@ -520,10 +532,11 @@
 			path = SideBar;
 			sourceTree = "<group>";
 		};
-		BAC7EC471DD424110095FD01 /* SiteHistory */ = {
+		BAC7EC4A1DD46D320095FD01 /* SiteHistory */ = {
 			isa = PBXGroup;
 			children = (
-				BAC7EC481DD424930095FD01 /* SiteHistoryTableView.swift */,
+				BAC7EC4B1DD46D320095FD01 /* SiteHistoryTableView.swift */,
+				BAC7EC4D1DD46D6E0095FD01 /* SiteHistoryTableViewCell.swift */,
 			);
 			path = SiteHistory;
 			sourceTree = "<group>";
@@ -563,7 +576,12 @@
 				D80008A31DD5692F008000EF /* InputWorkOrderCell.xib */,
 				D80008A61DD56949008000EF /* OptionBtnCell.swift */,
 				D80008A71DD56949008000EF /* OptionBtnCell.xib */,
-				D80008AA1DD56981008000EF /* PartItemCell.swift */,
+				D80008AE1DD5BD70008000EF /* AddPartsCell.swift */,
+				D80008AF1DD5BD70008000EF /* AddPartsCell.xib */,
+				D80008B21DD5C20C008000EF /* PartItemCell.swift */,
+				D80008B31DD5C20C008000EF /* PartItemCell.xib */,
+				D80008B61DD5C5F7008000EF /* WorkOrderOptionCell.swift */,
+				D80008B71DD5C5F7008000EF /* WorkOrderOptionCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -684,12 +702,17 @@
 			files = (
 				D87DCD721DD069DC00C6284B /* CompleteAppointmentTableViewCell.xib in Resources */,
 				A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */,
+				D80008B91DD5C5F7008000EF /* WorkOrderOptionCell.xib in Resources */,
 				43137B471DD1956100F2D553 /* JobPartsTableViewCell.xib in Resources */,
 				434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */,
 				4382586B1DD99B5400B2E190 /* EditEventViewController.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
 				D8B139311DD4216E0022AD1C /* WorkOrderScrollView.xib in Resources */,
 				4382585F1DD9509000B2E190 /* TimeSheetView.xib in Resources */,
+				D80008B11DD5BD70008000EF /* AddPartsCell.xib in Resources */,
+				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
+				D8B139311DD4216E0022AD1C /* WorkOrderScrollView.xib in Resources */,
+				D80008B51DD5C20C008000EF /* PartItemCell.xib in Resources */,
 				D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
@@ -769,6 +792,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80008B41DD5C20C008000EF /* PartItemCell.swift in Sources */,
 				434395C41DBF4EE600C12C37 /* AppointmentViewController.swift in Sources */,
 				434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */,
 				438258661DD986CA00B2E190 /* TimeSheetTableViewCell.swift in Sources */,
@@ -776,7 +800,6 @@
 				D80008A01DD4A05D008000EF /* StaticWorkOrderCell.swift in Sources */,
 				434395BC1DBF4E9800C12C37 /* BlockDefination.swift in Sources */,
 				BAE3DFFF1DD074CE006E2B69 /* TextTitleView.swift in Sources */,
-				BAC7EC491DD424930095FD01 /* SiteHistoryTableView.swift in Sources */,
 				BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */,
 				437279831DD594270090D253 /* CustomView.swift in Sources */,
 				438258631DD9586E00B2E190 /* UserManager.swift in Sources */,
@@ -789,6 +812,7 @@
 				D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */,
 				BAC7EC461DD416AD0095FD01 /* MKWhiteBtn.swift in Sources */,
 				A70495271DC34A63004AEA98 /* TimesheetModel.swift in Sources */,
+				D80008B81DD5C5F7008000EF /* WorkOrderOptionCell.swift in Sources */,
 				D8B139271DD4162B0022AD1C /* WorkOrderScrollView.swift in Sources */,
 				434395991DBF4DBE00C12C37 /* AppDelegate.swift in Sources */,
 				43137B621DD32F7D00F2D553 /* PartRequestContainerView.swift in Sources */,
@@ -796,6 +820,7 @@
 				4344BA041DD0224C007C3872 /* UserModel.swift in Sources */,
 				A79278D31DC86C42005FA025 /* ViewProgressExtension.swift in Sources */,
 				43CEC5171DC1D91D00A44F4E /* SiteHistoryModel.swift in Sources */,
+				BAC7EC4F1DD46D6E0095FD01 /* SiteHistoryTableViewCell.swift in Sources */,
 				A7593F231DC87EDA00FEFE71 /* AppointmentsTableView.swift in Sources */,
 				BAE3DFFB1DD06EC4006E2B69 /* JobDetailView.swift in Sources */,
 				434395BF1DBF4E9800C12C37 /* StringUtil.swift in Sources */,
@@ -822,6 +847,7 @@
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
 				4382585B1DD9507700B2E190 /* TimeSheetView.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
+				BAC7EC4C1DD46D320095FD01 /* SiteHistoryTableView.swift in Sources */,
 				434395D11DBF4F3B00C12C37 /* LoginViewController.swift in Sources */,
 				A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */,
 				43137B501DD1B0CE00F2D553 /* PartsResultTableView.swift in Sources */,
@@ -829,8 +855,8 @@
 				4344BA061DD023B4007C3872 /* FileUtility.swift in Sources */,
 				43CEC5191DC1D96900A44F4E /* DataManager.swift in Sources */,
 				43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */,
-				D80008AB1DD56981008000EF /* PartItemCell.swift in Sources */,
 				43137B531DD1E19300F2D553 /* PartsResultTableViewCell.swift in Sources */,
+				D80008B01DD5BD70008000EF /* AddPartsCell.swift in Sources */,
 				43137B3F1DD16A4700F2D553 /* JobPartsTableView.swift in Sources */,
 				434395C11DBF4EC900C12C37 /* BaseViewController.swift in Sources */,
 				43137B671DD3F94A00F2D553 /* SelectionView.swift in Sources */,

@@ -16,10 +16,12 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var workOrderView : WorkOrderScrollView?
  //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
     var scrollView : UIScrollView?
+
+    var siteHistoryTableView : SiteHistoryTableView?
+
     var workOrderTableView : WorkOrderTableView?
     var nextPartSearchVC : PartSearchViewController?
     var timeSheetTab : TimeSheetView?
-    
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -33,6 +35,9 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initUI()
         loadData()
         fetchPartsData()
+
+        fetchSiteHistoryData()
+ 
         fetchWorkOrderData()
     }
     
@@ -50,6 +55,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         
         initDetailTab()
         initPartTab()
+        initSiteHistory()
         initWorkOrderTab()
         initTimeSheetTab()
     }
@@ -108,6 +114,13 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         
     }
     
+    func initSiteHistory(){
+    siteHistoryTableView = SiteHistoryTableView(frame: CGRect(x: LCDW * 2, y: 0, width: LCDW, height: (scrollViewSet?.height())!), style: .plain)
+    scrollViewSet?.scrollView?.addSubview(siteHistoryTableView!)
+        
+    }
+    
+    
     func initWorkOrderTab() {
 //        workorderScrollView = UIScrollView.init(frame: CGRect(x: LCDW * 3, y: 0, width: LCDW, height: LCDH - 128))
 //        workorderScrollView?.delegate = self
@@ -137,20 +150,30 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         }
     }
     
+    func fetchSiteHistoryData(){
+        DataManager.shareManager.fetchSiteHistory (jobId: "ey4upM6hWsNiB6C4e", successHandler: { (obj) in
+            DispatchQueue.main.async {
+                var dicaa = NSMutableDictionary()
+                dicaa = PartsManager.shareManager.parseSiteHistoryDicToModel(dic: obj as! NSDictionary)
+                print(dicaa)
+                self.siteHistoryTableView?.dataItems = dicaa
+                self.siteHistoryTableView?.reloadData()
+            }
+        }) { (obj) in
+            print(obj)
+        }
+    }
+    
+  
     func fetchWorkOrderData() {
         self.workOrderTableView?.model = self.model
         self.workOrderTableView?.reloadData()
     }
     
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        print("aaaaaa")
-    }
-    
-    
-    
+   
 }
