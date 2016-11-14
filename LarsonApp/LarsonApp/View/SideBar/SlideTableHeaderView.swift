@@ -15,14 +15,13 @@ class SlideTableHeaderView: UIView{
     @IBOutlet weak var emailLbl: UILabel!
     
     func initUI(){
-        let usermodel = FileUtility.unarchive(fileName: kAccountFileName) as! UserModel
-        emailLbl.text = usermodel.google_email
+        emailLbl.text = UserManager.shareManager.userModel?.google_email
         
         let img = UIImageView(frame: CGRect(x: 16, y: 40, width: 60, height: 60))
         self.addSubview(img)
         
         img.clipsToBounds = true
         img.layer.cornerRadius = img.width() / 2
-        img.sd_setImage(with: usermodel.google_imageURL)
+        img.sd_setImage(with: UserManager.shareManager.userModel?.google_imageURL)
     }
 }

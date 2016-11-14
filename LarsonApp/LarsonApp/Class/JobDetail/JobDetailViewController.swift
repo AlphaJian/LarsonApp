@@ -21,8 +21,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
 
     var workOrderTableView : WorkOrderTableView?
     var nextPartSearchVC : PartSearchViewController?
-
-    
+    var timeSheetTab : TimeSheetView?
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -58,6 +57,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initPartTab()
         initSiteHistory()
         initWorkOrderTab()
+        initTimeSheetTab()
     }
     
     func initDetailTab(){
@@ -100,6 +100,19 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
             })
         }
     }
+    func initTimeSheetTab(){
+        timeSheetTab = Bundle.main.loadNibNamed("TimeSheetView", owner: self, options: nil)?[0] as? TimeSheetView
+        timeSheetTab?.frame = CGRect(x: LCDW * 4, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64)
+        PartsManager.shareManager.createInitialTimeSheet(startTime: Date(), jobsite: (model?.customerAddress)!, desc: (model?.jobDetail)!)
+        timeSheetTab?.initUI(timeSheetArr: PartsManager.shareManager.timeSheetArr!)
+        scrollViewSet?.scrollView?.addSubview(timeSheetTab!)
+        
+        timeSheetTab?.addHandler = {
+            let vc = EditEventViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
     
     func initSiteHistory(){
     siteHistoryTableView = SiteHistoryTableView(frame: CGRect(x: LCDW * 2, y: 0, width: LCDW, height: (scrollViewSet?.height())!), style: .plain)
@@ -118,7 +131,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
 //        
 //        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
 //        workorderScrollView?.contentSize.height = (workOrderView?.frame.height)!
-        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64), style: .plain)
+        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-128), style: .plain)
         scrollViewSet?.scrollView?.addSubview(workOrderTableView!)
     }
     
@@ -162,9 +175,5 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
-    
+   
 }
