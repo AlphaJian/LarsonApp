@@ -54,17 +54,24 @@ class SiteHistoryNotesModel: NSObject {
     var flag: Bool!
     var cellHeight : CGFloat = kSiteHisCellHeight
     var isOpen : Bool = false
+    var contentLabelHeight : CGFloat!
     
     func parseDicToSelf(dic : NSDictionary) {
         self.content = dic["content"] as! String
         self.date = dic["date"] as! Int
         self.flag = dic["flag"] as! Bool
+        let str = NSMutableAttributedString(string: content)
+        str.addAttribute(NSFontAttributeName, value:UIFont.systemFont(ofSize: 13.0), range:NSRange(location:0,length: content.characters.count))
+        
+        self.contentLabelHeight = StringUtil.getAttributeString(str: str, width: LCDW - 80)
         
     }
 
     func getCellHeight(){
+        
+        
         if isOpen {
-            self.cellHeight = 110 + 20
+            self.cellHeight = 90 + contentLabelHeight
         } else {
             self.cellHeight = kSiteHisCellHeight
         }
@@ -93,6 +100,7 @@ class SiteHistoryEquipModel: NSObject {
         self.wennsoftModelNumber = dic["wennsoftModelNumber"] as! String
         self.wennsoftSerialNumber = dic["wennsoftSerialNumber"] as! String
     }
+    
     func getCellHeight(){
         if isOpen {
             self.cellHeight = 50 + 60 * 5 + 20

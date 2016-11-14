@@ -70,12 +70,14 @@ class SiteHistoryTableViewCell: UITableViewCell {
        
        initShadowView(height: model.cellHeight)
 
-        let dateLabel = UILabel(frame: CGRect(x: 10, y: 10, width: 300, height: 30))
+        let dateLabel = UILabel(frame: CGRect(x: 10, y: 5, width: 300, height: 30))
         dateLabel.font = UIFont.boldSystemFont(ofSize: 13)
         dateLabel.text = StringUtil.getTime(timeStamp: model.date)
         
-        let contentLabel = UILabel(frame: CGRect(x: 20, y: 50, width: 300 , height: 40))
+        let contentLabel = UILabel(frame: CGRect(x: 20, y: 50, width: LCDW - 80 , height: model.contentLabelHeight!))
+        contentLabel.numberOfLines = 0
         contentLabel.text = model.content
+        contentLabel.font = UIFont.systemFont(ofSize: 13)
         
         self.shadowView?.addSubview(contentLabel)
         self.shadowView?.addSubview(dateLabel)
