@@ -18,6 +18,7 @@ enum EnumTableViewCell: Int{
     case ServiceDescCell
     case WorkDescCell
     case AddPartsCell
+    case OptionCell
     case SectionCount
 }
 
@@ -25,6 +26,8 @@ class WorkOrderTableView: UITableView {
 
     var model: AppointmentModel?
     var partItems: [Int] = [Int]()
+    weak var vc: JobDetailViewController?
+    var removeItemAlertHandler: ReturnBlock?
     /*
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -42,6 +45,7 @@ class WorkOrderTableView: UITableView {
         self.register(UINib(nibName: "InputWorkOrderCell", bundle: nil), forCellReuseIdentifier: "InputWorkOrderCell")
         self.register(UINib(nibName: "AddPartsCell", bundle: nil), forCellReuseIdentifier: "AddPartsCell")
         self.register(UINib(nibName: "PartItemCell", bundle: nil), forCellReuseIdentifier: "PartItemCell")
+        self.register(UINib(nibName: "WorkOrderOptionCell", bundle: nil), forCellReuseIdentifier: "WorkOrderOptionCell")
         
         self.rowHeight = UITableViewAutomaticDimension
         self.estimatedRowHeight = 60.0
@@ -101,24 +105,14 @@ extension WorkOrderTableView : UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputWorkOrderCell", for: indexPath) as! InputWorkOrderCell
             cell.initUI(parameter: ("Service Description", ""))
             cell.textViewUpdateBlock = { (str: AnyObject) in
-                let currentOffset = tableView.contentOffset
-                UIView.setAnimationsEnabled(false)
-                tableView.beginUpdates()
-                tableView.endUpdates()
-                UIView.setAnimationsEnabled(true)
-                tableView.setContentOffset(currentOffset, animated: false)
+                self.updateCellWithTVEdit()
             }
             return cell
         } else if indexPath.section == EnumTableViewCell.WorkDescCell.rawValue {
             let cell = tableView.dequeueReusableCell(withIdentifier: "InputWorkOrderCell", for: indexPath) as! InputWorkOrderCell
             cell.initUI(parameter: ("Description of Work", ""))
             cell.textViewUpdateBlock = { (str: AnyObject) in
-                let currentOffset = tableView.contentOffset
-                UIView.setAnimationsEnabled(false)
-                tableView.beginUpdates()
-                tableView.endUpdates()
-                UIView.setAnimationsEnabled(true)
-                tableView.setContentOffset(currentOffset, animated: false)
+                self.updateCellWithTVEdit()
             }
             return cell
         } else if indexPath.section == EnumTableViewCell.AddPartsCell.rawValue {
@@ -128,10 +122,17 @@ extension WorkOrderTableView : UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeueReusableCell(withIdentifier: "PartItemCell", for: indexPath) as! PartItemCell
-//                cell.initUI(parameter: ("Add Parts Used"))
+                unowned let wself = self
+                cell.removeItemBlock = { (str: AnyObject) in
+                    wself.showRemoveItemAlert(title: "Are you sure delete?", indexToDelete: indexPath as NSIndexPath)
+                }
                 return cell
             }
             
+        } else if indexPath.section == EnumTableViewCell.OptionCell.rawValue {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "WorkOrderOptionCell", for: indexPath) as! WorkOrderOptionCell
+            //                cell.initUI(parameter: ("Add Parts Used"))
+            return cell
         }
         
         else {
@@ -140,7 +141,40 @@ extension WorkOrderTableView : UITableViewDataSource {
             return cell
         }
     }
+
+    // update cell after edit textview
+    func updateCellWithTVEdit() {
+        let currentOffset = self.contentOffset
+        UIView.setAnimationsEnabled(false)
+        self.beginUpdates()
+        self.endUpdates()
+        UIView.setAnimationsEnabled(true)
+        self.setContentOffset(currentOffset, animated: false)
+    }
+    
+    // 删除某个row
+    func showRemoveItemAlert(title: String, indexToDelete: NSIndexPath) {
+        let alertVC = UIAlertController(title: title, message: "", preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: "ok", style: .default, handler: { (alert) in
+            // 使用beginUpdates会crush，原因是indexpath没更新，
+            // http://stackoverflow.com/questions/4497925/how-to-delete-a-row-from-uitableview  
+            // 直接用reloadData
+            let indexPath = NSIndexPath(row: indexToDelete.row, section: indexToDelete.section)
+            self.partItems.remove(at: indexPath.row-1)
+            self.deleteRows(at: [indexPath as IndexPath], with: .automatic)
+            self.reloadData()
+        })
+        let cancelAction = UIAlertAction(title: "cancel", style: .cancel, handler: { (alert) in
+            print(alert)
+        })
+        alertVC.addAction(confirmAction)
+        alertVC.addAction(cancelAction)
+        if vc != nil {
+            vc?.present(alertVC, animated: true, completion: nil)
+        }
+    }
 }
+
 
 extension WorkOrderTableView : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -150,6 +184,8 @@ extension WorkOrderTableView : UITableViewDelegate {
             tableView.beginUpdates()
             tableView.insertRows(at: [indexPathItem as IndexPath], with: .automatic)
             tableView.endUpdates()
+            // scroll to the item that just added
+//            tableView.scrollToRow(at: indexPathItem as IndexPath, at: .bottom, animated: true)
         }
     }
 }
