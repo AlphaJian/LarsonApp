@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimeSheetTableViewCell" rowHeight="209" id="KGk-i7-Jjw" customClass="TimeSheetTableViewCell" customModule="LarsonApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="320" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timesheet_drive" translatesAutoresizingMaskIntoConstraints="NO" id="VhX-VI-Gma">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="4uI-ZO-CDg"/>
+                            <constraint firstAttribute="width" constant="50" id="9sB-d1-FvZ"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXG-x1-wBc">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="30" id="gl0-Qn-G6k"/>
+                            <constraint firstAttribute="height" constant="30" id="qMM-UV-dXK"/>
+                        </constraints>
+                        <state key="normal" image="delete"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccB-Qe-xfZ">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Fwc-gM-P35"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qr9-Q9-y0P">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="7YF-sK-pjM"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm7-iE-Nvq">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="Inp-yf-DJU"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.12941176469999999" green="0.58823529409999997" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j7a-Zh-OZZ">
+                        <color key="backgroundColor" red="0.86274509799999999" green="0.86274509799999999" blue="0.86274509799999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="dR7-vL-ka5"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="qr9-Q9-y0P" firstAttribute="trailing" secondItem="ccB-Qe-xfZ" secondAttribute="trailing" id="48p-28-dlA"/>
+                    <constraint firstItem="j7a-Zh-OZZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="7AK-h5-Cji"/>
+                    <constraint firstItem="Fm7-iE-Nvq" firstAttribute="top" secondItem="ccB-Qe-xfZ" secondAttribute="bottom" constant="5" id="S3J-vb-ThP"/>
+                    <constraint firstItem="ccB-Qe-xfZ" firstAttribute="leading" secondItem="VhX-VI-Gma" secondAttribute="trailing" constant="10" id="TOV-dW-yOk"/>
+                    <constraint firstItem="VhX-VI-Gma" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Vht-wf-wKn"/>
+                    <constraint firstItem="VhX-VI-Gma" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="WPO-Y6-9uK"/>
+                    <constraint firstItem="ccB-Qe-xfZ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="YQH-C9-RLq"/>
+                    <constraint firstAttribute="bottom" secondItem="j7a-Zh-OZZ" secondAttribute="bottom" id="a8u-G9-3xc"/>
+                    <constraint firstItem="qr9-Q9-y0P" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="hi0-RN-JKc"/>
+                    <constraint firstItem="Fm7-iE-Nvq" firstAttribute="trailing" secondItem="ccB-Qe-xfZ" secondAttribute="trailing" id="ljy-lL-FnE"/>
+                    <constraint firstItem="uXG-x1-wBc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="nO0-Ba-Xcs"/>
+                    <constraint firstAttribute="trailing" secondItem="j7a-Zh-OZZ" secondAttribute="trailing" id="q6F-2c-Fe4"/>
+                    <constraint firstItem="qr9-Q9-y0P" firstAttribute="leading" secondItem="ccB-Qe-xfZ" secondAttribute="leading" id="rAg-5X-XsC"/>
+                    <constraint firstItem="Fm7-iE-Nvq" firstAttribute="leading" secondItem="ccB-Qe-xfZ" secondAttribute="leading" id="wca-7N-CF7"/>
+                    <constraint firstItem="uXG-x1-wBc" firstAttribute="leading" secondItem="ccB-Qe-xfZ" secondAttribute="trailing" constant="10" id="xpp-Pr-5sq"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="uXG-x1-wBc" secondAttribute="trailing" constant="20" id="zWZ-9f-eiD"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="statusImg" destination="VhX-VI-Gma" id="AeA-Pu-UX3"/>
+                <outlet property="timeFromLbl" destination="Fm7-iE-Nvq" id="xgg-4S-cys"/>
+                <outlet property="timeSpendLbl" destination="ccB-Qe-xfZ" id="hEG-0z-UEr"/>
+                <outlet property="titleLbl" destination="qr9-Q9-y0P" id="3Fh-aZ-L7r"/>
+            </connections>
+            <point key="canvasLocation" x="-131" y="61"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="delete" width="16" height="16"/>
+        <image name="timesheet_drive" width="16" height="16"/>
+    </resources>
+</document>

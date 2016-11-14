@@ -47,6 +47,14 @@
 		4344BA041DD0224C007C3872 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BA031DD0224C007C3872 /* UserModel.swift */; };
 		4344BA061DD023B4007C3872 /* FileUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4344BA051DD023B4007C3872 /* FileUtility.swift */; };
 		437279831DD594270090D253 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437279821DD594270090D253 /* CustomView.swift */; };
+		4382585B1DD9507700B2E190 /* TimeSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4382585A1DD9507700B2E190 /* TimeSheetView.swift */; };
+		4382585F1DD9509000B2E190 /* TimeSheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4382585E1DD9509000B2E190 /* TimeSheetView.xib */; };
+		438258611DD9533600B2E190 /* TimeSheetTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438258601DD9533600B2E190 /* TimeSheetTableView.swift */; };
+		438258631DD9586E00B2E190 /* UserManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438258621DD9586E00B2E190 /* UserManager.swift */; };
+		438258661DD986CA00B2E190 /* TimeSheetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438258641DD986CA00B2E190 /* TimeSheetTableViewCell.swift */; };
+		438258671DD986CA00B2E190 /* TimeSheetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438258651DD986CA00B2E190 /* TimeSheetTableViewCell.xib */; };
+		4382586A1DD99B5400B2E190 /* EditEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438258681DD99B5400B2E190 /* EditEventViewController.swift */; };
+		4382586B1DD99B5400B2E190 /* EditEventViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 438258691DD99B5400B2E190 /* EditEventViewController.xib */; };
 		43C3C6831DD011620036EE91 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3C6821DD011620036EE91 /* TabViewController.swift */; };
 		43C3C6851DD012910036EE91 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43C3C6841DD012910036EE91 /* NavViewController.swift */; };
 		43CEC5131DC1D82100A44F4E /* AppointmentModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */; };
@@ -141,6 +149,14 @@
 		4344BA031DD0224C007C3872 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		4344BA051DD023B4007C3872 /* FileUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileUtility.swift; path = LarsonApp/Model/FileUtility.swift; sourceTree = SOURCE_ROOT; };
 		437279821DD594270090D253 /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		4382585A1DD9507700B2E190 /* TimeSheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSheetView.swift; sourceTree = "<group>"; };
+		4382585E1DD9509000B2E190 /* TimeSheetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeSheetView.xib; sourceTree = "<group>"; };
+		438258601DD9533600B2E190 /* TimeSheetTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSheetTableView.swift; sourceTree = "<group>"; };
+		438258621DD9586E00B2E190 /* UserManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserManager.swift; sourceTree = "<group>"; };
+		438258641DD986CA00B2E190 /* TimeSheetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSheetTableViewCell.swift; sourceTree = "<group>"; };
+		438258651DD986CA00B2E190 /* TimeSheetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeSheetTableViewCell.xib; sourceTree = "<group>"; };
+		438258681DD99B5400B2E190 /* EditEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditEventViewController.swift; sourceTree = "<group>"; };
+		438258691DD99B5400B2E190 /* EditEventViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditEventViewController.xib; sourceTree = "<group>"; };
 		43C3C6821DD011620036EE91 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		43C3C6841DD012910036EE91 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
 		43CEC5121DC1D82100A44F4E /* AppointmentModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppointmentModel.swift; sourceTree = "<group>"; };
@@ -323,6 +339,7 @@
 		434395AD1DBF4E9800C12C37 /* JobDetail */ = {
 			isa = PBXGroup;
 			children = (
+				438258591DD9504900B2E190 /* TimeSheet */,
 				BAE3DFF91DD06E06006E2B69 /* JobDetailViews */,
 				43137B3D1DD16A4700F2D553 /* Parts */,
 				D8B139251DD411330022AD1C /* WorkOrderViews */,
@@ -378,6 +395,7 @@
 				A70495221DC33980004AEA98 /* GoogleSignInManager.swift */,
 				43CEC5181DC1D96900A44F4E /* DataManager.swift */,
 				43137B401DD16E8600F2D553 /* PartsManager.swift */,
+				438258621DD9586E00B2E190 /* UserManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -453,6 +471,20 @@
 				43137B4C1DD1AE4B00F2D553 /* NavSearchView.xib */,
 			);
 			path = NavView;
+			sourceTree = "<group>";
+		};
+		438258591DD9504900B2E190 /* TimeSheet */ = {
+			isa = PBXGroup;
+			children = (
+				4382585A1DD9507700B2E190 /* TimeSheetView.swift */,
+				4382585E1DD9509000B2E190 /* TimeSheetView.xib */,
+				438258601DD9533600B2E190 /* TimeSheetTableView.swift */,
+				438258641DD986CA00B2E190 /* TimeSheetTableViewCell.swift */,
+				438258651DD986CA00B2E190 /* TimeSheetTableViewCell.xib */,
+				438258681DD99B5400B2E190 /* EditEventViewController.swift */,
+				438258691DD99B5400B2E190 /* EditEventViewController.xib */,
+			);
+			path = TimeSheet;
 			sourceTree = "<group>";
 		};
 		A7593F211DC87EDA00FEFE71 /* Views */ = {
@@ -654,8 +686,10 @@
 				A77861231DBF573800BA17EE /* SlideTableHeaderView.xib in Resources */,
 				43137B471DD1956100F2D553 /* JobPartsTableViewCell.xib in Resources */,
 				434395F31DC044A400C12C37 /* NavHeaderView.xib in Resources */,
+				4382586B1DD99B5400B2E190 /* EditEventViewController.xib in Resources */,
 				434395D61DBF4F4900C12C37 /* PartsViewController.xib in Resources */,
 				D8B139311DD4216E0022AD1C /* WorkOrderScrollView.xib in Resources */,
+				4382585F1DD9509000B2E190 /* TimeSheetView.xib in Resources */,
 				D87DCD6E1DD069C700C6284B /* TodoAppointmentTableViewCell.xib in Resources */,
 				434395C51DBF4EE600C12C37 /* AppointmentViewController.xib in Resources */,
 				A77861251DBF573800BA17EE /* SlideTableViewCell.xib in Resources */,
@@ -675,6 +709,7 @@
 				D8B1392B1DD417A50022AD1C /* WorkOrderStaticView.xib in Resources */,
 				434395CE1DBF4F2E00C12C37 /* JobDetailViewController.xib in Resources */,
 				434395CA1DBF4F2100C12C37 /* ChatViewController.xib in Resources */,
+				438258671DD986CA00B2E190 /* TimeSheetTableViewCell.xib in Resources */,
 				434395A01DBF4DBE00C12C37 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +771,7 @@
 			files = (
 				434395C41DBF4EE600C12C37 /* AppointmentViewController.swift in Sources */,
 				434395F21DC044A400C12C37 /* NavHeaderView.swift in Sources */,
+				438258661DD986CA00B2E190 /* TimeSheetTableViewCell.swift in Sources */,
 				43CEC5151DC1D84400A44F4E /* PartModel.swift in Sources */,
 				D80008A01DD4A05D008000EF /* StaticWorkOrderCell.swift in Sources */,
 				434395BC1DBF4E9800C12C37 /* BlockDefination.swift in Sources */,
@@ -743,9 +779,11 @@
 				BAC7EC491DD424930095FD01 /* SiteHistoryTableView.swift in Sources */,
 				BAF0F5A61DC884CB00FBC443 /* TabBarView.swift in Sources */,
 				437279831DD594270090D253 /* CustomView.swift in Sources */,
+				438258631DD9586E00B2E190 /* UserManager.swift in Sources */,
 				A77861221DBF573800BA17EE /* SlideTableHeaderView.swift in Sources */,
 				43137B4B1DD1AE3400F2D553 /* NavSearchView.swift in Sources */,
 				43137B491DD1AB2C00F2D553 /* PartSearchViewController.swift in Sources */,
+				438258611DD9533600B2E190 /* TimeSheetTableView.swift in Sources */,
 				434395C91DBF4F2100C12C37 /* ChatViewController.swift in Sources */,
 				A778611F1DBF573800BA17EE /* MKLayer.swift in Sources */,
 				D87DCD711DD069DC00C6284B /* CompleteAppointmentTableViewCell.swift in Sources */,
@@ -771,6 +809,7 @@
 				43137B461DD1956100F2D553 /* JobPartsTableViewCell.swift in Sources */,
 				A778611D1DBF573800BA17EE /* MKBlueButton.swift in Sources */,
 				434395BE1DBF4E9800C12C37 /* Reachability.swift in Sources */,
+				4382586A1DD99B5400B2E190 /* EditEventViewController.swift in Sources */,
 				434395BD1DBF4E9800C12C37 /* ViewFrameExtension.swift in Sources */,
 				D80008A41DD5692F008000EF /* InputWorkOrderCell.swift in Sources */,
 				A77861241DBF573800BA17EE /* SlideTableViewCell.swift in Sources */,
@@ -781,6 +820,7 @@
 				D8B139291DD417510022AD1C /* WorkOrderStaticView.swift in Sources */,
 				A778611E1DBF573800BA17EE /* MKButton.swift in Sources */,
 				434395D51DBF4F4900C12C37 /* PartsViewController.swift in Sources */,
+				4382585B1DD9507700B2E190 /* TimeSheetView.swift in Sources */,
 				434395CD1DBF4F2E00C12C37 /* JobDetailViewController.swift in Sources */,
 				434395D11DBF4F3B00C12C37 /* LoginViewController.swift in Sources */,
 				A70495251DC34919004AEA98 /* WorkOrdersModel.swift in Sources */,

@@ -34,6 +34,8 @@ let kPartSearchIndex = "firebase-reln"
 let kPartSearchSize = 20
 let kPartSearchType = "part-inventory"
 
+let kTimeSheetTravel = "1050 ST - Travel"
+let kTimeSheetTech = "1003 ST - Technician"
 class BlockDefination: NSObject {
 
 }

@@ -192,4 +192,17 @@ class DataManager: NSObject {
         ref.removeValue()
         successHandler(NSNull.self)
     }
+    
+    func upsertTimeSheet(strTime : String, jobId : String, arr : NSMutableArray, successHandler : @escaping ReturnBlock, failHandeler : @escaping ReturnBlock)
+    {
+        let subRef = ref.child("engineerApp").child("user-timesheet").child("o8GCshuaUieenxLhcI8ampnaZC63").child(strTime).child(jobId)
+        for i in 0...arr.count - 1 {
+            let tempRef = subRef.childByAutoId()
+            let tempStr = subRef.description()
+            let model = arr[i] as! TimesheetModel
+            let requestId = StringUtil.getSpecWordToEnd(oldStr: tempRef.description(), middleStr: tempStr)
+            model._id = requestId
+            tempRef.setValue(model.parseSelfToDic())
+        }
+    }
 }

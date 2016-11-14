@@ -18,6 +18,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var scrollView : UIScrollView?
     var workOrderTableView : WorkOrderTableView?
     var nextPartSearchVC : PartSearchViewController?
+    var timeSheetTab : TimeSheetView?
     
     var partsView : JobPartsTableView?
     override func viewDidAppear(_ animated: Bool) {
@@ -50,6 +51,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
         initDetailTab()
         initPartTab()
         initWorkOrderTab()
+        initTimeSheetTab()
     }
     
     func initDetailTab(){
@@ -92,6 +94,19 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
             })
         }
     }
+    func initTimeSheetTab(){
+        timeSheetTab = Bundle.main.loadNibNamed("TimeSheetView", owner: self, options: nil)?[0] as? TimeSheetView
+        timeSheetTab?.frame = CGRect(x: LCDW * 4, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64)
+        PartsManager.shareManager.createInitialTimeSheet(startTime: Date(), jobsite: (model?.customerAddress)!, desc: (model?.jobDetail)!)
+        timeSheetTab?.initUI(timeSheetArr: PartsManager.shareManager.timeSheetArr!)
+        scrollViewSet?.scrollView?.addSubview(timeSheetTab!)
+        
+        timeSheetTab?.addHandler = {
+            let vc = EditEventViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
+    }
     
     func initWorkOrderTab() {
 //        workorderScrollView = UIScrollView.init(frame: CGRect(x: LCDW * 3, y: 0, width: LCDW, height: LCDH - 128))
@@ -103,7 +118,7 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
 //        
 //        workOrderView = Bundle.main.loadNibNamed("WorkOrderScrollView", owner: self, options: nil)?[0] as? WorkOrderScrollView
 //        workorderScrollView?.contentSize.height = (workOrderView?.frame.height)!
-        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-64), style: .plain)
+        workOrderTableView = WorkOrderTableView(frame: CGRect(x: LCDW*3, y: 0, width: (scrollViewSet?.width())!, height: (scrollViewSet?.height())!-128), style: .plain)
         scrollViewSet?.scrollView?.addSubview(workOrderTableView!)
     }
     
