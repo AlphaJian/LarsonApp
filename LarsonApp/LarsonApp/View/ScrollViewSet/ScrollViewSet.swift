@@ -67,4 +67,20 @@ class ScrollViewSet: UIView, UIScrollViewDelegate {
     }
   
 
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+    
+            let view = super.hitTest(point, with: event)
+            
+        let mapViewFrame = CGRect(x: 0, y: 64, width: LCDW, height: 200)
+        
+            if mapViewFrame.contains(point) {
+               
+                self.scrollView?.isScrollEnabled = false
+                return view
+            } else {
+                
+                self.scrollView?.isScrollEnabled = true
+                return view
+            }
+    }
 }
