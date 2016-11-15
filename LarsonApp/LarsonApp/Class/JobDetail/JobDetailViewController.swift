@@ -14,9 +14,6 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     var model : AppointmentModel?
     var jobDetailView : JobDetailView?
     var workOrderView : WorkOrderScrollView?
- //   var titleArr = ["aaa","bbbb","cccc","dddd","eee","ffff"]
-    var scrollView : UIScrollView?
-
     var siteHistoryTableView : SiteHistoryTableView?
 
     var workOrderTableView : WorkOrderTableView?
@@ -61,25 +58,10 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     }
     
     func initDetailTab(){
-        scrollView = UIScrollView.init(frame: CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128))
-        scrollView?.delegate = self
-        
-        
-        self.scrollViewSet?.scrollView?.addSubview(scrollView!)
         jobDetailView = Bundle.main.loadNibNamed("JobDetailView", owner: self, options: nil)?[0] as? JobDetailView
-        scrollView?.contentSize.height = (jobDetailView?.frame.height)!
-        scrollView?.addSubview(jobDetailView!)
+        jobDetailView?.frame = CGRect(x: 0, y: 0, width: LCDW, height: LCDH - 128)
+        self.scrollViewSet?.scrollView?.addSubview(jobDetailView!)
         
-        jobDetailView?.mapMovingHandler = {
-            self.scrollViewSet?.scrollView?.isScrollEnabled = false
-            self.scrollView?.isScrollEnabled = false
-        }
-        jobDetailView?.movingHandler = {
-            DispatchQueue.main.async {
-                self.scrollViewSet?.scrollView?.isScrollEnabled = true
-                self.scrollView?.isScrollEnabled = true
-            }
-        }
         
     }
 
@@ -166,5 +148,6 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     
     
     
-    
+
+   
 }

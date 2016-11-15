@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import GoogleMaps
 
-class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
+class JobDetailView: UIScrollView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
     
     
     @IBOutlet weak var addressView: UIView!
@@ -29,6 +29,7 @@ class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
     @IBOutlet weak var typeOfCall: TextTitleView!
     @IBOutlet weak var po: TextTitleView!
     
+    @IBOutlet weak var viewWidth: NSLayoutConstraint!
     
     @IBOutlet weak var descriptionHeight: NSLayoutConstraint!
     @IBOutlet weak var middleViewHeight: NSLayoutConstraint!
@@ -37,15 +38,12 @@ class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
     @IBOutlet weak var callBtn: MKWhiteBtn!
     @IBOutlet weak var streetViewBtn: MKButton!
     
-    
-    var mapMovingHandler : ButtonTouchUpBlock?
-    var movingHandler : ButtonTouchUpBlock?
-    
     let mapViewHeight: CGFloat = 100
     let addressViewHeight: CGFloat = 100
     
     func initUI(model: AppointmentModel){
         
+        viewWidth.constant = LCDW
         customerLabel.text = model.customerName
         addressLabel.text = model.customerAddress
         
@@ -103,20 +101,18 @@ class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         
-        if view != nil {
             if mapView.frame.contains(point) {
-                if mapMovingHandler != nil {
-                    mapMovingHandler!()
-                }
+               self.isScrollEnabled = false
+                 return view
             } else {
-                if movingHandler != nil {
-                    movingHandler!()
-                }
+                self.isScrollEnabled = true
+                 return view
             }
         
-        }
-        return view
     }
+    
+    
+    
     
     @IBAction func streetViewBtnTaped(_ sender: AnyObject) {
         if (UIApplication.shared.canOpenURL(NSURL(string:"comgooglemaps://")! as URL)) {
@@ -127,5 +123,8 @@ class JobDetailView: UIView, GMSMapViewDelegate, GMSPanoramaViewDelegate {
         }
         
     }
+    
+   
+
     
 }
