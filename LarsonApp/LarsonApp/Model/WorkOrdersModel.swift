@@ -52,7 +52,11 @@ class WorkOrdersModel: NSObject {
         }
         
     }
-   
+    
+    func parseSelfToDic() -> NSDictionary{
+        return ["_id": self._id, "callNumber": self.callNumber, "city": self.city, "createdAt": self.createdAt, "currentStatus": self.currentStatus, "jobCod": self.jobCod, "jobId": self.jobId, "lastModified": self.lastModified, "phoneNumber": self.phoneNumber, "returnTripNeeded": self.returnTripNeeded, "serviceDescription": self.serviceDescription, "siteAddress": self.siteAddress, "stationNumber": self.stationNumber, "submitted": self.submitted, "techNumber": self.techNumber, "workCompleted": self.workCompleted]
+    }
+    
     func initWithDic (dic : NSDictionary) {
         self.setValuesForKeys(dic as! [String : Any])
     }
