@@ -167,6 +167,11 @@ class JobDetailViewController: BaseViewController, UIScrollViewDelegate {
     
   
     func fetchWorkOrderData() {
+        DataManager.shareManager.fetchWorkOrder(appointmentModel: self.model!, successHandler: { (obj) in
+            
+        }, failHandeler: { (obj) in
+            print(obj)
+        })
         self.workOrderTableView?.model = self.model
         self.workOrderTableView?.reloadData()
     }
