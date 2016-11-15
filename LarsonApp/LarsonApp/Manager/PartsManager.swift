@@ -13,6 +13,8 @@ let singlePart = PartsManager()
 
 class PartsManager: NSObject {
     
+    var timeSheetArr : NSMutableArray?
+    
     class var shareManager : PartsManager {
         return singlePart
     }
@@ -55,15 +57,51 @@ class PartsManager: NSObject {
         return partsArr
     }
     
+    func createInitialTimeSheet(startTime : Date, jobsite : String, desc : String)
+    {
+        timeSheetArr = NSMutableArray()
+        let model1 = TimesheetModel()
+        model1.desc = "asd"
+        model1.startTime = StringUtil.getStringFromDate(date: startTime, format: "HH:mm")
+        model1.endTime = StringUtil.getStringFromDate(date: startTime.addingTimeInterval(3600), format: "HH:mm")
+        model1.payCode = kTimeSheetTravel
+        model1.transactionType = "Service Call"
+        model1.totalTime = 60
+        model1.jobSite = jobsite
+        model1.desc = desc
+        
+        let model2 = TimesheetModel()
+        model2.desc = "asd"
+        model2.startTime = StringUtil.getStringFromDate(date: startTime.addingTimeInterval(3600), format: "HH:mm")
+        model2.endTime = StringUtil.getStringFromDate(date: startTime.addingTimeInterval(3600 * 2), format: "HH:mm")
+        model2.payCode = kTimeSheetTech
+        model2.transactionType = "Service Call"
+        model2.totalTime = 60
+        model2.jobSite = jobsite
+        model2.desc = desc
+        
+        timeSheetArr?.add(model1)
+        timeSheetArr?.add(model2)
+    }
+    
+    func countTotalTimeSheet() -> Int{
+        var timeSpend = 0
+        for item in timeSheetArr! {
+            let model = item as! TimesheetModel
+            timeSpend = timeSpend + model.totalTime
+        }
+        return timeSpend
+    }
+    
     func parseSiteHistoryDicToModel(dic: NSDictionary) -> NSMutableDictionary
     {
-    let modelDic = NSMutableDictionary()
+        let modelDic = NSMutableDictionary()
         if dic.value(forKey: "location-equipment") != nil {
-        
-        let arr =  dic.value(forKey: "location-equipment") as! NSArray
-        var equipmentArr = [SiteHistoryEquipModel]()
+            
+            let arr =  dic.value(forKey: "location-equipment") as! NSArray
+            var equipmentArr = [SiteHistoryEquipModel]()
             for item in arr {
-            let model = SiteHistoryEquipModel()
+                let model = SiteHistoryEquipModel()
                 model.parseDicToSelf(dic: item as! NSDictionary)
                 equipmentArr.append(model)
                 modelDic.setValue(equipmentArr, forKey: "location-equipment")
@@ -106,5 +144,4 @@ class PartsManager: NSObject {
         
         return modelDic
     }
-    
 }

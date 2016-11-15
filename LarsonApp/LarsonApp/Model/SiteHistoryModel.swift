@@ -40,7 +40,7 @@ class SiteHistoryModel: NSObject {
    
     func getCellHeight(){
         if isOpen {
-            self.cellHeight = 50 + 60 * 5 + 20
+            self.cellHeight = CGFloat(50 + 60 * 5 + 20)
         } else {
             self.cellHeight = kSiteHisCellHeight
         }
@@ -103,7 +103,7 @@ class SiteHistoryEquipModel: NSObject {
     
     func getCellHeight(){
         if isOpen {
-            self.cellHeight = 50 + 60 * 5 + 20
+            self.cellHeight = CGFloat(50 + 60 * 5 + 20)
         } else {
             self.cellHeight = kSiteHisCellHeight
         }

@@ -50,7 +50,9 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
                                                           accessToken: (authentication?.accessToken)!)
         FIRAuth.auth()?.signIn(with: credential) { (user, error) in
             // ...
-            print(user,error)
+            UserManager.shareManager.userModel?.firebase_uid = (user! as FIRUser).uid
+            let _ = FileUtility.archive(fileName: kAccountFileName, object: UserManager.shareManager.userModel!)
+
 //            DataManager.shareManager.insertUser(emial: emial!, accessToken: token!)
         }
     }
@@ -67,13 +69,8 @@ class GoogleSignInManager: NSObject ,GIDSignInDelegate{
     }
     
     func saveGoogleAccount(account : GIDProfileData){
-        var usermodel = FileUtility.unarchive(fileName: kAccountFileName) as? UserModel
-        if usermodel == nil
-        {
-            usermodel = UserModel()
-        }
-        usermodel?.google_email = account.email
-        usermodel?.google_imageURL = account.imageURL(withDimension: 120)
-        let _ = FileUtility.archive(fileName: kAccountFileName, object: usermodel!)
+//        var usermodel = FileUtility.unarchive(fileName: kAccountFileName) as? UserModel
+        UserManager.shareManager.userModel?.google_email = account.email
+        UserManager.shareManager.userModel?.google_imageURL = account.imageURL(withDimension: 120)
     }
 }
