@@ -21,9 +21,12 @@
                             <constraint firstAttribute="width" constant="40" id="oMU-Nd-ZZK"/>
                             <constraint firstAttribute="height" constant="40" id="rma-SA-7Q5"/>
                         </constraints>
-                        <state key="normal" title="x">
+                        <state key="normal" image="close">
                             <color key="titleColor" red="0.22352941179999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
+                        <connections>
+                            <action selector="deleteTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YWy-hc-dOc"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qty:1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="epy-nM-fWs">
                         <constraints>
@@ -36,7 +39,7 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="characterWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYY-Y7-piy">
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="uBU-X2-2Ev"/>
+                            <constraint firstAttribute="height" constant="35" id="uBU-X2-2Ev"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <nil key="textColor"/>
@@ -50,17 +53,26 @@
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nam-N8-i5q">
+                        <color key="backgroundColor" red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="cfv-h3-qLC"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="OYY-Y7-piy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6na-3h-bvK"/>
+                    <constraint firstItem="Nam-N8-i5q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1bv-2c-dJA"/>
+                    <constraint firstItem="OYY-Y7-piy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="6na-3h-bvK"/>
                     <constraint firstAttribute="trailing" secondItem="wwF-zr-zvH" secondAttribute="trailing" id="HDs-68-00c"/>
-                    <constraint firstItem="epy-nM-fWs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-5" id="NX1-TN-Ch5"/>
+                    <constraint firstItem="epy-nM-fWs" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="NX1-TN-Ch5"/>
                     <constraint firstItem="A0o-gh-OAq" firstAttribute="leading" secondItem="OYY-Y7-piy" secondAttribute="leading" id="Sr0-RI-4ty"/>
                     <constraint firstItem="A0o-gh-OAq" firstAttribute="trailing" secondItem="OYY-Y7-piy" secondAttribute="trailing" id="UxY-Zx-G9R"/>
                     <constraint firstItem="A0o-gh-OAq" firstAttribute="top" secondItem="OYY-Y7-piy" secondAttribute="bottom" id="VQe-UI-n5Z"/>
-                    <constraint firstItem="wwF-zr-zvH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="9" id="WrE-Z0-lzz"/>
-                    <constraint firstItem="OYY-Y7-piy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="dcp-qd-rzB"/>
+                    <constraint firstItem="wwF-zr-zvH" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="WrE-Z0-lzz"/>
+                    <constraint firstAttribute="trailing" secondItem="Nam-N8-i5q" secondAttribute="trailing" id="X5u-kx-0Xl"/>
+                    <constraint firstItem="OYY-Y7-piy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="dcp-qd-rzB"/>
                     <constraint firstItem="epy-nM-fWs" firstAttribute="leading" secondItem="OYY-Y7-piy" secondAttribute="trailing" constant="10" id="qb3-8x-YiJ"/>
+                    <constraint firstAttribute="bottom" secondItem="Nam-N8-i5q" secondAttribute="bottom" id="xcl-0E-cSu"/>
                     <constraint firstItem="wwF-zr-zvH" firstAttribute="leading" secondItem="epy-nM-fWs" secondAttribute="trailing" constant="5" id="zGz-7q-847"/>
                 </constraints>
             </tableViewCellContentView>
@@ -73,4 +85,7 @@
             <point key="canvasLocation" x="-308" y="153"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="close" width="16" height="16"/>
+    </resources>
 </document>

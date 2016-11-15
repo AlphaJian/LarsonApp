@@ -12,7 +12,7 @@ class ChatViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        initNavView(title: "Chart Center")
+        initNavView(title: "Chart Center", bolBack: false)
     }
     
     override func viewDidLoad() {

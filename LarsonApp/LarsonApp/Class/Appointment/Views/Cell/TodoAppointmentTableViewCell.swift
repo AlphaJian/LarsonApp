@@ -15,11 +15,27 @@ class TodoAppointmentTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var trunkLabel: UILabel!
+    
+    private var phoneStr: String = ""
+    private var legacyID: String = ""
+    
+    var phoneCallback: ReturnBlock?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.containerView.layer.cornerRadius = 4.0
-        self.containerView.layer.shouldRasterize = true
+//        self.containerView.layer.shadowOffset = CGSize(width: 0, height: 15)
+////        self.containerView.layer.shadowRadius = 5
+//        self.containerView.layer.shadowOpacity = 1
+////        self.containerView.layer.shadowColor = UIColor.black.cgColor
+//        self.containerView.layer.masksToBounds = true
+        
+        
+        self.containerView.layer.shadowColor = UIColor.lightGray.cgColor
+        self.containerView.layer.shadowOffset = CGSize(width: 3, height: 3)
+        self.containerView.layer.shadowOpacity = 1;
+        self.containerView.layer.shadowRadius = 3.0;
         // Initialization code
     }
 
@@ -28,7 +44,22 @@ class TodoAppointmentTableViewCell: UITableViewCell {
         self.legacyIdLabel.text = model.legacyId
         self.nameLabel.text = model.customerName
         self.addressLabel.text = model.customerAddress
+        self.trunkLabel.text = "\(model.partsReqInTruckNum) of \(model.partsReqNum) parts\n in Truck"
+        self.phoneStr = model.telephoneNumber
+        self.legacyID = model.legacyId
     }
+    
+    @IBAction func phoneAction(_ sender: UIButton) {
+        print(self.legacyID)
+        let phoneURL = NSURL(string: "telprompt://\(self.phoneStr)")
+        let phoneCallbackURL = NSURL(string: "tel://\(self.phoneStr)")
+        if UIApplication.shared.canOpenURL(phoneURL as! URL) {
+            UIApplication.shared.openURL(phoneURL as! URL)
+        } else if UIApplication.shared.canOpenURL(phoneCallbackURL as! URL) {
+            UIApplication.shared.openURL(phoneCallbackURL as! URL)
+        }
+    }
+    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

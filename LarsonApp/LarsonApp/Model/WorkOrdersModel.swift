@@ -12,11 +12,11 @@ class WorkOrdersModel: NSObject {
     var _id : String!
     var callNumber : String!
     var city : String!
-    var createdAt : Int!
+    var createdAt : TimeInterval!
     var currentStatus : String!
     var jobCod : Bool!
     var jobId : String!
-    var lastModified : String!
+    var lastModified : TimeInterval!
     var phoneNumber : String!
     var returnTripNeeded : Bool!
     var serviceDescription : String!
@@ -25,27 +25,38 @@ class WorkOrdersModel: NSObject {
     var submitted : Bool!
     var techNumber : String!
     var workCompleted : Bool!
+    var parts : [PartModel]!
     
     func parseDicToSelf(dic : NSDictionary) {
-        self._id = dic["_id"] as! String
-        self.callNumber = dic["callNumber"] as! String
-        self.city = dic["city"] as! String
-        self.createdAt = dic["createdAt"] as! Int
-        self.currentStatus = dic["currentStatus"] as! String
-        self.jobCod = dic["jobCod"] as! Bool
-        self.jobId = dic["jobId"] as! String
-        self.lastModified = dic["lastModified"] as! String
-        self.phoneNumber = dic["phoneNumber"] as! String
-        self.returnTripNeeded = dic["returnTripNeeded"] as! Bool
-        self.serviceDescription = dic["serviceDescription"] as! String
-        self.siteAddress = dic["siteAddress"] as! String
-        self.stationNumber = dic["stationNumber"] as! String
-        self.submitted = dic["submitted"] as! Bool
-        self.techNumber = dic["techNumber"] as! String
-        self.workCompleted = dic["workCompleted"] as! Bool
+        self._id = dic.checkValueIfNil(key: "_id", oldValue: self._id)
+        self.callNumber = dic.checkValueIfNil(key: "callNumber", oldValue: self.callNumber)
+        self.city = dic.checkValueIfNil(key: "city", oldValue: self.city)
+        self.createdAt = dic["createdAt"] as! TimeInterval
+        self.currentStatus = dic.checkValueIfNil(key: "currentStatus", oldValue: self.currentStatus)
+        self.jobCod = dic.checkBoolIfNil(key: "jobCod", oldValue: self.jobCod)
+        self.jobId = dic.checkValueIfNil(key: "jobId", oldValue: self.jobId)
+        self.lastModified = dic.checkTimeIntervalIfNil(key: "lastModified", oldValue: self.lastModified)
+        self.phoneNumber = dic.checkValueIfNil(key: "phoneNumber", oldValue: self.phoneNumber)
+        self.returnTripNeeded = dic.checkBoolIfNil(key: "returnTripNeeded", oldValue: self.returnTripNeeded)
+        self.serviceDescription = dic.checkValueIfNil(key: "serviceDescription", oldValue: self.serviceDescription)
+        self.siteAddress = dic.checkValueIfNil(key: "siteAddress", oldValue: self.siteAddress)
+        self.stationNumber = dic.checkValueIfNil(key: "stationNumber", oldValue: self.stationNumber)
+        self.submitted = dic.checkBoolIfNil(key: "submitted", oldValue: self.submitted)
+        self.techNumber = dic.checkValueIfNil(key: "techNumber", oldValue: self.techNumber)
+        self.workCompleted = dic.checkBoolIfNil(key: "workCompleted", oldValue: self.workCompleted)
+        var partsArr = [PartModel]()
+        for partDic in (dic.object(forKey: "parts") as! [NSDictionary]) {
+            let partModel = PartModel()
+            partModel.parseDicToSelf(dic: partDic)
+            partsArr.append(partModel)
+        }
         
     }
-   
+    
+    func parseSelfToDic() -> NSDictionary{
+        return ["_id": self._id, "callNumber": self.callNumber, "city": self.city, "createdAt": self.createdAt, "currentStatus": self.currentStatus, "jobCod": self.jobCod, "jobId": self.jobId, "lastModified": self.lastModified, "phoneNumber": self.phoneNumber, "returnTripNeeded": self.returnTripNeeded, "serviceDescription": self.serviceDescription, "siteAddress": self.siteAddress, "stationNumber": self.stationNumber, "submitted": self.submitted, "techNumber": self.techNumber, "workCompleted": self.workCompleted]
+    }
+    
     func initWithDic (dic : NSDictionary) {
         self.setValuesForKeys(dic as! [String : Any])
     }

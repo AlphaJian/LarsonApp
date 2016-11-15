@@ -69,4 +69,19 @@ extension NSDictionary {
         }
         return value as! Int
     }
+
+    func checkTimeIntervalIfNil(key: String, oldValue : TimeInterval) -> TimeInterval {
+        if self.object(forKey: key) == nil
+        {
+            return oldValue
+        }
+        var value: AnyObject?
+        
+        value = self.value(forKey: key) as AnyObject?
+        
+        if (value == nil){
+            return 0
+        }
+        return value as! TimeInterval
+    }
 }

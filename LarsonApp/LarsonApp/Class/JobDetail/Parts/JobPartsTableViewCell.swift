@@ -18,6 +18,7 @@ class JobPartsTableViewCell: UITableViewCell {
     
     var partModel : PartModel?
     var indexPath : IndexPath?
+    var deleteHandler : CellTouchUpBlock?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,11 +31,17 @@ class JobPartsTableViewCell: UITableViewCell {
         
         let attrStr = NSMutableAttributedString(string: model.name)
         attrStr.addAttribute(NSFontAttributeName, value: UIFont.systemFont(ofSize: 13), range: NSMakeRange(0, model.name.characters.count))
-        let height = StringUtil.getAttributeString(str: attrStr, width: LCDW - 105)
+        let height = StringUtil.getAttributeString(str: attrStr, width: LCDW - 115)
         partNameLblHeight.constant = height + 5
         self.layoutIfNeeded()
         partNameLbl.text = model.name
-        partInfoLbl.text = "#\(model.vendorId)   $\(model.price)"
+        partInfoLbl.text = "#\(model.number)   $\(model.price)"
+    }
+    @IBAction func deleteTapped(_ sender: AnyObject) {
+        if deleteHandler != nil
+        {
+            deleteHandler!(indexPath!, partModel!)
+        }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

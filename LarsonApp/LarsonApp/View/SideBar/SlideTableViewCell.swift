@@ -20,7 +20,7 @@ class SlideTableViewCell: UITableViewCell {
         if index == items.value(forKey: "didSelect") as! Int {
             cellLabel.textColor = StringUtil.getColorWithRGB(red: 33, green: 105, blue: 243)
 
-            cellImage.image = UIImage(named: items.value(forKey: "\(index)") as! String + "_b")
+            cellImage.image = UIImage(named: items.value(forKey: "\(index)") as! String + "_Blue")
         } else {
             cellImage.image = UIImage(named: items.value(forKey: "\(index)") as! String)
         }

@@ -13,7 +13,7 @@ class PartsViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        initNavView(title: "Parts Management")
+        initNavView(title: "Parts Management", bolBack: false)
     }
     
     override func viewDidLoad() {

@@ -56,4 +56,21 @@ class StringUtil: NSObject {
         let rect = str.boundingRect(with: CGSize(width: 10000, height: height), options: options, context: nil)
         return rect.width
     }
+    
+    class func getSpecWordToEnd(oldStr : String, middleStr : String) -> String
+    {
+        let oldStr2 = oldStr
+        let range = oldStr.range(of: middleStr + "/")
+        return oldStr2.replacingCharacters(in: range!, with: "")
+    }
+    
+    class func getTime(timeStamp: Int) -> String {
+
+        let timeInterval:TimeInterval = TimeInterval(timeStamp/1000)
+        let date = NSDate(timeIntervalSince1970: timeInterval)
+        let dformatter = DateFormatter()
+        dformatter.dateFormat = "MMM d yyyy HH:mm a"
+        return "\(dformatter.string(from: date as Date))"
+    }
+    
 }
